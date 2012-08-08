@@ -2,39 +2,39 @@
 NIFTY Cloud SDK for Java
 --------------------------
 
-�j�t�e�B�N���E�h SDK for Java �́A�T�[�o�[�̍쐬�E�N���E��~��
-�X�e�[�^�X�Q�ƂȂǂ̑�����\�ɂ��� Java API �ł��B
-���� SDK �𗘗p���āA�j�t�e�B�N���E�h�Ǘ��A�v���|�P�[�V�����̊J���A
-���\�[�X�R���g���[���̎������Ȃǂ����e�ՂɎ������邱�Ƃ��ł��܂��B
+ニフティクラウド SDK for Java は、サーバーの作成・起動・停止や
+ステータス参照などの操作を可能にする Java API です。
+この SDK を利用して、ニフティクラウド管理アプリ－ケーションの開発、
+リソースコントロールの自動化などをより容易に実現することができます。
 
-�ڂ����́A���L�̃y�[�W�����Q�Ƃ��������B
+詳しくは、下記のページをご参照ください。
 http://cloud.nifty.com/api/#sdk
 
 
 
 
-���j�t�e�B�N���E�h SDK for Java �Ɋ܂܂�Ă������
+●ニフティクラウド SDK for Java に含まれているもの
 
-�E�j�t�e�B�N���E�h Java ���C�u����
-�@�@�j�t�e�B�N���E�h API�iREST�j�Ƃ̒ʐM�A�������������� Java API �ł��B
-�@�@REST �̒m���������Ă��A���g���� Java IDE �𗘗p���ăA�v���P�[�V������
-�@�@�J�������邱�Ƃ��\�ł��B 
+・ニフティクラウド Java ライブラリ
+　　ニフティクラウド API（REST）との通信、処理を実装した Java API です。
+　　REST の知識が無くても、お使いの Java IDE を利用してアプリケーションの
+　　開発をすることが可能です。 
 
-�E�T���v���R�[�h
-�@�@�A�v���P�[�V�����J���̂��߂̃��C�u�����g�p������Ă��܂��B 
+・サンプルコード
+　　アプリケーション開発のためのライブラリ使用例を内包しています。 
 
-�E�����[�X�m�[�g
-�@�@�X�V�ӏ��ɂ��ċL�q���Ă��܂��B
-
-
-�������
-
-�EJava SE 6 Update 7 �ȍ~ 
-�EApache Commons�AXStream �T�[�h�p�[�e�B���C�u����
-�@�@�ithird-party �f�B���N�g���ɓ����Ă��܂��B�j 
+・リリースノート
+　　更新箇所について記述しています。
 
 
-��JavaDoc
+●動作環境
+
+・Java SE 6 Update 7 以降 
+・Apache Commons、XStream サードパーティライブラリ
+　　（third-party ディレクトリに内包されています。） 
+
+
+●JavaDoc
 http://cloud.nifty.com/api/sdk/javadoc/
 
 
