@@ -1,0 +1,42 @@
+--------------------------
+NIFTY Cloud SDK for Java
+--------------------------
+
+ニフティクラウド SDK for Java は、サーバーの作成・起動・停止や
+ステータス参照などの操作を可能にする Java API です。
+この SDK を利用して、ニフティクラウド管理アプリ－ケーションの開発、
+リソースコントロールの自動化などをより容易に実現することができます。
+
+詳しくは、下記のページをご参照ください。
+http://cloud.nifty.com/api/#sdk
+
+
+
+
+●ニフティクラウド SDK for Java に含まれているもの
+
+・ニフティクラウド Java ライブラリ
+　　ニフティクラウド API（REST）との通信、処理を実装した Java API です。
+　　REST の知識が無くても、お使いの Java IDE を利用してアプリケーションの
+　　開発をすることが可能です。 
+
+・サンプルコード
+　　アプリケーション開発のためのライブラリ使用例を内包しています。 
+
+・リリースノート
+　　更新箇所について記述しています。
+
+
+●動作環境
+
+・Java SE 6 Update 7 以降 
+・Apache Commons、XStream サードパーティライブラリ
+　　（third-party ディレクトリに内包されています。） 
+
+
+●JavaDoc
+http://cloud.nifty.com/api/sdk/javadoc/
+
+
+
+Copyright 2011 NIFTY Corporation All Rights Reserved.

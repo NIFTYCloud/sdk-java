@@ -1,0 +1,118 @@
+--------------------------
+NIFTY Cloud SDK for Java
+リリースノート
+--------------------------
+
+
+2012-04-02  SDK for Java Version.1.9.2
+---------------------------------
+■機能追加
+－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+　主な修正classは以下です。
+　　com.nifty.cloud.sdk.usage.*
+－詳しくは、JavaDocを参照してください。
+　　http://cloud.nifty.com/api/sdk/javadoc/
+
+
+
+2012-02-14  SDK for Java Version.1.9
+---------------------------------
+■機能追加
+API Version 1.9に対応
+－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+　主な修正classは以下です。
+　　com.nifty.cloud.sdk.dashboard.*
+　　com.nifty.cloud.sdk.firewall.*
+　　com.nifty.cloud.sdk.loadbalancer.*
+　　com.nifty.cloud.sdk.server.*
+　　com.nifty.cloud.sdk.upload.*
+　　com.nifty.cloud.sdk.usage.*
+－詳しくは、JavaDocを参照してください。
+　　http://cloud.nifty.com/api/sdk/javadoc/
+
+
+
+2011-11-21  SDK for Java Version.1.8
+---------------------------------
+■機能追加
+API Version 1.8に対応
+－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+　主な修正classは以下です。
+　　com.nifty.cloud.sdk.disk.*
+　　com.nifty.cloud.sdk.loadbalancer.*
+　　com.nifty.cloud.sdk.sslcert.*
+－詳しくは、JavaDocを参照してください。
+　　http://cloud.nifty.com/api/sdk/javadoc/
+
+
+
+2011-10-26  SDK for Java Version.1.8
+---------------------------------
+■機能追加
+API Version 1.8に対応
+－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+　主な修正classは以下です。
+　　com.nifty.cloud.sdk.server.*
+－詳しくは、JavaDocを参照してください。
+　　http://cloud.nifty.com/api/sdk/javadoc/
+
+
+
+2011-08-22  SDK for Java Version.1.7
+---------------------------------
+■機能追加
+API Version 1.7に対応
+－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+　主な修正classは以下です。
+　　com.nifty.cloud.sdk.image.model.Image.java
+－詳しくは、JavaDocを参照してください。
+　　http://cloud.nifty.com/api/sdk/javadoc/
+
+
+
+2011-06-16  SDK for Java Version.1.6
+---------------------------------
+■機能追加
+API Version 1.6に対応
+
+－以下の機能について、classを追加します。
+　[ファイアウォール]
+　　com.nifty.cloud.sdk.firewall.*
+　　com.nifty.cloud.sdk.sample.AuthorizeSecurityGroupIngressSample.java
+　　com.nifty.cloud.sdk.sample.CreateSecurityGroupSample.java
+　　com.nifty.cloud.sdk.sample.DeleteSecurityGroupSample.java
+　　com.nifty.cloud.sdk.sample.DeregisterInstancesFromSecurityGroupSample.java
+　　com.nifty.cloud.sdk.sample.DescribeSecurityActivitiesSample.java
+　　com.nifty.cloud.sdk.sample.DescribeSecurityGroupsSample.java
+　　com.nifty.cloud.sdk.sample.RegisterInstancesWithSecurityGroupSample.java
+　　com.nifty.cloud.sdk.sample.RevokeSecurityGroupIngressSample.java
+　　com.nifty.cloud.sdk.sample.UpdateSecurityGroupSample.java
+　[SSL証明書]
+　　com.nifty.cloud.sdk.sslcert.*
+　　com.nifty.cloud.sdk.sample.CreateSslCertificateSample.java
+　　com.nifty.cloud.sdk.sample.DeleteSslCertificateSample.java
+　　com.nifty.cloud.sdk.sample.DescribeSslCertificateAttributeSample.java
+　　com.nifty.cloud.sdk.sample.DescribeSslCertificatesSample.java
+　　com.nifty.cloud.sdk.sample.DownloadSslCertificateSample.java
+　　com.nifty.cloud.sdk.sample.ModifySslCertificateAttributeSample.java
+　　com.nifty.cloud.sdk.sample.RegisterCorporateInfoForCertificateSample.java
+　　com.nifty.cloud.sdk.sample.UploadSslCertificateSample.java
+－上記機能に対応するため、既存classにmethod・パラメーターを付加します。
+　主な修正classは以下です。
+　　com.nifty.cloud.sdk.server.model.CopyInstances.java
+　　com.nifty.cloud.sdk.server.model.Instances.java
+　　com.nifty.cloud.sdk.server.model.InstanceAttribute.java
+　　com.nifty.cloud.sdk.server.model.RunInstancesRequest.java
+　　com.nifty.cloud.sdk.loadbalancer.model.CreateLoadBalancerRequest.java
+－詳しくは、JavaDocを参照してください。
+　　http://cloud.nifty.com/api/sdk/javadoc/
+
+
+
+2011-03-24  SDK for Java Version.1.5
+---------------------------------
+■新規リリース
+API Version 1.5 に対応
+
+
+Copyright 2011 NIFTY Corporation All Rights Reserved.
