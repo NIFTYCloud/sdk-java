@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-/* ***************************************************************************
- *  Copyright 2012 NIFTY Corporation All Rights Reserved.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  You may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
+/* *************************************************************************** 
+ *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+ *  
+ *  Licensed under the Apache License, Version 2.0 (the "License"); 
+ *  You may not use this file except in compliance with the License. 
+ *  You may obtain a copy of the License at 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ *  
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * *****************************************************************************
- *
+ * ***************************************************************************** 
+ * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2012-09-10 16:28:26
- *
+ *  API Version: 1.12
+ *  Date: 2013-01-28 14:44:24
+ * 
  */
  -->
 
@@ -33,7 +33,7 @@
 	<property name="sdkDocWindowTitle" value="NIFTY Cloud SDK for Java" />
 	<property name="sdkDocTitle" value="NIFTY Cloud SDK for Java API Reference" />
 	<property name="sdkDocPackageGroupTitle" value="NIFTY Cloud SDK for Java" />
-	<property name="sdkDocBottom" value="Copyright 2012 NIFTY Corporation All Rights Reserved." />
+	<property name="sdkDocBottom" value="Copyright 2013 NIFTY Corporation All Rights Reserved." />
 	<property name="sdkDocVersion" value="1.0" />
 	<property name="sdkDocVersionJoint" value=" - " />
 
@@ -99,29 +99,29 @@
 				<group title="${sdkDocPackageGroupTitle}" packages="${sdkPackageRoot}" />
 				<bottom>${sdkDocBottom}</bottom>
 				<classpath refid="sdk.build.classpath"/>
-				<group title="サーバー"
+				<group title="サーバー" 
 					   packages="com.nifty.cloud.sdk.server:com.nifty.cloud.sdk.server.model" />
-				<group title="ディスク"
+				<group title="ディスク" 
 					   packages="com.nifty.cloud.sdk.disk:com.nifty.cloud.sdk.disk.model" />
-				<group title="ネットワーク・セキュリティ"
+				<group title="ネットワーク・セキュリティ" 
 					   packages="com.nifty.cloud.sdk.security:com.nifty.cloud.sdk.security.model" />
-				<group title="ロードバランサー"
+				<group title="ロードバランサー" 
 					   packages="com.nifty.cloud.sdk.loadbalancer:com.nifty.cloud.sdk.loadbalancer.model" />
-				<group title="OSイメージ"
+				<group title="OSイメージ" 
 					   packages="com.nifty.cloud.sdk.image:com.nifty.cloud.sdk.image.model" />
-				<group title="ファイアウォール"
+				<group title="ファイアウォール" 
 					   packages="com.nifty.cloud.sdk.firewall:com.nifty.cloud.sdk.firewall.model" />
-				<group title="SSL証明書"
+				<group title="SSL証明書" 
 					   packages="com.nifty.cloud.sdk.sslcert:com.nifty.cloud.sdk.sslcert.model" />
-				<group title="アップロード"
+				<group title="アップロード" 
 					   packages="com.nifty.cloud.sdk.upload:com.nifty.cloud.sdk.upload.model" />
-				<group title="ダッシュボード"
+				<group title="ダッシュボード" 
 					   packages="com.nifty.cloud.sdk.dashboard:com.nifty.cloud.sdk.dashboard.model" />
-				<group title="利用状況"
+				<group title="利用状況" 
 					   packages="com.nifty.cloud.sdk.usage:com.nifty.cloud.sdk.usage.model" />
-				<group title="その他"
+				<group title="その他" 
 					   packages="com.nifty.cloud.sdk.misc:com.nifty.cloud.sdk.misc.model" />
-				<group title="共通クラス"
+				<group title="共通クラス" 
 					   packages="com.nifty.cloud.sdk:com.nifty.cloud.sdk.*:com.nifty.cloud.sdk.*.transform" />
 		</javadoc>
 	</target>

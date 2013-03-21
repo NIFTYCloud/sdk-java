@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2012 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2012-06-21 12:00:00
+ *  API Version: 1.12
+ *  Date: 2012-12-21 17:00:00
  * 
  */
 package com.nifty.cloud.sdk;
@@ -73,10 +73,15 @@ public interface Const {
 	/** APIバージョン： 1.10 */
 	public final static String VERSION_1_10 = "1.10";
 	/** APIバージョン： 1.10 */
-	public final static String VERSION_1_11 = "1.11";
+	public final static String VERSION_1_11 = "1.11";	
+	/** APIバージョン	*/
+	public final static String VERSION_1_12 = "1.12";
+
 	
 	/** APIバージョン	*/
-	public final static String VERSION = VERSION_1_11;
+	public final static String VERSION = VERSION_1_12;
+	
+
 	
 	/** SignatureVersion: バージョン0 */
 	public final static String SIGNATURE_VERSION_0 = "0";

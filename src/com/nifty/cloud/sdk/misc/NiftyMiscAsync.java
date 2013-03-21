@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2012 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,18 +14,22 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2012-02-20 10:57:31
+ *  API Version: 1.12
+ *  Date: 2012-12-21 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.misc;
 
 import java.util.concurrent.Future;
 
+import com.nifty.cloud.sdk.misc.model.AssociateUsersRequest;
+import com.nifty.cloud.sdk.misc.model.AssociateUsersResult;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesResult;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsResult;
+import com.nifty.cloud.sdk.misc.model.DissociateUsersRequest;
+import com.nifty.cloud.sdk.misc.model.DissociateUsersResult;
 
 /**
  * NIFTY Cloud API 非同期クライアント　インタフェース。
@@ -49,5 +53,21 @@ public interface NiftyMiscAsync extends NiftyMisc {
 	 * @return 非同期処理結果
 	 */
 	public Future<DescribeRegionsResult> describeRegionsAsync(DescribeRegionsRequest request);
+
+	/**
+	 * 非同期で指定ユーザーの情報を共有します。
+	 * @param request AssociateUsersリクエスト<br />
+	 * &nbsp;	AssociateUsersRequest
+	 * @return 非同期処理結果
+	 */
+	public Future<AssociateUsersResult> associateUsersAsync(AssociateUsersRequest request);
+
+	/**
+	 * 非同期で指定ユーザーの情報の共有を解除します。
+	 * @param request DissociateUsersリクエスト<br />
+	 * &nbsp;	DissociateUsersRequest
+	 * @return 非同期処理結果
+	 */
+	public Future<DissociateUsersResult> dissociateUsersAsync(DissociateUsersRequest request);
 
 }

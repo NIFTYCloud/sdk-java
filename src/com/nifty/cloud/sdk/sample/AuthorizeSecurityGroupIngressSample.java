@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2012 NIFTY Corporation All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  You may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.12
+ *  Date: 2012-12-21 17:00:00
  *
  */
 package com.nifty.cloud.sdk.sample;
@@ -28,8 +28,11 @@ import java.util.List;
 
 import com.nifty.cloud.sdk.ClientConfiguration;
 import com.nifty.cloud.sdk.NiftyClientException;
+import com.nifty.cloud.sdk.Protocol;
 import com.nifty.cloud.sdk.auth.BasicCredentials;
 import com.nifty.cloud.sdk.auth.Credentials;
+import com.nifty.cloud.sdk.auth.SignatureUtils.SignatureMethod;
+import com.nifty.cloud.sdk.auth.SignatureUtils.SignatureVersion;
 import com.nifty.cloud.sdk.firewall.NiftySecurityGroupClient;
 import com.nifty.cloud.sdk.firewall.model.AuthorizeSecurityGroupIngressRequest;
 import com.nifty.cloud.sdk.firewall.model.AuthorizeSecurityGroupIngressResult;
@@ -81,21 +84,21 @@ public class AuthorizeSecurityGroupIngressSample {
          *   - SignatureMethod
          *     HTTPメソッド
          ***********************************************************************/
-        ClientConfiguration config = new ClientConfiguration();
-        // config.setUserAgent("NIFTY Cloud API Java SDK");
-        // config.setProtocol(Protocol.HTTPS);
-        // config.setProxyHost("proxy_host");
-        // config.setProxyPort(0);
-        // config.setProxyUsername("proxy_username");
-        // config.setProxyPassword("proxy_password");
-        // config.setMaxErrorRetry(3);
-        // config.setMaxConnections(50);
-        // config.setSocketTimeout(30);
-        // config.setConnectionTimeout(30);
-        // config.setSocketSendBufferSizeHint(0, 0);
-        // config.setSignatureVersion(SignatureVersion.Version_2);
-        // config.setSignatureMethod(SignatureMethod.HmacSHA256);
-        // config.setRequestMethod("GET");
+         ClientConfiguration config = new ClientConfiguration();
+         //config.setUserAgent("NIFTY Cloud API Java SDK");
+         //config.setProtocol(Protocol.HTTPS);
+         //config.setProxyHost("proxy_port");
+         //config.setProxyPort(0);
+         //config.setProxyUsername("proxy_username");
+         //config.setProxyPassword("proxy_password");
+         //config.setMaxErrorRetry(3);
+         //config.setMaxConnections(50);
+         //config.setSocketTimeout(30);
+         //config.setConnectionTimeout(30);
+         //config.setSocketSendBufferSizeHint(0, 0);
+         //config.setSignatureVersion(SignatureVersion.Version_2);
+         //config.setSignatureMethod(SignatureMethod.HmacSHA256);
+         //config.setRequestMethod("GET");
 
         /************************************************************************
          * 認証情報とクライアント設定情報からファイアウォールカテゴリクライアントを生成します。
@@ -106,33 +109,33 @@ public class AuthorizeSecurityGroupIngressSample {
         /************************************************************************
          * 接続先URLを変更する場合は接続先を指定します。
          ***********************************************************************/
-        // client.setEndpoint("endpoint_url");
+         //client.setEndpoint("endpoint_url");
 
         /************************************************************************
          * リクエストパラメーターを設定し、AuthorizeSecurityGroupIngressを実行します。
          ***********************************************************************/
-        AuthorizeSecurityGroupIngressRequest request = new AuthorizeSecurityGroupIngressRequest();
-        // request.setUserId("userId");
-        // request.setGroupName("groupName");
-        // List<IpPermission> ipPermissions = new ArrayList<IpPermission>();
-        // IpPermission ipPermission = new IpPermission();
-        // ipPermission.setIpProtocol("ipProtocol");
-        // ipPermission.setFromPort(0);
-        // ipPermission.setToPort(0);
-        // ipPermission.setInOut("inOut");
-        // List<UserIdGroupPair> groups = new ArrayList<UserIdGroupPair>();
-        // UserIdGroupPair group = new UserIdGroupPair();
-        // group.settUserId("userId");
-        // group.setGroupName("groupName");
-        // groups.add(group);
-        // ipPermission.setGroups(groups);
-        // List<IpRange> ipRanges = new ArrayList<IpRange>();
-        // IpRange ipRange = new IpRange();
-        // ipRange.setCidrIp("*.*.*.*");
-        // ipRanges.add(ipRange);
-        // ipPermission.setIpRanges(ipRanges);
-        // ipPermissions.add(ipPermission);
-        // request.setIpPermissions(ipPermissions);
+         AuthorizeSecurityGroupIngressRequest request = new AuthorizeSecurityGroupIngressRequest();
+         //request.setUserId("userId");
+         //request.setGroupName("groupName");
+         //List<IpPermission> ipPermissions = new ArrayList<IpPermission>();
+         //IpPermission ipPermission = new IpPermission();
+         //ipPermission.setIpProtocol("ipProtocol");
+         //ipPermission.setFromPort(0);
+         //ipPermission.setToPort(0);
+         //ipPermission.setInOut("inOut");
+         //List<UserIdGroupPair> groups = new ArrayList<UserIdGroupPair>();
+         //UserIdGroupPair group = new UserIdGroupPair();
+         //group.settUserId("userId");
+         //group.setGroupName("groupName");
+         //groups.add(group);
+         //ipPermission.setGroups(groups);
+         //List<IpRange> ipRanges = new ArrayList<IpRange>();
+         //IpRange ipRange = new IpRange();
+         //ipRange.setCidrIp("*.*.*.*");
+         //ipRanges.add(ipRange);
+         //ipPermission.setIpRanges(ipRanges);
+         //ipPermissions.add(ipPermission);
+         //request.setIpPermissions(ipPermissions);
 
          invokeAuthorizeSecurityGroupIngress(client, request);
     }

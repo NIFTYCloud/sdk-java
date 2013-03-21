@@ -39,4 +39,4 @@ http://cloud.nifty.com/api/sdk/javadoc/
 
 
 
-Copyright 2011 NIFTY Corporation All Rights Reserved.
+Copyright 2013 NIFTY Corporation All Rights Reserved.

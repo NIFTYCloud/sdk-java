@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2012 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.12
+ *  Date: 2012-12-21 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.server.model.transform;
@@ -40,6 +40,7 @@ public class InstanceLoadBalancerMappingConverter implements Converter {
 	private static final String ELEMENT_LOAD_BALANCER_NAME = "loadBalancerName";
 	private static final String ELEMENT_LOAD_BALANCER_PORT = "loadBalancerPort";
 	private static final String ELEMENT_INSTANCE_PORT = "instancePort";
+	private static final String ELEMENT_HEALTH_STATUS = "State";
 
 	/**
 	 * 変換可能なクラスか判定します。
@@ -90,6 +91,9 @@ public class InstanceLoadBalancerMappingConverter implements Converter {
 				}
 				else if (name.equals(ELEMENT_INSTANCE_PORT)) {
 					loadbalancing.setInstancePort(new Integer(reader.getValue()));
+				}
+				else if (name.equals(ELEMENT_HEALTH_STATUS)) {
+					loadbalancing.setState(new String(reader.getValue()));
 				}
 				
 				reader.moveUp();

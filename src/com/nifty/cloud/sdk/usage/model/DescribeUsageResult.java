@@ -1,27 +1,31 @@
-/*******************************************************************************
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  You may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
+/******************************************************************************* 
+ *  Copyright 2012 NIFTY Corporation All Rights Reserved.
+ *  
+ *  Licensed under the Apache License, Version 2.0 (the "License"); 
+ *  You may not use this file except in compliance with the License. 
+ *  You may obtain a copy of the License at 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ *  
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * *****************************************************************************
- *
+ * ***************************************************************************** 
+ * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2012-02-24 09:53:00
- *
+ *  API Version: 1.12
+ *  Date: 2012-12-21 17:00:00
+ * 
  */
 package com.nifty.cloud.sdk.usage.model;
 
+import java.util.List;
+
 import com.nifty.cloud.sdk.Result;
 import com.nifty.cloud.sdk.usage.model.transform.MailSendInfoConverter;
+import com.nifty.cloud.sdk.usage.model.transform.OptionCommonInfoConverter;
+import com.nifty.cloud.sdk.usage.model.transform.OptionInfoConverter;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 
@@ -113,6 +117,18 @@ public class DescribeUsageResult extends Result {
 	/** その他の利用情報 */
 	@XStreamAlias("extraChargeInfo")
 	private UsageExtraCharge extraCharge;
+	
+	
+	/** 追加オプション利用情報（共通） */
+	@XStreamAlias("optionCommonInfo")
+	@XStreamConverter(OptionCommonInfoConverter.class)
+	private List<UsageOptionCommon> optionCommon;
+	
+	/** 追加オプション利用情報 */
+	@XStreamAlias("optionInfo")
+	@XStreamConverter(OptionInfoConverter.class)
+	private List<UsageOption> option;
+
 
 	/**
 	 * リクエスト識別子を取得します。
@@ -679,6 +695,57 @@ public class DescribeUsageResult extends Result {
 		setExtraCharge(extraCharge);
 		return this;
 	}
+	
+	
+	/**
+	 * 追加オプション（共通）の利用情報を取得します。
+	 * @return 追加オプション（共通）の利用情報
+	 */
+	public List<UsageOptionCommon> getUsageOptionCommon() {
+		return optionCommon;
+	}
+	/**
+	 * 追加オプション（共通）の利用情報を設定します。
+	 * @param usageOptionCommon 追加オプション（共通）の利用情報
+	 */
+	public void setUsageOptionCommon(List<UsageOptionCommon> usageOptionCommon) {
+		this.optionCommon = usageOptionCommon;
+	}
+	/**
+	 * 追加オプション（共通）の利用情報を設定し、自オブジェクトを返します。
+	 * @param usageOptionCommon 追加オプション（共通）の利用情報
+	 * @return 自オブジェクト
+	 */
+	public DescribeUsageResult withUsageOptionCommon(List<UsageOptionCommon> usageOptionCommon) {
+		setUsageOptionCommon(usageOptionCommon);
+		return this;
+	}
+	
+	
+	/**
+	 * 追加オプションの利用情報を取得します。
+	 * @return 追加オプションの利用情報
+	 */
+	public List<UsageOption> getUsageOption() {
+		return option;
+	}
+	/**
+	 * 追加オプションの利用情報を設定します。
+	 * @param usageOption 追加オプションの利用情報
+	 */
+	public void setUsageOption(List<UsageOption> usageOption) {
+		this.option = usageOption;
+	}
+	/**
+	 * 追加オプションの利用情報を設定し、自オブジェクトを返します。
+	 * @param usageOption 追加オプションの利用情報
+	 * @return 自オブジェクト
+	 */
+	public DescribeUsageResult withUsageOption(List<UsageOption> usageOption) {
+		setUsageOption(usageOption);
+		return this;
+	}
+
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -726,6 +793,10 @@ public class DescribeUsageResult extends Result {
 		builder.append(osOptionCharge);
 		builder.append(", extraCharge=");
 		builder.append(extraCharge);
+		builder.append(", optionCommon=");
+		builder.append(optionCommon);
+		builder.append(", option=");
+		builder.append(option);
 		builder.append("]");
 		return builder.toString();
 	}

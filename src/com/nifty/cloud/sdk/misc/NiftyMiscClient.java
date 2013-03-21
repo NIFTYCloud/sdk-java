@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2012 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.12
+ *  Date: 2012-12-21 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.misc;
@@ -24,10 +24,16 @@ package com.nifty.cloud.sdk.misc;
 import com.nifty.cloud.sdk.BaseClient;
 import com.nifty.cloud.sdk.ClientConfiguration;
 import com.nifty.cloud.sdk.auth.Credentials;
+import com.nifty.cloud.sdk.misc.model.AssociateUsersRequest;
+import com.nifty.cloud.sdk.misc.model.AssociateUsersResult;
+import com.nifty.cloud.sdk.misc.model.DescribeAssociatedUsersRequest;
+import com.nifty.cloud.sdk.misc.model.DescribeAssociatedUsersResult;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesResult;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsResult;
+import com.nifty.cloud.sdk.misc.model.DissociateUsersRequest;
+import com.nifty.cloud.sdk.misc.model.DissociateUsersResult;
 
 /**
  * NIFTY Cloud API クライアント　具象クラス。
@@ -69,5 +75,25 @@ public class NiftyMiscClient extends BaseClient implements NiftyMisc {
 	public DescribeRegionsResult describeRegions(DescribeRegionsRequest request) {
 		return (DescribeRegionsResult)client.execute(request, DescribeRegionsResult.class);
 	}
-
+	/**
+	 * @see com.nifty.cloud.sdk.misc.NiftyMisc#associateUsers(AssociateUsersRequest)
+	 */
+	@Override
+	public AssociateUsersResult associateUsers(AssociateUsersRequest request) {
+		return (AssociateUsersResult)client.execute(request, AssociateUsersResult.class);
+	}
+	/**
+	 * @see com.nifty.cloud.sdk.misc.NiftyMisc#dissociateUsers(DissociateUsersRequest)
+	 */
+	@Override
+	public DissociateUsersResult dissociateUsers(DissociateUsersRequest request) {
+		return (DissociateUsersResult)client.execute(request, DissociateUsersResult.class);
+	}
+	/**
+	 * @see com.nifty.cloud.sdk.misc.NiftyMisc#describeAssociatedUsers(DescribeAssociatedUsersRequest)
+	 */
+	@Override
+	public DescribeAssociatedUsersResult describeAssociatedUsers(DescribeAssociatedUsersRequest request) {
+		return (DescribeAssociatedUsersResult)client.execute(request, DescribeAssociatedUsersResult.class);
+	}
 }

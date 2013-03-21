@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2012 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,16 +14,22 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2012-02-20 10:57:31
+ *  API Version: 1.12
+ *  Date: 2012-12-21 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.misc;
 
+import com.nifty.cloud.sdk.misc.model.AssociateUsersRequest;
+import com.nifty.cloud.sdk.misc.model.AssociateUsersResult;
+import com.nifty.cloud.sdk.misc.model.DescribeAssociatedUsersRequest;
+import com.nifty.cloud.sdk.misc.model.DescribeAssociatedUsersResult;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesResult;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsResult;
+import com.nifty.cloud.sdk.misc.model.DissociateUsersRequest;
+import com.nifty.cloud.sdk.misc.model.DissociateUsersResult;
 
 
 /**
@@ -55,4 +61,28 @@ public interface NiftyMisc {
 	 * @return DescribeRegions処理結果
 	 */
 	public DescribeRegionsResult describeRegions(DescribeRegionsRequest request);
+
+	/**
+	 * 指定ユーザーの情報を共有します。
+	 * @param request AssociateUsersリクエスト<br />
+	 * &nbsp;	AssociateUsersRequest
+	 * @return AssociateUsers処理結果
+	 */
+	public AssociateUsersResult associateUsers(AssociateUsersRequest request);
+	
+	/**
+	 * 指定ユーザーの情報の共有を解除します。
+	 * @param request DissociateUsersリクエスト<br />
+	 * &nbsp;	DissociateUsersRequest
+	 * @return DissociateUsers処理結果
+	 */
+	public DissociateUsersResult dissociateUsers(DissociateUsersRequest request);
+	
+	/**
+	 * 共有されているユーザ一覧を取得します。
+	 * @param request DescribeAssociatedUsersリクエスト<br />
+	 * &nbsp;	DescribeAssociatedUsersRequest
+	 * @return DescribeAssociatedUsers処理結果
+	 */
+	public DescribeAssociatedUsersResult describeAssociatedUsers(DescribeAssociatedUsersRequest request);
 }

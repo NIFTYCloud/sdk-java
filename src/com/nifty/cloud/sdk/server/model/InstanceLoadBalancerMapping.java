@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2012 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.11
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.12
+ *  Date: 2012-12-21 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.server.model;
@@ -35,6 +35,9 @@ public class InstanceLoadBalancerMapping {
 	
 	/** 宛先ポート */
 	private Integer instancePort;
+	
+	/** ヘルスステータス */
+	private String state;
 	
 	
 	/**
@@ -118,6 +121,35 @@ public class InstanceLoadBalancerMapping {
 		return this;
 	}
 	
+	
+	/**
+	 * ヘルスステータスを取得します。
+	 * 
+	 * @return ヘルスステータス
+	 */
+	public String getState() {
+		return state;
+	}
+	/**
+	 * ヘルスステータスを設定します。
+	 * 
+	 * @param state ヘルスステータス
+	 */
+	public void setState(String state) {
+		this.state = state;
+	}
+	/**
+	 * ヘルスステータスを設定し、自オブジェクトを返します。
+	 *
+	 * @param state ヘルスステータス
+	 * @return 自オブジェクト	 
+	 */
+	public InstanceLoadBalancerMapping withState(String state) {
+		setState(state);
+		return this;
+	}
+		
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -130,9 +162,12 @@ public class InstanceLoadBalancerMapping {
 		builder.append(loadBalancerPort);
 		builder.append(", instancePort=");
 		builder.append(instancePort);
+		builder.append(", state=");
+		builder.append(state);
 		builder.append("]");
 		return builder.toString();
 	}
+
 
 	
 }
