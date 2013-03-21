@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-10 09:56:54
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.sample;
@@ -224,7 +224,7 @@ public class DescribeInstancesSample {
                                 Placement placement = instance.getPlacement();
                                 out.println("    Placement");
                                 if (placement.getAvailabilityZone() != null) {
-                                    out.println("      availabilityZone     : " + placement.getAvailabilityZone());
+                                    out.println("      AvailabilityZone     : " + placement.getAvailabilityZone());
                                 }
                             }
                             if (instance.getKernelId() != null) {

@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-03-27 16:04:10
  * 
  */
 package com.nifty.cloud.sdk.upload.model;
@@ -227,6 +227,7 @@ public abstract class UploadRequest implements Request {
 	 * @return true=変更された false=変更されなかった
 	 */
 	public boolean removeCallback(UploadCallback callback) {
+		if (this.callbacks == null || this.callbacks.isEmpty()) return false;
 		return this.callbacks.remove(callback);
 	}
 

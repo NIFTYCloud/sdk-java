@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-06-21 12:00:00
  * 
  */
 package com.nifty.cloud.sdk;
@@ -70,9 +70,13 @@ public interface Const {
 	public final static String VERSION_1_8 = "1.8";
 	/** APIバージョン： 1.9	*/
 	public final static String VERSION_1_9 = "1.9";
+	/** APIバージョン： 1.10 */
+	public final static String VERSION_1_10 = "1.10";
+	/** APIバージョン： 1.10 */
+	public final static String VERSION_1_11 = "1.11";
 	
 	/** APIバージョン	*/
-	public final static String VERSION = VERSION_1_9;
+	public final static String VERSION = VERSION_1_11;
 	
 	/** SignatureVersion: バージョン0 */
 	public final static String SIGNATURE_VERSION_0 = "0";
@@ -98,6 +102,8 @@ public interface Const {
 	/** HTTPメソッド: POST */
 	public final static String HTTP_METHOD_POST = "POST";
 	
+	public final static String HTTP_VERB = HTTP_METHOD_POST;
+	
 	/** エンコーディング	*/
 	public final static String ENCODING = "UTF-8";
 	
@@ -113,5 +119,6 @@ public interface Const {
 	/** 無償版へ変更する際のファイアウォール注意事項URL */
 	public final static String FW_NOTES_URL_FOR_FREE = "http://cp.cloud.nifty.com/fw/fw2.txt";
 
-	
+	/** RHELサブスクリプション規約 URL */
+	public final static String REDHAT_AGREE = "http://cp.cloud.nifty.com/rhel/eula.txt";
 }

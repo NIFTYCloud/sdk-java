@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-10 09:56:54
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.loadbalancer.model;
@@ -41,6 +41,7 @@ public class CreateLoadBalancerRequest implements Request {
 	/** ロードバランサーの設定情報リスト */
 	private List<Listener>	listeners;
 	
+	/** ゾーン名リスト */
 	private List<String>	availabilityZones;
 	
 	/** 最大ネットワーク流量 */
@@ -139,26 +140,26 @@ public class CreateLoadBalancerRequest implements Request {
 	}
 	
 	/**
-	 * availabilityZonesを取得します。
+	 * ゾーン名リストを取得します。
 	 * 
-	 * @return availabilityZones
+	 * @return ゾーン名リスト
 	 */
 	@Query(name="AvailabilityZones.member")
 	public List<String> getAvailabilityZones() {
 		return availabilityZones;
 	}
 	/**
-	 * availabilityZonesを設定します。
+	 * ゾーン名リストを設定します。
 	 * 
-	 * @param availabilityZones
+	 * @param availabilityZones ゾーン名リスト
 	 */
 	public void setAvailabilityZones(List<String> availabilityZones) {
 		this.availabilityZones = availabilityZones;
 	}
 	/**
-	 * availabilityZonesの配列を設定し、自オブジェクトを返します。
+	 * ゾーン名の配列を設定し、自オブジェクトを返します。
 	 *
-	 * @param availabilityZones
+	 * @param availabilityZones ゾーン名の配列
 	 * @return 自オブジェクト
 	 */
 	public CreateLoadBalancerRequest withAvailabilityZones(String ... availabilityZones) {
@@ -169,9 +170,9 @@ public class CreateLoadBalancerRequest implements Request {
 		return this;
 	}
 	/**
-	 * availabilityZonesを設定し、自オブジェクトを返します。
+	 * ゾーン名リストを設定し、自オブジェクトを返します。
 	 *
-	 * @param availabilityZones
+	 * @param availabilityZones ゾーン名リスト
 	 * @return 自オブジェクト
 	 */
 	public CreateLoadBalancerRequest withAvailabilityZones(Collection<String> availabilityZones) {

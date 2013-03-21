@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-06-21 12:00:00
  *
  */
 package com.nifty.cloud.sdk.firewall.model.transform;
@@ -45,6 +45,8 @@ public class SecurityGroupConverter implements Converter {
 	private static final String ELEMENT_INSTANCES_SET = "instancesSet";
 	private static final String ELEMENT_GROUP_RULE_LIMIT = "groupRuleLimit";
 	private static final String ELEMENT_GROUP_LOG_LIMIT = "groupLogLimit";
+	private static final String ELEMENT_GROUP_LOG_FILTER_NET_BIOS = "groupLogFilterNetBios";
+	private static final String ELEMENT_AVAILABILITY_ZONE = "availabilityZone";
 
 	/**
 	 * 変換可能なクラスか判定します。
@@ -114,6 +116,10 @@ public class SecurityGroupConverter implements Converter {
 					securityGroups.setGroupRuleLimit(Integer.valueOf(reader.getValue()));
 				} else if (name.equals(ELEMENT_GROUP_LOG_LIMIT)) {
 					securityGroups.setGroupLogLimit(Integer.valueOf(reader.getValue()));
+				} else if (name.equals(ELEMENT_GROUP_LOG_FILTER_NET_BIOS)) {
+					securityGroups.setGroupLogFilterNetBios(Boolean.valueOf(reader.getValue()));
+				} else if (name.equals(ELEMENT_AVAILABILITY_ZONE)) {
+					securityGroups.setAvailabilityZone(reader.getValue());
 				}
 
 				reader.moveUp();

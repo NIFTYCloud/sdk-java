@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.image.model.transform;
@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.nifty.cloud.sdk.image.model.BlockDeviceMapping;
+import com.nifty.cloud.sdk.image.model.GlobalPlacement;
 import com.nifty.cloud.sdk.image.model.Image;
 import com.nifty.cloud.sdk.image.model.ProductCode;
 import com.nifty.cloud.sdk.image.model.StateReason;
@@ -57,6 +58,7 @@ public class DescribeImagesConverter implements Converter {
 	private static final String ELEMENT_DESCRIPTION          = "description";
 	private static final String ELEMENT_DETAIL_DESCRIPTION   = "detailDescription";
 	private static final String ELEMENT_REDISTRIBUTABLE      = "redistributable";
+	private static final String ELEMENT_PLACEMENT            = "placement";
 	private static final String ELEMENT_ROOT_DEVICE_TYPE     = "rootDeviceType";
 	private static final String ELEMENT_ROOT_DEVICE_NAME     = "rootDeviceName";
 	private static final String ELEMENT_BLOCK_DEVICE_MAPPING = "blockDeviceMapping";
@@ -96,6 +98,7 @@ public class DescribeImagesConverter implements Converter {
 		List<Image> images = new ArrayList<Image>();
 		Converter productCodeConverter = new ProductCodesSetConverter();
 		Converter stateReasonConverter = new StateReasonConverter();
+		Converter placementConverter   = new PlacementConverter();
 		Converter blockDeviceConverter = new BlockDeviceMappingConverter();
 		String name = null;
 		
@@ -156,6 +159,9 @@ public class DescribeImagesConverter implements Converter {
 				}
 				else if (name.equals(ELEMENT_REDISTRIBUTABLE)) {
 					image.setRedistributable(Boolean.valueOf(reader.getValue()));
+				}
+				else if (name.equals(ELEMENT_PLACEMENT)) {
+					image.setPlacement((GlobalPlacement) placementConverter.unmarshal(reader, context));
 				}
 				else if (name.equals(ELEMENT_ROOT_DEVICE_TYPE)) {
 					image.setRootDeviceType(reader.getValue());

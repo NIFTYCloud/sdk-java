@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-02-24 09:53:00
  *
  */
 package com.nifty.cloud.sdk.sample;
@@ -27,11 +27,8 @@ import java.util.List;
 
 import com.nifty.cloud.sdk.ClientConfiguration;
 import com.nifty.cloud.sdk.NiftyClientException;
-import com.nifty.cloud.sdk.Protocol;
 import com.nifty.cloud.sdk.auth.BasicCredentials;
 import com.nifty.cloud.sdk.auth.Credentials;
-import com.nifty.cloud.sdk.auth.SignatureUtils.SignatureMethod;
-import com.nifty.cloud.sdk.auth.SignatureUtils.SignatureVersion;
 import com.nifty.cloud.sdk.usage.model.DescribeUsageRequest;
 import com.nifty.cloud.sdk.usage.model.DescribeUsageResult;
 import com.nifty.cloud.sdk.usage.model.UsageAutoScale;
@@ -39,9 +36,11 @@ import com.nifty.cloud.sdk.usage.model.UsageChargeDetail;
 import com.nifty.cloud.sdk.usage.model.UsageCopy;
 import com.nifty.cloud.sdk.usage.model.UsageDetail;
 import com.nifty.cloud.sdk.usage.model.UsageDetailDouble;
+import com.nifty.cloud.sdk.usage.model.UsageExtraCharge;
 import com.nifty.cloud.sdk.usage.model.UsageImage;
 import com.nifty.cloud.sdk.usage.model.UsageInstance;
 import com.nifty.cloud.sdk.usage.model.UsageLoadBalancer;
+import com.nifty.cloud.sdk.usage.model.UsageMailSend;
 import com.nifty.cloud.sdk.usage.model.UsageMultiAccount;
 import com.nifty.cloud.sdk.usage.model.UsageNetwork;
 import com.nifty.cloud.sdk.usage.model.UsageOsOptionCharge;
@@ -129,16 +128,16 @@ public class DescribeUsageSample {
          * リクエストパラメーターを設定し、DescribeUsageを実行します。
          ***********************************************************************/
         DescribeUsageRequest request = new DescribeUsageRequest();
-        
+
          // request.setYearMonth("yearMonth");
-        
+
         invokeDescribeUsage(client, request);
     }
 
     /**
      * DescribeUsage 実行サンプル
      * 設定されたリクエストから DescribeUsage を実行し、実行結果を表示します。
-     * 
+     *
      * @param client クライアント
      * @param request リクエスト
      */
@@ -146,10 +145,10 @@ public class DescribeUsageSample {
             DescribeUsageRequest request) {
         try {
             DescribeUsageResult result = client.describeUsage(request);
-            
+
             out.println("DescribeUsage Action Response");
             out.println("=============================================================================");
-            
+
             if (result.getYearMonth() != null) {
                 out.println("YearMonth : " + result.getYearMonth());
             }
@@ -255,6 +254,19 @@ public class DescribeUsageSample {
                         if (osMeasuredRate.getValue() != null) {
                             out.println("    Value : " + osMeasuredRate.getValue());
                         }
+                    }
+                }
+                if (instance.getMultiIpMonthlyRate() != null) {
+                	out.println("  MultiIpMonthlyRate");
+                	UsageDetail multiIpMonthlyRate = instance.getMultiIpMonthlyRate();
+                    if (multiIpMonthlyRate.getType() != null) {
+                        out.println("    Type  : " + multiIpMonthlyRate.getType());
+                    }
+                    if (multiIpMonthlyRate.getType() != null) {
+                        out.println("    Unit  : " + multiIpMonthlyRate.getUnit());
+                    }
+                    if (multiIpMonthlyRate.getType() != null) {
+                        out.println("    Value  : " + multiIpMonthlyRate.getValue());
                     }
                 }
             }
@@ -682,6 +694,79 @@ public class DescribeUsageSample {
                     }
                 }
             }
+            if (result.getMailSend() != null) {
+                out.println("MailSend");
+                UsageMailSend mailSend = result.getMailSend();
+                if (mailSend.getMailSendInitial() != null) {
+                    out.println("  MailSendInitial");
+                    UsageDetail mailSendInitial = mailSend.getMailSendInitial();
+                    if (mailSendInitial.getType() != null) {
+                        out.println("    Type  : " + mailSendInitial.getType());
+                    }
+                    if (mailSendInitial.getUnit() != null) {
+                        out.println("    Unit  : " + mailSendInitial.getUnit());
+                    }
+                    if (mailSendInitial.getValue() != null) {
+                        out.println("    Value : " + mailSendInitial.getValue());
+                    }
+                }
+                if (mailSend.getMailSendMonthlyRate() != null) {
+                    out.println("  MailSendMonthlyRate");
+                    List<UsageDetail> mailSendMonthlyRates = mailSend.getMailSendMonthlyRate();
+                    for (UsageDetail mailSendMonthlyRate: mailSendMonthlyRates) {
+                        if (mailSendMonthlyRate.getType() != null) {
+                            out.println("    Type  : " + mailSendMonthlyRate.getType());
+                        }
+                        if (mailSendMonthlyRate.getUnit() != null) {
+                            out.println("    Unit  : " + mailSendMonthlyRate.getUnit());
+                        }
+                        if (mailSendMonthlyRate.getValue() != null) {
+                            out.println("    Value : " + mailSendMonthlyRate.getValue());
+                        }
+                    }
+                }
+                if (mailSend.getMailSendMeasuredRate() != null) {
+                    out.println("  MailSendMeasuredRate");
+                    UsageDetail mailSendMesuredRate = mailSend.getMailSendMeasuredRate();
+                    if (mailSendMesuredRate.getType() != null) {
+                        out.println("    Type  : " + mailSendMesuredRate.getType());
+                    }
+                    if (mailSendMesuredRate.getUnit() != null) {
+                        out.println("    Unit  : " + mailSendMesuredRate.getUnit());
+                    }
+                    if (mailSendMesuredRate.getValue() != null) {
+                        out.println("    Value : " + mailSendMesuredRate.getValue());
+                    }
+                }
+                if (mailSend.getMailSendMonthlyRateExceeded() != null) {
+                    out.println("  MailSendMonthlyExceedRate");
+                    UsageDetail mailSendMonthlyExceedRate = mailSend.getMailSendMonthlyRateExceeded();
+                    if (mailSendMonthlyExceedRate.getType() != null) {
+                        out.println("    Type  : " + mailSendMonthlyExceedRate.getType());
+                    }
+                    if (mailSendMonthlyExceedRate.getUnit() != null) {
+                        out.println("    Unit  : " + mailSendMonthlyExceedRate.getUnit());
+                    }
+                    if (mailSendMonthlyExceedRate.getValue() != null) {
+                        out.println("    Value : " + mailSendMonthlyExceedRate.getValue());
+                    }
+                }
+                if (mailSend.getOptions() != null) {
+                    out.println("  OptionMonthly");
+                    List<UsageDetail> options = mailSend.getOptions();
+                    for(UsageDetail option : options) {
+                        if (option.getType() != null) {
+                            out.println("    Type  : " + option.getType());
+                        }
+                        if (option.getUnit() != null) {
+                            out.println("    Unit  : " + option.getUnit());
+                        }
+                        if (option.getValue() != null) {
+                            out.println("    Value : " + option.getValue());
+                        }
+                    }
+                }
+            }
             if (result.getOsOptionCharge() != null) {
                 out.println("OsOptionCharge");
                 UsageOsOptionCharge osOption = result.getOsOptionCharge();
@@ -701,6 +786,26 @@ public class DescribeUsageSample {
                     }
                 }
             }
+            if (result.getExtraCharge() != null) {
+                out.println("ExtraCharge");
+                UsageExtraCharge extraCharge = result.getExtraCharge();
+                if (extraCharge.getExtraChargeMonthlyRates() != null) {
+                    out.println("  ExtraChargeMonthlyRate");
+                    List<UsageDetail> extraChargeMonthlyRates = extraCharge.getExtraChargeMonthlyRates();
+                    for(UsageDetail extraChargeMonthlyRate : extraChargeMonthlyRates) {
+                        if (extraChargeMonthlyRate.getType() != null) {
+                            out.println("    Type  : " + extraChargeMonthlyRate.getType());
+                        }
+                        if (extraChargeMonthlyRate.getUnit() != null) {
+                            out.println("    Unit  : " + extraChargeMonthlyRate.getUnit());
+                        }
+                        if (extraChargeMonthlyRate.getValue() != null) {
+                            out.println("    Value : " + extraChargeMonthlyRate.getValue());
+                        }
+                    }
+            	}
+            }
+
             out.println("=============================================================================");
         } catch(NiftyClientException ex) {
             err.println("Message: " + ex.getMessage());

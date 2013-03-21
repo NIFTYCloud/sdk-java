@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.sample;
@@ -36,6 +36,7 @@ import com.nifty.cloud.sdk.image.model.DescribeImagesInfo;
 import com.nifty.cloud.sdk.image.model.DescribeImagesRequest;
 import com.nifty.cloud.sdk.image.model.DescribeImagesResult;
 import com.nifty.cloud.sdk.image.model.EbsBlockDevice;
+import com.nifty.cloud.sdk.image.model.GlobalPlacement;
 import com.nifty.cloud.sdk.image.model.Image;
 import com.nifty.cloud.sdk.image.model.ProductCode;
 import com.nifty.cloud.sdk.image.model.StateReason;
@@ -217,6 +218,16 @@ public class DescribeImagesSample {
                     }
                     if (image.getRedistributable() != null) {
                     	out.println("  Redistributable   : " + image.getRedistributable());
+                    }
+                    if (image.getPlacement() != null) {
+                    	GlobalPlacement placement = image.getPlacement();
+                    	out.println("  Placement");
+                    	if (placement.getRegionName() != null) {
+                    		out.println("    RegionName      : " + placement.getRegionName());
+                    	}
+                    	if (placement.getAvailabilityZone() != null) {
+                    		out.println("    AvailabilityZone: " + placement.getAvailabilityZone());
+                    	}
                     }
                     if (image.getRootDeviceType() != null) {
                         out.println("  RootDeviceType    : " + image.getRootDeviceType());

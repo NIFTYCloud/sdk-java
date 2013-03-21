@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-06-21 12:00:00
  * 
  */
 package com.nifty.cloud.sdk.server.model;
@@ -61,6 +61,7 @@ public class RunInstancesRequest implements Request {
 	/** サーバータイプ */
 	private String instanceType;
 	
+	/** ゾーン情報 */
 	private Placement placement;
 	
 	private String kernelId;
@@ -93,11 +94,15 @@ public class RunInstancesRequest implements Request {
 	/** IPアドレスタイプ */
 	private String ipType;
 	
+	/** Redhat サブスプリクション入りを指定した場合の同意　*/
+	private boolean agreement;
+	
 	/**
 	 * デフォルトコンストラクタ。
 	 */
 	public RunInstancesRequest() {
 	}
+
 
 	/**
 	 * OSイメージIDを指定し、RunInstancesRequestを構築します。
@@ -404,27 +409,27 @@ public class RunInstancesRequest implements Request {
 	}
 	
 	/**
-	 * placementを取得します。
+	 * ゾーン情報を取得します。
 	 * 
-	 * @return placement
+	 * @return ゾーン情報
 	 */
 	@Query(name="Placement")
 	public Placement getPlacement() {
 		return placement;
 	}
 	/**
-	 * placementを設定します。
+	 * ゾーン情報を設定します。
 	 * 
-	 * @param placement
+	 * @param placement ゾーン情報
 	 */
 	public void setPlacement(Placement placement) {
 		this.placement = placement;
 	}
 	/**
-	 * placementを設定し、自オブジェクトを返します。
+	 * ゾーン情報を設定し、自オブジェクトを返します。
 	 *
-	 * @param placement
-	 * @return 自オブジェクト	 
+	 * @param placement ゾーン情報
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withPlacement(Placement placement) {
 		setPlacement(placement);
@@ -782,7 +787,26 @@ public class RunInstancesRequest implements Request {
 	public RunInstancesRequest withIpType(String ipType) {
 		setIpType(ipType);
 		return this;
+	}	
+
+	/**
+	 * @param agreement Redhat サブスクリプション入りをした場合の同意を返します。
+	 * @return
+	 */
+	@Query(name="Agreement")
+	public boolean isAgreement() {
+		return agreement;
 	}
+
+	/**
+	 * @param agreement Redhat　サブスクリオプション入りをした場合の同意を設定します。
+	 * @param agreement
+	 */
+	public void setAgreement(boolean agreement) {
+		this.agreement = agreement;
+	}
+
+
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -836,6 +860,8 @@ public class RunInstancesRequest implements Request {
 		builder.append(password);
 		builder.append(", ipType=");
 		builder.append(ipType);
+		builder.append(", agreement=");
+		builder.append(agreement);
 		builder.append("]");
 		return builder.toString();
 	}

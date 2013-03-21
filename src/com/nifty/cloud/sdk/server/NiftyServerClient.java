@@ -14,12 +14,14 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
- * 
+ *  API Version: 1.11
+ *  Date: 2012-06-21 12:00:00
+ *   
  */
 package com.nifty.cloud.sdk.server;
 
+
+import java.io.IOException;
 
 import com.nifty.cloud.sdk.BaseClient;
 import com.nifty.cloud.sdk.ClientConfiguration;
@@ -173,6 +175,18 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 	@Override
 	public ImportInstanceResult importInstance(ImportInstanceRequest request) {
 		return (ImportInstanceResult) client.execute(request, ImportInstanceResult.class);
+	}
+	
+	/*
+	 * Redhat 同意文取得
+	 * 
+	 */
+	
+	@Override
+	public String getRedhatAgree() throws IOException {
+		ClientConfiguration configuration = client.getConfig();
+		String url = configuration.getRedhatAgreeUrl();
+		return client.getHttpText(url);
 	}
 
 }

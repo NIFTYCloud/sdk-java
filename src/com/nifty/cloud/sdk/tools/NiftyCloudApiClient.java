@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-02-28 12:00:00
  *
  */
 package com.nifty.cloud.sdk.tools;
@@ -270,7 +270,7 @@ public class NiftyCloudApiClient {
 		int offset = 0;
 		byte[] tmp = new byte[1024];
 		InputStream is = method.getResponseBodyAsStream();
-		while ((length=is.read(tmp, offset, tmp.length-offset))!= -1) {
+		while ((length = is.read(tmp, offset, tmp.length-offset))!= -1) {
 			offset += length;
 			if (tmp.length == offset) {
 				byte[] newTmp = new byte[tmp.length*2];
@@ -548,7 +548,7 @@ public class NiftyCloudApiClient {
 		StringBuilder sb = new StringBuilder();
 		for (Header header: headers) {
 			sb.append(header.getName()).append(": ").append(header.getValue()).append("\n");
-	    }
+		}
 
 		return sb.toString();
 	}

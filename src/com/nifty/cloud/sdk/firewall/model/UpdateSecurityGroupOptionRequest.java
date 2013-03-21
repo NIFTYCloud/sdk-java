@@ -14,7 +14,7 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
+ *  API Version: 1.11
  *  Date: 2011-11-29 14:07:10
  *
  */
@@ -27,8 +27,10 @@ import com.nifty.cloud.sdk.annotation.Query;
 /**
  * UpdateSecurityGroupOptionリクエストクラス。<br />
  * このクラスはUpdateSecurityGroupOptionへのリクエストを構築します。
+ * @deprecated コマンド削除
  */
 @Action("UpdateSecurityGroupOption")
+@Deprecated
 public class UpdateSecurityGroupOptionRequest implements Request {
 
 	/** 有償サービス申し込み情報 */

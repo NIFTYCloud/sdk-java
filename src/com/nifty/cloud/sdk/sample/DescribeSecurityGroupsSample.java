@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  *
  */
 package com.nifty.cloud.sdk.sample;
@@ -207,6 +207,15 @@ public class DescribeSecurityGroupsSample {
                                 out.println("    InstanceId          : " + instanceId);
                             }
                         }
+                    }
+                    if (securityGroup.getGroupRuleLimit() != null) {
+                    	out.println("  GroupRuleLimit    : " + securityGroup.getGroupRuleLimit());
+                    }
+                    if (securityGroup.getGroupLogLimit() != null) {
+                    	out.println("  GroupLogLimit     : " + securityGroup.getGroupLogLimit());
+                    }
+                    if (securityGroup.getAvailabilityZone() != null) {
+                    	out.println("  AvailabilityZone  : " + securityGroup.getAvailabilityZone());
                     }
                 }
             }

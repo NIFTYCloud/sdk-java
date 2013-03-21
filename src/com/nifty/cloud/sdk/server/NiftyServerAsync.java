@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.server;
@@ -142,7 +142,6 @@ public interface NiftyServerAsync extends NiftyServer {
 	 * &nbsp;	RunInstancesRequest#additionalInfoは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#userDataは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#addressingTypeは利用不可<br />
-	 * &nbsp;	RunInstancesRequest#placementは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#kernelIdは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#ramdiskIdは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#blockDeviceMappingsは利用不可<br />
@@ -195,7 +194,6 @@ public interface NiftyServerAsync extends NiftyServer {
 	 * 
 	 * @param request ImportInstanceリクエスト<br/>
 	 * &nbsp;	ImportInstanceRequest#userDataは利用不可<br />
-	 * &nbsp;	ImportInstanceRequest#placementは利用不可<br />
 	 * &nbsp;	ImportInstanceRequest#monitoringは利用不可<br />
 	 * &nbsp;	ImportInstanceRequest#subnetIdは利用不可<br />
 	 * &nbsp;	ImportInstanceRequest#instanceInitiatedShutdownBehaviorは利用不可<br />

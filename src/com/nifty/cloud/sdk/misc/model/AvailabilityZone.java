@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.misc.model;
@@ -36,11 +36,18 @@ public class AvailabilityZone {
 	/** ゾーンステータス */
 	private String	state;
 	
+	/** リージョン名 */
 	private String	regionName;
 	
+	/** メッセージリスト */
 	private List<String> messages;
 	
+	/** ファイアウォール指定可否 */
+	private Boolean securityGroupSupported;
 	
+	/** デフォルトゾーンかどうか */
+	private Boolean isDefault;
+
 	/**
 	 * ゾーン名を取得します。
 	 * 
@@ -96,25 +103,25 @@ public class AvailabilityZone {
 	}
 	
 	/**
-	 * regionNameを取得します。
+	 * リージョン名を取得します。
 	 * 
-	 * @return regionName
+	 * @return リージョン名
 	 */
 	public String getRegionName() {
 		return regionName;
 	}
 	/**
-	 * regionNameを設定します。
+	 * リージョン名を設定します。
 	 * 
-	 * @param regionName
+	 * @param regionName リージョン名
 	 */
 	public void setRegionName(String regionName) {
 		this.regionName = regionName;
 	}
 	/**
-	 * regionNameを設定し、自オブジェクトを返します。
+	 * リージョン名を設定し、自オブジェクトを返します。
 	 *
-	 * @param regionName
+	 * @param regionName リージョン名
 	 * @return 自オブジェクト
 	 */
 	public AvailabilityZone withRegionName(String regionName) {
@@ -123,25 +130,25 @@ public class AvailabilityZone {
 	}
 	
 	/**
-	 * messagesを取得します。
+	 * メッセージリストを取得します。
 	 * 
-	 * @return messages
+	 * @return メッセージリスト
 	 */
 	public List<String> getMessages() {
 		return messages;
 	}
 	/**
-	 * messagesを設定します。
+	 * メッセージリストを設定します。
 	 * 
-	 * @param messages
+	 * @param messages メッセージリスト
 	 */
 	public void setMessages(List<String> messages) {
 		this.messages = messages;
 	}
 	/**
-	 * messagesの配列を設定し、自オブジェクトを返します。
+	 * メッセージの配列を設定し、自オブジェクトを返します。
 	 *
-	 * @param messages
+	 * @param messages メッセージの配列
 	 * @return 自オブジェクト
 	 */
 	public AvailabilityZone withMessages(String ... messages) {
@@ -152,9 +159,9 @@ public class AvailabilityZone {
 		return this;
 	}
 	/**
-	 * messagesを設定し、自オブジェクトを返します。
+	 * メッセージリストを設定し、自オブジェクトを返します。
 	 *
-	 * @param messages
+	 * @param messages メッセージリスト
 	 * @return 自オブジェクト
 	 */
 	public AvailabilityZone withMessages(Collection<String> messages) {
@@ -165,6 +172,53 @@ public class AvailabilityZone {
 		return this;
 	}
 	
+	/**
+	 * ファイアウォール指定可否を取得します。
+	 * @return ファイアウォール指定可否
+	 */
+	public Boolean getSecurityGroupSupported() {
+		return securityGroupSupported;
+	}
+	/**
+	 * ファイアウォール指定可否を設定します。
+	 * @param securityGroupSupported ファイアウォール指定可否
+	 */
+	public void setSecurityGroupSupported(Boolean securityGroupSupported) {
+		this.securityGroupSupported = securityGroupSupported;
+	}
+	/**
+	 * ファイアウォール指定可否を設定し、自オブジェクトを返します。
+	 * @param securityGroupSupported ファイアウォール指定可否
+	 * @return 自オブジェクト
+	 */
+	public AvailabilityZone withSecurityGroupSupported(Boolean securityGroupSupported) {
+		setSecurityGroupSupported(securityGroupSupported);
+		return this;
+	}
+	
+	/**
+	 * デフォルトゾーンかどうかを取得します。
+	 * @return デフォルトゾーンかどうか
+	 */
+	public Boolean getIsDefault() {
+		return isDefault;
+	}
+	/**
+	 * デフォルトゾーンかどうかを設定します。
+	 * @param isDefault デフォルトゾーンかどうか
+	 */
+	public void setIsDefault(Boolean isDefault) {
+		this.isDefault = isDefault;
+	}
+	/**
+	 * デフォルトゾーンかどうかを設定し、自オブジェクトを返します。
+	 * @param isDefault デフォルトゾーンかどうか
+	 * @return 自オブジェクト
+	 */
+	public AvailabilityZone withIsDefault(Boolean isDefault) {
+		setIsDefault(isDefault);
+		return this;
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -179,6 +233,10 @@ public class AvailabilityZone {
 		builder.append(regionName);
 		builder.append(", messages=");
 		builder.append(messages);
+		builder.append(", securityGroupSupported=");
+		builder.append(securityGroupSupported);
+		builder.append(", isDefault=");
+		builder.append(isDefault);
 		builder.append("]");
 		return builder.toString();
 	}

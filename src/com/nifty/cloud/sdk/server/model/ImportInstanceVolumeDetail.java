@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.server.model;
@@ -28,7 +28,7 @@ public class ImportInstanceVolumeDetail {
 
 	private Long bytesConverted;
 
-	/** ゾーン情報 */
+	/** ゾーン名 */
 	private String availabilityZone;
 
 	/** ディスクイメージ詳細 */
@@ -68,21 +68,21 @@ public class ImportInstanceVolumeDetail {
 	}
 
 	/**
-	 * ゾーン情報を取得します。
-	 * @return ゾーン情報
+	 * ゾーン名を取得します。
+	 * @return ゾーン名
 	 */
 	public String getAvailabilityZone() {
 		return availabilityZone;
 	}
 	/**
-	 * ゾーン情報を設定します。
-	 * @param availabilityZone ゾーン情報
+	 * ゾーン名を設定します。
+	 * @param availabilityZone ゾーン名
 	 */
 	public void setAvailabilityZone(String availabilityZone) {
 		this.availabilityZone = availabilityZone;
 	}
 	/**
-	 * ゾーン情報を設定し、自オブジェクトを返します。
+	 * ゾーン名を設定し、自オブジェクトを返します。
 	 * @param availabilityZone
 	 * @return 自オブジェクト
 	 */

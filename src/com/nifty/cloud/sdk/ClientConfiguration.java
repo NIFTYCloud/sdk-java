@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-06-21 12:00:00
  * 
  */
 package com.nifty.cloud.sdk;
@@ -95,7 +95,14 @@ public class ClientConfiguration {
 
     /** 無償版へ変更する際の注意事項URL */
     private String firewallNotesUrlForFree = FW_NOTES_URL_FOR_FREE;
-
+    
+    /*
+     * ここにRedhat同意文のURLを定義
+     * private String redHatForAgree = REDHAT_AGREE;
+     */
+     private String redhatForAgree = REDHAT_AGREE;
+    
+    
 	/**
 	 * デフォルトのプロパティファイルから設定を取得し、クライアント設定情報を構築します。
 	 * 
@@ -736,6 +743,33 @@ public class ClientConfiguration {
 	 */
 	public ClientConfiguration withFirewallNotesUrlForFree(String firewallNotesUrlForFree) {
 		this.firewallNotesUrlForFree = firewallNotesUrlForFree;
+		return this;
+	}
+	
+	
+	/**
+	 * Redhat 同意文URLを取得します。
+	 * @return Redhat同意文の注意事項URL
+	 */
+	public String getRedhatAgreeUrl() {
+		return redhatForAgree;
+	}
+
+	/**
+	 * Redhat 同意文URLを設定します。
+	 * @param redhatForAgree Redhat同意文URL
+	 */
+	public void setRedhatAgreeUrl(String redhatForAgree) {
+		this.redhatForAgree = redhatForAgree;
+	}
+
+	/**
+	 * Redhat同意文URLを設定し、ジオブジェクトを返します。
+	 * @param redhatForAgree Redhat同意文URL
+	 * @return 自オブジェクト
+	 */
+	public ClientConfiguration withRedhatAgreeUrl(String redhatForAgree) {
+		this.redhatForAgree = redhatForAgree;
 		return this;
 	}
 }

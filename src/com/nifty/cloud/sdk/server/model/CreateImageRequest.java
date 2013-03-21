@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.server.model;
@@ -45,6 +45,9 @@ public class CreateImageRequest implements Request {
 	/** イメージ化元サーバー残存フラグ */
 	private Boolean	leftInstance;
 	
+	/** リージョン・ゾーン情報 */
+	private GlobalPlacement placement;
+
 	/**
 	 * イメージ化元サーバーを取得します。
 	 * 
@@ -184,7 +187,31 @@ public class CreateImageRequest implements Request {
 		setLeftInstance(leftInstance);
 		return this;
 	}
-	
+
+	/**
+	 * リージョン・ゾーン情報を取得します。
+	 * @return リージョン・ゾーン情報
+	 */
+	@Query(name="Placement")	
+	public GlobalPlacement getPlacement() {
+		return placement;
+	}
+	/**
+	 * リージョン・ゾーン情報を設定します。
+	 * @param placement リージョン・ゾーン情報
+	 */
+	public void setPlacement(GlobalPlacement placement) {
+		this.placement = placement;
+	}
+	/**
+	 * リージョン・ゾーン情報を設定し、自オブジェクトを返します。
+	 * @param placement リージョン・ゾーン情報
+	 * @return 自オブジェクト
+	 */
+	public CreateImageRequest withPlacement(GlobalPlacement placement) {
+		setPlacement(placement);
+		return this;
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -201,6 +228,8 @@ public class CreateImageRequest implements Request {
 		builder.append(noReboot);
 		builder.append(", leftInstance=");
 		builder.append(leftInstance);
+		builder.append(", placement=");
+		builder.append(placement);
 		builder.append("]");
 		return builder.toString();
 	}

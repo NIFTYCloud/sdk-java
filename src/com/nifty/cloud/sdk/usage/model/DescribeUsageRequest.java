@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-02-24 09:53:00
  * 
  */
 package com.nifty.cloud.sdk.usage.model;
@@ -33,6 +33,8 @@ public class DescribeUsageRequest implements Request {
 
 	/** 取得対象年月 */
 	private String yearMonth;
+	/** リージョン */
+	private String region;
 
 	/**
 	 * 取得対象年月を取得します。
@@ -64,6 +66,33 @@ public class DescribeUsageRequest implements Request {
 		return this;
 	}
 
+	/**
+	 * リージョンを取得します。
+	 * @return リージョン
+	 */
+	@Query(name="Region")
+	public String getRegion() {
+		return region;
+	}
+
+	/**
+	 * リージョンを設定します。
+	 * @param region リージョン
+	 */
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	/**
+	 * リージョンを設定し、自オブジェクトを返します。
+	 * @param region リージョン
+	 * @return 自オブジェクト
+	 */
+	public DescribeUsageRequest withRegion(String region) {
+		setRegion(region);
+		return this;
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -72,6 +101,8 @@ public class DescribeUsageRequest implements Request {
 		StringBuilder builder = new StringBuilder();
 		builder.append("[yearMonth=");
 		builder.append(yearMonth);
+		builder.append(", region=");
+		builder.append(region);
 		builder.append("]");
 		return builder.toString();
 	}

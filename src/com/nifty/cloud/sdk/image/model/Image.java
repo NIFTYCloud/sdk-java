@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.image.model;
@@ -23,7 +23,6 @@ package com.nifty.cloud.sdk.image.model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 
 /**
  * OSイメージ情報クラス。<br />
@@ -75,6 +74,9 @@ public class Image {
 	
 	/** OSイメージの再配布可否情報 */
 	private Boolean redistributable;
+	
+	/** リージョン・ゾーン情報 */
+	private GlobalPlacement placement;
 	
 	/** rootデバイスタイプ */
 	private String rootDeviceType;
@@ -553,6 +555,29 @@ public class Image {
 		return this;
 	}
 	/**
+	 * リージョン・ゾーン情報を取得します。
+	 * @return リージョン・ゾーン情報
+	 */
+	public GlobalPlacement getPlacement() {
+		return placement;
+	}
+	/**
+	 * リージョン・ゾーン情報を設定します。
+	 * @param placement リージョン・ゾーン情報
+	 */
+	public void setPlacement(GlobalPlacement placement) {
+		this.placement = placement;
+	}
+	/**
+	 * リージョン・ゾーン情報を設定し、自オブジェクトを返します。
+	 * @param placement リージョン・ゾーン情報
+	 * @return 自オブジェクト
+	 */
+	public Image withPlacement(GlobalPlacement placement) {
+		setPlacement(placement);
+		return this;
+	}
+	/**
 	 * rootデバイスタイプを取得します。
 	 * 
 	 * @return rootデバイスタイプ
@@ -689,6 +714,8 @@ public class Image {
 		builder.append(detailDescription);
 		builder.append(", redistributable=");
 		builder.append(redistributable);
+		builder.append(", placement=");
+		builder.append(placement);
 		builder.append(", rootDeviceType=");
 		builder.append(rootDeviceType);
 		builder.append(", rootDeviceName=");

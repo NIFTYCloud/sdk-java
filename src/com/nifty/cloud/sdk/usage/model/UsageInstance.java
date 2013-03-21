@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-02-24 09:53:00
  * 
  */
 package com.nifty.cloud.sdk.usage.model;
@@ -66,6 +66,9 @@ public class UsageInstance {
 	@XStreamConverter(UsageDetailSetConverter.class)
 	private List<UsageDetail> osMeasuredRates;
 
+	/** マルチIP月額利用情報 */
+	@XStreamAlias("multiIpMonthlyRate")
+	private UsageDetail multiIpMonthlyRate;
 	/**
 	 * サーバー月額利用情報リストを取得します。
 	 * 
@@ -374,6 +377,31 @@ public class UsageInstance {
 		return this;
 	}
 
+	/**
+	 * マルチIP月額利用情報を設定します。
+	 * @return マルチIP月額利用情報
+	 */
+	public UsageDetail getMultiIpMonthlyRate() {
+		return multiIpMonthlyRate;
+	}
+
+	/**
+	 * マルチIP月額利用情報を設定します。
+	 * @param multiIpMonthlyRate マルチIP月額利用情報
+	 */
+	public void setMultiIpMonthlyRate(UsageDetail multiIpMonthlyRate) {
+		this.multiIpMonthlyRate = multiIpMonthlyRate;
+	}
+
+	/**
+	 * マルチIP月額利用情報を設定し、自オブジェクトを返します。
+	 * @param multiIpMonthlyRate マルチIP月額利用情報
+	 * @return 自オブジェクト
+	 */
+	public UsageInstance withMultiIpMonthlyRate(UsageDetail multiIpMonthlyRate) {
+		setMultiIpMonthlyRate(multiIpMonthlyRate);
+		return this;
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -394,6 +422,8 @@ public class UsageInstance {
 		builder.append(osMonthlyRates);
 		builder.append(", osMeasuredRates=");
 		builder.append(osMeasuredRates);
+		builder.append(", multiIpMonthlyRate=");
+		builder.append(multiIpMonthlyRate);
 		builder.append("]");
 		return builder.toString();
 	}

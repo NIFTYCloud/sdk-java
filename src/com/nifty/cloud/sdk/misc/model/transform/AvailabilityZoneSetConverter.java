@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.misc.model.transform;
@@ -41,6 +41,8 @@ public class AvailabilityZoneSetConverter implements Converter {
 	private static final String ELEMENT_ZONE_STATE = "zoneState";
 	private static final String ELEMENT_REGION_NAME = "regionName";
 	private static final String ELEMENT_MESSAGE_SET = "messageSet";
+	private static final String ELEMENT_SECURITY_GROUP_SUPPORTED = "securityGroupSupported";
+	private static final String ELEMENT_IS_DEFAULT = "isDefault";
 
 	/**
 	 * 変換可能なクラスか判定します。
@@ -49,17 +51,17 @@ public class AvailabilityZoneSetConverter implements Converter {
 	 * @return 変換可能な場合true, 変換不可能な場合false
 	 *  
 	 * @see com.thoughtworks.xstream.converters.Converter#canConvert(Class)
-	 */										
+	 */
 	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean canConvert(Class clazz) {
-    	Class[] interfaces = clazz.getInterfaces();
-    	for(Class i: interfaces) {
-    		if (i==List.class) {
-    			return true;
-    		}
-    	}
-    	return false;		
+		Class[] interfaces = clazz.getInterfaces();
+		for(Class i : interfaces) {
+			if (i == List.class) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -98,7 +100,12 @@ public class AvailabilityZoneSetConverter implements Converter {
 				else if (name.equals(ELEMENT_MESSAGE_SET)) {
 					availabilityZone.setMessages((List<String>) messageSetConverter.unmarshal(reader, context));
 				}
-				
+				else if (name.equals(ELEMENT_SECURITY_GROUP_SUPPORTED)) {
+					availabilityZone.setSecurityGroupSupported(Boolean.valueOf(reader.getValue()));
+				}
+				else if (name.equals(ELEMENT_IS_DEFAULT)) {
+					availabilityZone.setIsDefault(Boolean.valueOf(reader.getValue()));
+				}
 				reader.moveUp();
 			}
 			

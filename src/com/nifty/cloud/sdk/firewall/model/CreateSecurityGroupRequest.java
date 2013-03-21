@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  *
  */
 package com.nifty.cloud.sdk.firewall.model;
@@ -37,6 +37,8 @@ public class CreateSecurityGroupRequest implements Request {
 	/** ファイアウォールグループのメモ */
 	private String groupDescription;
 
+	/** ゾーン情報 */
+	private Placement placement;
 	/**
 	 * デフォルトコンストラクタ。
 	 */
@@ -110,7 +112,33 @@ public class CreateSecurityGroupRequest implements Request {
 		setGroupDescription(groupDescription);
 		return this;
 	}
-
+	/**
+	 * ゾーン情報を取得します。
+	 * 
+	 * @return ゾーン情報
+	 */
+	@Query(name="Placement")
+	public Placement getPlacement() {
+		return placement;
+	}
+	/**
+	 * ゾーン情報を設定します。
+	 * 
+	 * @param placement ゾーン情報
+	 */
+	public void setPlacement(Placement placement) {
+		this.placement = placement;
+	}
+	/**
+	 * ゾーン情報を設定し、自オブジェクトを返します。
+	 *
+	 * @param placement ゾーン情報
+	 * @return 自オブジェクト
+	 */
+	public CreateSecurityGroupRequest withPlacement(Placement placement) {
+		setPlacement(placement);
+		return this;
+	}
 	/*
 	 * (non-Javadoc)
 	 *
@@ -123,6 +151,8 @@ public class CreateSecurityGroupRequest implements Request {
 		builder.append(groupName);
 		builder.append(", groupDescription=");
 		builder.append(groupDescription);
+		builder.append(", placement=");
+		builder.append(placement);
 		builder.append("]");
 		return builder.toString();
 	}

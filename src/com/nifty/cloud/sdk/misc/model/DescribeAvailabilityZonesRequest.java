@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.misc.model;
@@ -35,29 +35,30 @@ import com.nifty.cloud.sdk.annotation.Query;
 @Action("DescribeAvailabilityZones")
 public class DescribeAvailabilityZonesRequest implements Request {
 	
+	/** ゾーン名リスト*/
 	private List<String>	zoneNames;
 
 	/**
-	 * zoneNamesを取得します。
+	 * ゾーン名リストを取得します。
 	 * 
-	 * @return zoneNames
+	 * @return ゾーン名リスト
 	 */
 	@Query(name="ZoneName")			
 	public List<String> getZoneNames() {
 		return zoneNames;
 	}
 	/**
-	 * zoneNamesを設定します。
+	 * ゾーン名リストを設定します。
 	 * 
-	 * @param zoneNames
+	 * @param zoneNames ゾーン名リスト
 	 */
 	public void setZoneNames(List<String> zoneNames) {
 		this.zoneNames = zoneNames;
 	}
 	/**
-	 * zoneNamesの配列を設定し、自オブジェクトを返します。
+	 * ゾーン名の配列を設定し、自オブジェクトを返します。
 	 *
-	 * @param zoneNames
+	 * @param zoneNames ゾーン名の配列
 	 * @return 自オブジェクト
 	 */
 	public DescribeAvailabilityZonesRequest withZoneNames(String ... zoneNames) {
@@ -68,9 +69,9 @@ public class DescribeAvailabilityZonesRequest implements Request {
 		return this;
 	}
 	/**
-	 * zoneNamesを設定し、自オブジェクトを返します。
+	 * ゾーン名リストを設定し、自オブジェクトを返します。
 	 *
-	 * @param zoneNames
+	 * @param zoneNames ゾーン名リスト
 	 * @return 自オブジェクト
 	 */
 	public DescribeAvailabilityZonesRequest withZoneNames(Collection<String> zoneNames) {

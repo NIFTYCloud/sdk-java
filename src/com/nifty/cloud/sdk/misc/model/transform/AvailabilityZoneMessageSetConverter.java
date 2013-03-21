@@ -14,92 +14,18 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-24 10:42:00
  * 
  */
 package com.nifty.cloud.sdk.misc.model.transform;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.thoughtworks.xstream.converters.Converter;
-import com.thoughtworks.xstream.converters.MarshallingContext;
-import com.thoughtworks.xstream.converters.UnmarshallingContext;
-import com.thoughtworks.xstream.io.HierarchicalStreamReader;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 
 /**
  *  AvailabilityZoneMessageSetType変換クラス。<br />
  *  このクラスはレスポンスXMLのmessageSet要素からStringクラスを生成します。
  */
-public class AvailabilityZoneMessageSetConverter implements Converter {
-
-	private static final String ELEMENT_MESSAGE= "message";
-
-	/**
-	 * 変換可能なクラスか判定します。
-	 * 
-	 * @param clazz クラス
-	 * @return 変換可能な場合true, 変換不可能な場合false
-	 *  
-	 * @see com.thoughtworks.xstream.converters.Converter#canConvert(Class)
-	 */									
-	@SuppressWarnings("rawtypes")
-	@Override
-	public boolean canConvert(Class clazz) {
-    	Class[] interfaces = clazz.getInterfaces();
-    	for(Class i: interfaces) {
-    		if (i==List.class) {
-    			return true;
-    		}
-    	}
-    	return false;		
-	}
-
-	/**
-	 * messageSet要素をList<String>クラスに変換します。
-	 * 
-	 * @param reader XML読込リーダ
-	 * @param context 
-	 * @return List<String>オブジェクト
-	 * 
-	 * @see com.thoughtworks.xstream.converters.Converter#unmarshal(HierarchicalStreamReader, UnmarshallingContext)
-	 */
-	@Override
-	public Object unmarshal(HierarchicalStreamReader reader, UnmarshallingContext context) {
-		List<String> messages = new ArrayList<String>();
-		
-		String name = null;
-		while(reader.hasMoreChildren()) {
-			reader.moveDown();
-			
-			while(reader.hasMoreChildren()) {
-				reader.moveDown();
-				
-				name = reader.getNodeName();
-				if (name.equals(ELEMENT_MESSAGE)) {
-					messages.add(reader.getValue());
-				}
-				
-				reader.moveUp();
-			}
-			
-			reader.moveUp();
-		}
-		
-		return messages;
-	}
-
-
-	/**
-	 * 未実装メソッド 
-	 */
-	@Override
-	public void marshal(Object paramObject,
-						HierarchicalStreamWriter paramHierarchicalStreamWriter,
-						MarshallingContext paramMarshallingContext) {
-	}
+public class AvailabilityZoneMessageSetConverter extends MessageSetConverter {
 
 }

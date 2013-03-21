@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.sample;
@@ -30,6 +30,7 @@ import com.nifty.cloud.sdk.auth.SignatureUtils.SignatureVersion;
 import com.nifty.cloud.sdk.server.NiftyServerClient;
 import com.nifty.cloud.sdk.server.model.CreateImageRequest;
 import com.nifty.cloud.sdk.server.model.CreateImageResult;
+import com.nifty.cloud.sdk.server.model.GlobalPlacement;
 
 import static java.lang.System.out;
 import static java.lang.System.err;
@@ -114,6 +115,10 @@ public class CreateImageSample {
         // request.setDescription("description");
         // request.setNoReboot(false);
         // request.setLeftInstance(false);
+        // GlobalPlacement placement = new GlobalPlacement();
+        // placement.setRegionName("regionName");
+        // placement.setAvailabilityZone("availabilityZone");
+        // request.setPlacement(placement);
         invokeCreateImage(client, request);
     }
 

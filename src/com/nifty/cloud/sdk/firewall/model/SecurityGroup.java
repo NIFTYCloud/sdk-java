@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-06-21 12:00:00
  *
  */
 package com.nifty.cloud.sdk.firewall.model;
@@ -66,6 +66,12 @@ public class SecurityGroup {
 
 	/** ログ取得件数 */
 	private Integer groupLogLimit; 
+
+	/** Windows サーバー BroadCast 通信ログの抑止状態 */
+	private Boolean groupLogFilterNetBios;
+	
+	/** ゾーン名 */
+	private String availabilityZone;
 
 	/**
 	 * ownerIdを取得します。
@@ -331,6 +337,59 @@ public class SecurityGroup {
 		return this;
 	}
 
+
+	/**
+	 * WindowsサーバーBroadcastログの抑止設定情報を取得します
+	 * @return boolean true:設定する  false:設定しない
+	 */
+	public Boolean isGroupLogFilterNetBios() {
+		return groupLogFilterNetBios;
+	}
+
+	/**
+	 * WindowsサーバーBroadcastログの抑止設定を登録します
+	 * @param boolean groupLogFilterNetBios  true:設定する  false:設定しない
+	 */
+	public void setGroupLogFilterNetBios(boolean groupLogFilterNetBios) {
+		this.groupLogFilterNetBios = groupLogFilterNetBios;
+	}	
+	
+	public SecurityGroup withGroupLogFilterNetBios(boolean groupLogFilterNetBios) {
+		setGroupLogFilterNetBios(groupLogFilterNetBios);
+		return this;
+	}
+		
+	
+	/**
+	 * ゾーン名を取得します。
+	 * @return ゾーン名
+	 */
+	public String getAvailabilityZone() {
+		return availabilityZone;
+	}
+
+	/**
+	 * ゾーン名を設定します。
+	 * @param availabilityZone ゾーン名
+	 */
+	public void setAvailabilityZone(String availabilityZone) {
+		this.availabilityZone = availabilityZone;
+	}
+
+	/**
+	 * ゾーン名を設定し、自オブジェクトを返します。
+	 * @param availabilityZone ゾーン名
+	 * @return 自オブジェクト
+	 */
+	
+	
+	public SecurityGroup withAvailabilityZone(String availabilityZone) {
+		setAvailabilityZone(availabilityZone);
+		return this;
+	}
+	
+
+
 	/*
 	 * (non-Javadoc)
 	 *
@@ -355,6 +414,10 @@ public class SecurityGroup {
 		builder.append(groupRuleLimit);
 		builder.append(", groupLogLimit=");
 		builder.append(groupLogLimit);
+		builder.append(" ,groupLogFilterNetBios=");
+		builder.append(groupLogFilterNetBios);
+		builder.append(" ,availabilityZone=");
+		builder.append(availabilityZone);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.loadbalancer;
@@ -77,7 +77,6 @@ public interface NiftyLoadBalancer {
 	 * ロードバランサーの定義を作成します。
 	 *
 	 * @param request CreateLoadBalancerリクエスト<br />
-	 * &nbsp;	CreateLoadBalancerRequest#availabilityZonesは利用不可
 	 * @return CreateLoadBalancer処理結果
 	 */
 	public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest request);

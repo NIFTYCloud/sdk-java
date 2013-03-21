@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.misc;
@@ -29,6 +29,8 @@ import com.nifty.cloud.sdk.ClientConfiguration;
 import com.nifty.cloud.sdk.auth.Credentials;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesResult;
+import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
+import com.nifty.cloud.sdk.misc.model.DescribeRegionsResult;
 
 /**
  * NIFTY Cloud API 非同期クライアント 具象クラス。
@@ -98,6 +100,18 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 				}
 		);
 	}
-
-
+	/**
+	 * @see com.nifty.cloud.sdk.misc.NiftyMiscAsync#describeRegionsAsync(DescribeRegionsRequest)
+	 */
+	@Override
+	public Future<DescribeRegionsResult> describeRegionsAsync(final DescribeRegionsRequest request) {
+		return executorService.submit( 
+				new Callable<DescribeRegionsResult>() {
+					@Override
+					public DescribeRegionsResult call() {
+						return describeRegions(request);
+					}
+				}
+		);
+	}
 }

@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.sample;
@@ -35,6 +35,7 @@ import com.nifty.cloud.sdk.server.model.CopyInstance;
 import com.nifty.cloud.sdk.server.model.CopyInstanceSet;
 import com.nifty.cloud.sdk.server.model.CopyInstancesRequest;
 import com.nifty.cloud.sdk.server.model.CopyInstancesResult;
+import com.nifty.cloud.sdk.server.model.GlobalPlacement;
 import com.nifty.cloud.sdk.server.model.LoadBalancer;
 
 import static java.lang.System.out;
@@ -131,9 +132,12 @@ public class CopyInstancesSample {
         // List<String> groupIds = new ArrayList<String>();
         // groupIds.add("groupId");
         // copyInstance.setGroupIds(groupIds);
+        // GlobalPlacement placement = new GlobalPlacement();
+        // placement.setRegionName("regionName");
+        // placement.setAvailabilityZone("availabilityZone");
+        // copyInstance.setPlacement(placement);
         // request.setCopyInstance(copyInstance);
         // request.setCopyCount(0);
-
         invokeCopyInstances(client, request);
 
     }

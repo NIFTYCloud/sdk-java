@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.misc;
@@ -24,6 +24,8 @@ import java.util.concurrent.Future;
 
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesResult;
+import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
+import com.nifty.cloud.sdk.misc.model.DescribeRegionsResult;
 
 /**
  * NIFTY Cloud API 非同期クライアント　インタフェース。
@@ -39,5 +41,13 @@ public interface NiftyMiscAsync extends NiftyMisc {
 	 * @return 非同期処理結果
 	 */
 	public Future<DescribeAvailabilityZonesResult> describeAvailabilityZonesAsync(DescribeAvailabilityZonesRequest request);
+
+	/**
+	 * 非同期でリージョン情報を取得します。
+	 * @param request DescribeRegionsリクエスト<br />
+	 * &nbsp;	DescribeRegionsRequest#filtersは利用不可
+	 * @return 非同期処理結果
+	 */
+	public Future<DescribeRegionsResult> describeRegionsAsync(DescribeRegionsRequest request);
 
 }

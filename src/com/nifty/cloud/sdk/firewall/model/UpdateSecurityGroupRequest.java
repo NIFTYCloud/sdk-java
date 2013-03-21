@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-06-16 15:00:00
  *
  */
 package com.nifty.cloud.sdk.firewall.model;
@@ -45,7 +45,11 @@ public class UpdateSecurityGroupRequest implements Request {
 
 	/** ファイアウォールのログ取得件数の変更 */
 	private Integer groupLogLimitUpdate;
-
+	
+	/** Windows サーバーのBroadCast通信ログの抑止の変更　*/
+//    private boolean groupLogFilterNetBios;
+    private String groupLogFilterNetBios;
+    
 	/**
 	 * デフォルトコンストラクタ。
 	 */
@@ -154,8 +158,12 @@ public class UpdateSecurityGroupRequest implements Request {
 	 * ファイアウォールグループのルール数上限の変更を取得します。
 	 * 
 	 * @return ファイアウォールグループのルール数上限の変更
+	 * @deprecated オプションから削除
+	 *
 	 */
 	@Query(name = "GroupRuleLimitUpdate")
+
+	@Deprecated 
 	public Integer getGroupRuleLimitUpdate() {
 		return groupRuleLimitUpdate;
 	}
@@ -164,7 +172,10 @@ public class UpdateSecurityGroupRequest implements Request {
 	 * ファイアウォールグループのルール数上限の変更設定します。
 	 * 
 	 * @param groupRuleLimitUpdate ファイアウォールグループのルール数上限の変更
+	 *　@deprecated オプションから削除
 	 */
+	
+	@Deprecated 
 	public void setGroupRuleLimitUpdate(Integer groupRuleLimitUpdate) {
 		this.groupRuleLimitUpdate = groupRuleLimitUpdate;
 	}
@@ -197,7 +208,7 @@ public class UpdateSecurityGroupRequest implements Request {
 	public void setGroupLogLimitUpdate(Integer groupLogLimitUpdate) {
 		this.groupLogLimitUpdate = groupLogLimitUpdate;
 	}
-
+	
 	/**
 	 * ファイアウォールのログ取得件数の変更を設定し、自オブジェクトを返します。
 	 * 
@@ -208,6 +219,25 @@ public class UpdateSecurityGroupRequest implements Request {
 		setGroupLogLimitUpdate(groupLogLimitUpdate);
 		return this;
 	}
+	
+	/**
+	 * WindowsサーバーBroadcastログの抑止設定内容取得
+	 * @return　boolean true:設定する  false:設定しない
+	 */
+	@Query(name = "GroupLogFilterNetBios")
+	public String getGroupLogFilterNetBios() {
+		return groupLogFilterNetBios;
+	}
+	
+	/**
+	 * WindowsサーバーBroadcaseログの抑止設定の登録をします。
+	 * @param boolean groupLogFilterNetBios  true:設定する  false:しない
+	 */
+
+	public void setGroupLogFilterNetBios(String groupLogFilterNetBios) {
+		this.groupLogFilterNetBios = groupLogFilterNetBios;
+	}
+
 
 	/*
 	 * (non-Javadoc)
@@ -227,6 +257,8 @@ public class UpdateSecurityGroupRequest implements Request {
 		builder.append(groupRuleLimitUpdate);
 		builder.append(", groupLogLimitUpdate=");
 		builder.append(groupLogLimitUpdate);
+		builder.append(", groupLogFilterNetBios=");
+		builder.append(groupLogFilterNetBios);
 		return builder.toString();
 	}
 }

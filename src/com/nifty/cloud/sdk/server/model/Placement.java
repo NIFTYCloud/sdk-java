@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.server.model;
@@ -24,7 +24,7 @@ import com.nifty.cloud.sdk.annotation.Query;
 
 
 /**
- * ゾーン名クラス。<br />
+ * ゾーン情報クラス。<br />
  * このクラスはゾーン名を格納します。
  */
 public class Placement {

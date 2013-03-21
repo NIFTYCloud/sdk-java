@@ -14,11 +14,13 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
+ *  API Version: 1.11
+ *  Date: 2012-06-21 12:00:00
  * 
  */
 package com.nifty.cloud.sdk.server;
+
+import java.io.IOException;
 
 import com.nifty.cloud.sdk.server.model.CancelCopyInstancesRequest;
 import com.nifty.cloud.sdk.server.model.CancelCopyInstancesResult;
@@ -149,7 +151,6 @@ public interface NiftyServer {
 	 * &nbsp;	RunInstancesRequest#maxCountは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#additionalInfoは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#addressingTypeは利用不可<br />
-	 * &nbsp;	RunInstancesRequest#placementは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#kernelIdは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#ramdiskIdは利用不可<br />
 	 * &nbsp;	RunInstancesRequest#blockDeviceMappingsは利用不可<br />
@@ -202,7 +203,6 @@ public interface NiftyServer {
 	 * サーバーをインポートします。
 	 * @param request ImportInstanceリクエスト<br/>
 	 * &nbsp;	ImportInstanceRequest#userDataは利用不可<br />
-	 * &nbsp;	ImportInstanceRequest#placementは利用不可<br />
 	 * &nbsp;	ImportInstanceRequest#monitoringは利用不可<br />
 	 * &nbsp;	ImportInstanceRequest#subnetIdは利用不可<br />
 	 * &nbsp;	ImportInstanceRequest#instanceInitiatedShutdownBehaviorは利用不可<br />
@@ -222,4 +222,12 @@ public interface NiftyServer {
 	 * &nbsp;	DiskImageDescription#checksumは利用不可
 	 */
 	public ImportInstanceResult importInstance(ImportInstanceRequest request);
+	
+	/**
+	 * Redhat 同意文の文言を取得します。
+	 * 
+	 * @return 注意事項
+	 * @throws IOException
+	 */
+	public String getRedhatAgree() throws IOException;
 }

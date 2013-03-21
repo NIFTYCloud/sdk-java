@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.sample;
@@ -139,13 +139,13 @@ public class DescribeAvailabilityZonesSample {
                 for (AvailabilityZone availabilityZone : availabilityZones) {
                     out.println("AvailabilityZone");
                     if (availabilityZone.getZoneName() != null) {
-                        out.println("  ZoneName        : " + availabilityZone.getZoneName());
+                        out.println("  ZoneName               : " + availabilityZone.getZoneName());
                     }
                     if (availabilityZone.getState() != null) {
-                        out.println("  State           : " + availabilityZone.getState());
+                        out.println("  State                  : " + availabilityZone.getState());
                     }
                     if (availabilityZone.getRegionName() != null) {
-                        out.println("  RegionName      : " + availabilityZone.getRegionName());
+                        out.println("  RegionName             : " + availabilityZone.getRegionName());
                     }
                     if (availabilityZone.getMessages() != null) {
                         List<String> messages = availabilityZone.getMessages();
@@ -154,6 +154,12 @@ public class DescribeAvailabilityZonesSample {
                                 out.println("  Message       : " + message);
                             }
                         }
+                    }
+                    if (availabilityZone.getSecurityGroupSupported() != null) {
+                    	out.println("  SecurityGroupSupported : " + availabilityZone.getSecurityGroupSupported());
+                    }
+                    if (availabilityZone.getIsDefault() != null) {
+                    	out.println("  IsDefault              : " + availabilityZone.getIsDefault());
                     }
                 }
             }

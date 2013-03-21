@@ -1,27 +1,29 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2011 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-11-29 14:07:10
- * 
+ *  API Version: 1.11
+ *  Date: 2012-02-24 09:53:00
+ *
  */
 package com.nifty.cloud.sdk.usage.model;
 
 import com.nifty.cloud.sdk.Result;
+import com.nifty.cloud.sdk.usage.model.transform.MailSendInfoConverter;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamConverter;
 
 /**
  * DescribeUsage処理結果クラス。<br />
@@ -99,13 +101,22 @@ public class DescribeUsageResult extends Result {
 	@XStreamAlias("storageInfo")
 	private UsageStorage storage;
 
+	/** メール配信利用情報 */
+	@XStreamAlias("mailSendInfo")
+	@XStreamConverter(MailSendInfoConverter.class)
+	private UsageMailSend mailSend;
+
 	/** OSオプション利用情報 */
 	@XStreamAlias("osOptionChargeInfo")
 	private UsageOsOptionCharge osOptionCharge;
 
+	/** その他の利用情報 */
+	@XStreamAlias("extraChargeInfo")
+	private UsageExtraCharge extraCharge;
+
 	/**
 	 * リクエスト識別子を取得します。
-	 * 
+	 *
 	 * @return リクエスト識別子
 	 */
 	public String getRequestId() {
@@ -114,7 +125,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * リクエスト識別子を設定します。
-	 * 
+	 *
 	 * @param requestId リクエスト識別子
 	 */
 	public void setRequestId(String requestId) {
@@ -123,7 +134,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * リクエスト識別子を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param requestId リクエスト識別子
 	 * @return 自オブジェクト
 	 */
@@ -134,7 +145,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * 情報取得年月を取得します。
-	 * 
+	 *
 	 * @return 情報取得年月
 	 */
 	public String getYearMonth() {
@@ -143,7 +154,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * 情報取得年月を設定します。
-	 * 
+	 *
 	 * @param yearMonth 情報取得年月
 	 */
 	public void setYearMonth(String yearMonth) {
@@ -152,7 +163,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * 情報取得年月を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param yearMonth 情報取得年月
 	 * @return 自オブジェクト
 	 */
@@ -163,7 +174,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * サーバー情報を取得します。
-	 * 
+	 *
 	 * @return サーバー情報
 	 */
 	public UsageInstance getInstance() {
@@ -172,7 +183,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * サーバー情報を設定します。
-	 * 
+	 *
 	 * @param instance サーバー情報
 	 */
 	public void setInstance(UsageInstance instance) {
@@ -181,7 +192,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * サーバー情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param instance サーバー情報
 	 * @return 自オブジェクト
 	 */
@@ -192,7 +203,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * サーバーコピー利用情報を取得します。
-	 * 
+	 *
 	 * @return サーバーコピー利用情報
 	 */
 	public UsageCopy getCopy() {
@@ -201,7 +212,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * サーバーコピー利用情報を設定します。
-	 * 
+	 *
 	 * @param copy サーバーコピー利用情報
 	 */
 	public void setCopy(UsageCopy copy) {
@@ -210,7 +221,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * サーバーコピー利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param copy サーバーコピー利用情報
 	 * @return 自オブジェクト
 	 */
@@ -221,7 +232,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * イメージ利用情報を取得します。
-	 * 
+	 *
 	 * @return イメージ利用情報
 	 */
 	public UsageImage getImage() {
@@ -230,7 +241,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * イメージ利用情報を設定します。
-	 * 
+	 *
 	 * @param image イメージ利用情報
 	 */
 	public void setImage(UsageImage image) {
@@ -239,7 +250,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * イメージ利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param image イメージ利用情報
 	 * @return 自オブジェクト
 	 */
@@ -250,7 +261,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ディスク利用情報を取得します。
-	 * 
+	 *
 	 * @return ディスク利用情報
 	 */
 	public UsageVolume getVolume() {
@@ -259,7 +270,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ディスク利用情報を設定します。
-	 * 
+	 *
 	 * @param volume ディスク利用情報
 	 */
 	public void setVolume(UsageVolume volume) {
@@ -268,7 +279,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ディスク利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param volume ディスク利用情報
 	 * @return 自オブジェクト
 	 */
@@ -279,7 +290,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ネットワーク利用情報を取得します。
-	 * 
+	 *
 	 * @return ネットワーク利用情報
 	 */
 	public UsageNetwork getNetwork() {
@@ -288,7 +299,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ネットワーク利用情報を設定します。
-	 * 
+	 *
 	 * @param network ネットワーク利用情報
 	 */
 	public void setNetwork(UsageNetwork network) {
@@ -297,7 +308,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ネットワーク利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param network ネットワーク利用情報
 	 * @return 自オブジェクト
 	 */
@@ -308,7 +319,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ファイアウォール利用情報を取得します。
-	 * 
+	 *
 	 * @return ファイアウォール利用情報
 	 */
 	public UsageSecurityGroup getSecurityGroup() {
@@ -317,7 +328,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ファイアウォール利用情報を設定します。
-	 * 
+	 *
 	 * @param securityGroup ファイアウォール利用情報
 	 */
 	public void setSecurityGroup(UsageSecurityGroup securityGroup) {
@@ -326,7 +337,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ファイアウォール利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param securityGroup ファイアウォール利用情報
 	 * @return 自オブジェクト
 	 */
@@ -337,7 +348,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ロードバランサー利用情報を取得します。
-	 * 
+	 *
 	 * @return ロードバランサー利用情報
 	 */
 	public UsageLoadBalancer getLoadBalancer() {
@@ -346,7 +357,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * ロードバランサー利用情報を設定します。
-	 * 
+	 *
 	 * @param loadBalancer ロードバランサー利用情報
 	 */
 	public void setLoadBalancer(UsageLoadBalancer loadBalancer) {
@@ -354,8 +365,18 @@ public class DescribeUsageResult extends Result {
 	}
 
 	/**
+	 * ロードバランサー利用情報を設定し、自オブジェクトを返します。
+	 * @param loadBalancer ロードバランサー利用情報
+	 * @return 自オブジェクト
+	 */
+	public DescribeUsageResult withLoadBalancer(UsageLoadBalancer loadBalancer) {
+		setLoadBalancer(loadBalancer);
+		return this;
+	}
+
+	/**
 	 * オートスケール利用情報を取得します。
-	 * 
+	 *
 	 * @return オートスケール利用情報
 	 */
 	public UsageAutoScale getAutoScale() {
@@ -364,7 +385,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * オートスケール利用情報を設定します。
-	 * 
+	 *
 	 * @param autoScale オートスケール利用情報
 	 */
 	public void setAutoScale(UsageAutoScale autoScale) {
@@ -373,7 +394,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * オートスケール利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param autoScale オートスケール利用情報
 	 * @return 自オブジェクト
 	 */
@@ -383,7 +404,7 @@ public class DescribeUsageResult extends Result {
 	}
 	/**
 	 * SSL証明書利用情報を取得します。
-	 * 
+	 *
 	 * @return SSL証明書利用情報
 	 */
 	public UsageSslCert getSslCert() {
@@ -392,7 +413,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * SSL証明書利用情報を設定します。
-	 * 
+	 *
 	 * @param sslCert SSL証明書利用情報
 	 */
 	public void setSslCert(UsageSslCert sslCert) {
@@ -401,7 +422,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * SSL証明書利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param sslCert SSL証明書利用情報
 	 * @return 自オブジェクト
 	 */
@@ -411,7 +432,7 @@ public class DescribeUsageResult extends Result {
 	}
 	/**
 	 * プライベートLAN情報を取得します。
-	 * 
+	 *
 	 * @return プライベートLAN情報
 	 */
 	public UsagePrivateLan getPrivateLan() {
@@ -420,7 +441,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * プライベートLAN情報を設定します。
-	 * 
+	 *
 	 * @param privateLan プライベートLAN情報
 	 */
 	public void setPrivateLan(UsagePrivateLan privateLan) {
@@ -429,7 +450,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * プライベートLAN情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param privateLan プライベートLAN情報
 	 * @return 自オブジェクト
 	 */
@@ -440,7 +461,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * 利用料金明細情報を取得します。
-	 * 
+	 *
 	 * @return 利用料金明細情報
 	 */
 	public UsageChargeDetail getChargeDetail() {
@@ -449,7 +470,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * 利用料金明細情報設定します。
-	 * 
+	 *
 	 * @param chargeDetail 利用料金明細情報
 	 */
 	public void setChargeDetail(UsageChargeDetail chargeDetail) {
@@ -458,7 +479,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * 利用料金明細情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param chargeDetail 利用料金明細情報
 	 * @return 自オブジェクト
 	 */
@@ -469,7 +490,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * プレミアムサポート情報を取得します。
-	 * 
+	 *
 	 * @return プレミアムサポート情報
 	 */
 	public UsagePremiumSupport getPremiumSupport() {
@@ -478,7 +499,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * プレミアムサポート情報を設定します。
-	 * 
+	 *
 	 * @param premiumSupport プレミアムサポート情報
 	 */
 	public void setPremiumSupport(UsagePremiumSupport premiumSupport) {
@@ -487,7 +508,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * プレミアムサポート情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param premiumSupport プレミアムサポート情報
 	 * @return 自オブジェクト
 	 */
@@ -498,7 +519,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * マルチアカウント利用情報を取得します。
-	 * 
+	 *
 	 * @return マルチアカウント利用情報
 	 */
 	public UsageMultiAccount getMultiAccount() {
@@ -507,7 +528,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * マルチアカウント利用情報設定します。
-	 * 
+	 *
 	 * @param multiAccount マルチアカウント利用情報
 	 */
 	public void setMultiAccount(UsageMultiAccount multiAccount) {
@@ -516,7 +537,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * マルチアカウント利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param multiAccount マルチアカウント利用情報
 	 * @return 自オブジェクト
 	 */
@@ -527,7 +548,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * パターン認証利用情報を取得します。
-	 * 
+	 *
 	 * @return パターン認証利用情報
 	 */
 	public UsagePatternAuth getPatternAuth() {
@@ -536,7 +557,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * パターン認証利用情報を設定します。
-	 * 
+	 *
 	 * @param patternAuth パターン認証利用情報
 	 */
 	public void setPatternAuth(UsagePatternAuth patternAuth) {
@@ -545,7 +566,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * パターン認証利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param patternAuth パターン認証利用情報
 	 * @return 自オブジェクト
 	 */
@@ -556,7 +577,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * クラウドストレージ利用情報を取得します。
-	 * 
+	 *
 	 * @return クラウドストレージ利用情報
 	 */
 	public UsageStorage getStorage() {
@@ -565,7 +586,7 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * クラウドストレージ利用情報を設定します。
-	 * 
+	 *
 	 * @param storage クラウドストレージ利用情報
 	 */
 	public void setStorage(UsageStorage storage) {
@@ -574,12 +595,38 @@ public class DescribeUsageResult extends Result {
 
 	/**
 	 * クラウドストレージ利用情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param storage クラウドストレージ利用情報
 	 * @return 自オブジェクト
 	 */
 	public DescribeUsageResult withStorage(UsageStorage storage) {
 		setStorage(storage);
+		return this;
+	}
+
+	/**
+	 * メール配信利用情報を取得します。
+	 * @return メール配信利用情報
+	 */
+	public UsageMailSend getMailSend() {
+		return mailSend;
+	}
+
+	/**
+	 * メール配信利用情報を設定します。
+	 * @param mailSend メール配信利用情報
+	 */
+	public void setMailSend(UsageMailSend mailSend) {
+		this.mailSend = mailSend;
+	}
+
+	/**
+	 * メール配信利用情報を設定し、自オブジェクトを返します。
+	 * @param mailSend メール配信利用情報
+	 * @return 自オブジェクト
+	 */
+	public DescribeUsageResult withMailSend(UsageMailSend mailSend) {
+		setMailSend(mailSend);
 		return this;
 	}
 
@@ -606,6 +653,30 @@ public class DescribeUsageResult extends Result {
 	 */
 	public DescribeUsageResult withOsOptionCharge(UsageOsOptionCharge osOptionCharge) {
 		setOsOptionCharge(osOptionCharge);
+		return this;
+	}
+
+	/**
+	 * その他の利用情報を取得します。
+	 * @return その他の利用情報
+	 */
+	public UsageExtraCharge getExtraCharge() {
+		return extraCharge;
+	}
+	/**
+	 * その他の利用情報を設定します。
+	 * @param extraCharge その他の利用情報
+	 */
+	public void setExtraCharge(UsageExtraCharge extraCharge) {
+		this.extraCharge = extraCharge;
+	}
+	/**
+	 * その他の利用情報を設定し、自オブジェクトを返します。
+	 * @param extraCharge その他の利用情報
+	 * @return 自オブジェクト
+	 */
+	public DescribeUsageResult withExtraCharge(UsageExtraCharge extraCharge) {
+		setExtraCharge(extraCharge);
 		return this;
 	}
 
@@ -649,8 +720,12 @@ public class DescribeUsageResult extends Result {
 		builder.append(patternAuth);
 		builder.append(", storage=");
 		builder.append(storage);
+		builder.append(", mailSend=");
+		builder.append(mailSend);
 		builder.append(", osOptionCharge=");
 		builder.append(osOptionCharge);
+		builder.append(", extraCharge=");
+		builder.append(extraCharge);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  *
  */
 package com.nifty.cloud.sdk.sample;
@@ -30,6 +30,7 @@ import com.nifty.cloud.sdk.auth.Credentials;
 import com.nifty.cloud.sdk.firewall.NiftySecurityGroupClient;
 import com.nifty.cloud.sdk.firewall.model.CreateSecurityGroupRequest;
 import com.nifty.cloud.sdk.firewall.model.CreateSecurityGroupResult;
+import com.nifty.cloud.sdk.firewall.model.Placement;
 
 /**
  * CreateSecurityGroupサンプル
@@ -108,7 +109,9 @@ public class CreateSecurityGroupSample {
         CreateSecurityGroupRequest request = new CreateSecurityGroupRequest();
         // request.setGroupName("groupName");
         // request.setGroupDescription("groupDescription");
-
+        // Placement placement = new Placement();
+        // placement.setAvailabilityZone("availabilityZone");
+        // request.setPlacement(placement);
         invokeCreateSecurityGroup(client, request);
     }
 

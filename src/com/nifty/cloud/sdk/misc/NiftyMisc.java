@@ -14,14 +14,16 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.9
- *  Date: 2011-08-25 09:46:38
+ *  API Version: 1.11
+ *  Date: 2012-02-20 10:57:31
  * 
  */
 package com.nifty.cloud.sdk.misc;
 
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesResult;
+import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
+import com.nifty.cloud.sdk.misc.model.DescribeRegionsResult;
 
 
 /**
@@ -46,4 +48,11 @@ public interface NiftyMisc {
 	 */
 	public DescribeAvailabilityZonesResult describeAvailabilityZones(DescribeAvailabilityZonesRequest request);
 
+	/**
+	 * リージョン情報を取得します。
+	 * @param request DescribeRegionsリクエスト<br />
+	 * &nbsp;	DescribeRegionsRequest#filtersは利用不可
+	 * @return DescribeRegions処理結果
+	 */
+	public DescribeRegionsResult describeRegions(DescribeRegionsRequest request);
 }
