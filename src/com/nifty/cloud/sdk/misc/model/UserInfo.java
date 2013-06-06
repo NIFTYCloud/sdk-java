@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2012 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2013 NIFTY Corporation All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  You may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.12
- *  Date: 2012-12-21 17:00:00
+ *  API Version: 1.14
+ *  Date: 2013-03-28 17:00:00
  *
  */
 package com.nifty.cloud.sdk.misc.model;
@@ -24,40 +24,40 @@ import com.nifty.cloud.sdk.annotation.Query;
 
 /**
  * UserInfoクラス。<br />
- * Users情報を格納します。
+ * ＠nifty法人ID情報を格納します。
  *
  */
 public class UserInfo {
 	private String UserId;
 
 	/**
-	 * ユーザーIDを取得します。
-	 * 
-	 * @return String UserId
+	 * ＠nifty法人IDを取得します。
+	 *
+	 * @return ＠nifty法人ID
 	 */
-	@Query(name="UserId")	
+	@Query(name="UserId")
 	public String getUserId() {
 		return UserId;
 	}
 	/**
-	 * ユーザーIDを設定します。
-	 * 
-	 * @param String UserId
+	 * ＠nifty法人IDを設定します。
+	 *
+	 * @param UserId ＠nifty法人ID
 	 */
 	public void setUserId(String UserId) {
 		this.UserId = UserId;
 	}
 	/**
-	 * ユーザーIDを設定し、自オブジェクトを返します。
+	 * ＠nifty法人IDを設定し、自オブジェクトを返します。
 	 *
-	 * @param  String UserId
+	 * @param  UserId ＠nifty法人ID
 	 * @return 自オブジェクト
 	 */
 	public UserInfo withUserId(String UserId) {
 		setUserId(UserId);
 		return this;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */

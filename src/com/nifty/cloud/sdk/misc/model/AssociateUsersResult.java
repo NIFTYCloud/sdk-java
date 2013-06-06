@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2012 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.12
- *  Date: 2012-12-21 17:00:00
- * 
+ *  API Version: 1.14
+ *  Date: 2013-03-28 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.misc.model;
 
@@ -38,29 +38,29 @@ import com.thoughtworks.xstream.annotations.XStreamConverter;
 @Xml2Response(response=AssociateUsersResponse.class)
 public class AssociateUsersResult extends Result {
 
-	/** ユーザID */
+	/** 共有設定する＠nifty法人IDリスト */
 	@XStreamAlias("Users")
 	@XStreamConverter(UsersConverter.class)
 	private List<UserInfo> userinfo;
 
 
 	/**
-	 * ユーザIDリストを取得します。
-	 * @return List<UserInfo> ユーザIDリスト
+	 * 共有設定する＠nifty法人IDリストを取得します。
+	 * @return 共有設定する＠nifty法人IDリスト
 	 */
 	public List<UserInfo> getUserInfo() {
 		return userinfo;
 	}
 	/**
-	 * ユーザIDリストを設定します。
-	 * @param UserInfo ユーザIDリスト
+	 * 共有設定する＠nifty法人IDリストを設定します。
+	 * @param uinfo 共有設定する＠nifty法人IDリスト
 	 */
 	public void setUserInfo(List<UserInfo> uinfo) {
 		this.userinfo = uinfo;
 	}
 	/**
-	 * ユーザIDの配列を設定し、自オブジェクトを返します。
-	 * @param UserInfo ユーザID情報の配列
+	 * 共有設定する＠nifty法人IDの配列を設定し、自オブジェクトを返します。
+	 * @param uinfo 共有設定する＠nifty法人IDの配列
 	 * @return 自オブジェクト
 	 */
 	public AssociateUsersResult withUserInfo(UserInfo ... uinfo) {
@@ -71,8 +71,8 @@ public class AssociateUsersResult extends Result {
 		return this;
 	}
 	/**
-	 * ユーザIDリストを設定し、自オブジェクトを返します。
-	 * @param UserInfo ユーザID情報リスト
+	 * 共有設定する＠nifty法人IDリストを設定し、自オブジェクトを返します。
+	 * @param uinfo 共有設定する＠nifty法人IDリスト
 	 * @return 自オブジェクト
 	 */
 	public AssociateUsersResult withUserInfo(Collection<UserInfo> uinfo) {

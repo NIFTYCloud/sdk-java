@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2012 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.12
- *  Date: 2012-12-21 17:00:00
- * 
+ *  API Version: 1.14
+ *  Date: 2013-03-28 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.server.model;
 
@@ -37,66 +37,66 @@ public class RunInstancesRequest implements Request {
 
 	/** OSイメージID */
 	private String imageId;
-	
+
 	private Integer	minCount;
-	
+
 	private Integer	maxCount;
-	
+
 	/** SSHキー名 */
 	private String keyName;
-	
+
 	/** ファイアウォールグループ名 */
 	private List<String> groupNames;
-	
+
 	private String additionalInfo;
-	
+
 	/** サーバー起動時スクリプト **/
 	private String userData;
-	
+
 	/** サーバー起動時スクリプトのエンコード **/
 	private String userDataEncoding;
-	
+
 	private String addressingType;
-	
+
 	/** サーバータイプ */
 	private String instanceType;
-	
+
 	/** ゾーン情報 */
 	private Placement placement;
-	
+
 	private String kernelId;
-	
+
 	private String ramdiskId;
-	
+
 	private List<BlockDeviceMapping> blockDeviceMappings;
-	
+
 	private Boolean	monitoring;
-	
+
 	private String subnetId;
-	
+
 	/** APIからのサーバー削除の可否フラグ  */
 	private Boolean	disableApiTermination;
-	
+
 	private String instanceInitiatedShutdownBehavior;
-	
+
 	/** 利用料金タイプ  */
 	private String accountingType;
-	
+
 	/** サーバー名 */
 	private String instanceId;
-	
+
 	/** 管理者アカウント */
 	private String admin;
-	
+
 	/** root/管理者アカウント　パスワード */
 	private String password;
-	
+
 	/** IPアドレスタイプ */
 	private String ipType;
-	
+
 	/** Redhat サブスプリクション入りを指定した場合の同意　*/
 	private boolean agreement;
-	
+
 	/**
 	 * デフォルトコンストラクタ。
 	 */
@@ -114,7 +114,7 @@ public class RunInstancesRequest implements Request {
 
 	/**
 	 * OSイメージIDを取得します。
-	 * 
+	 *
 	 * @return OSイメージID
 	 */
 	@Query(name="ImageId", require=true)
@@ -123,7 +123,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * OSイメージIDを設定します。
-	 * 
+	 *
 	 * @param imageId OSイメージID
 	 */
 	public void setImageId(String imageId) {
@@ -133,16 +133,16 @@ public class RunInstancesRequest implements Request {
 	 * OSイメージIDを設定し、自オブジェクトを返します。
 	 *
 	 * @param imageId OSイメージID
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withImageId(String imageId) {
 		setImageId(imageId);
 		return this;
-	}	
-	
+	}
+
 	/**
 	 * minCountを取得します。
-	 * 
+	 *
 	 * @return minCount
 	 */
 	@Query(name="MinCount")
@@ -151,7 +151,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * minCountを設定します。
-	 * 
+	 *
 	 * @param minCount
 	 */
 	public void setMinCount(Integer minCount) {
@@ -161,16 +161,16 @@ public class RunInstancesRequest implements Request {
 	 * minCountを設定し、自オブジェクトを返します。
 	 *
 	 * @param minCount
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withMinCount(Integer minCount) {
 		setMinCount(minCount);
 		return this;
 	}
-	
+
 	/**
 	 * maxCountを取得します。
-	 * 
+	 *
 	 * @return maxCount
 	 */
 	@Query(name="MaxCount")
@@ -179,7 +179,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * maxCountを設定します。
-	 * 
+	 *
 	 * @param maxCount
 	 */
 	public void setMaxCount(Integer maxCount) {
@@ -189,16 +189,16 @@ public class RunInstancesRequest implements Request {
 	 * maxCountを設定し、自オブジェクトを返します。
 	 *
 	 * @param maxCount
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withMaxCount(Integer maxCount) {
 		setMaxCount(maxCount);
 		return this;
 	}
-	
+
 	/**
 	 * SSHキー名を取得します。
-	 * 
+	 *
 	 * @return SSHキー名
 	 */
 	@Query(name="KeyName")
@@ -207,7 +207,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * SSHキー名を設定します。
-	 * 
+	 *
 	 * @param keyName SSHキー名
 	 */
 	public void setKeyName(String keyName) {
@@ -217,16 +217,16 @@ public class RunInstancesRequest implements Request {
 	 * SSHキー名を設定し、自オブジェクトを返します。
 	 *
 	 * @param keyName SSHキー名
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withKeyName(String keyName) {
 		setKeyName(keyName);
 		return this;
 	}
-	
+
 	/**
 	 * ファイアウォールグループ名を取得します。
-	 * 
+	 *
 	 * @return ファイアウォールグループ名
 	 */
 	@Query(name="SecurityGroup")
@@ -235,7 +235,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * ファイアウォールグループ名を設定します。
-	 * 
+	 *
 	 * @param groupNames ファイアウォールグループ名
 	 */
 	public void setGroupNames(List<String> groupNames) {
@@ -245,7 +245,7 @@ public class RunInstancesRequest implements Request {
 	 * ファイアウォールグループ名の配列を設定し、自オブジェクトを返します。
 	 *
 	 * @param groupNames ファイアウォールグループ名の配列
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withGroupNames(String ... groupNames) {
 		if(this.groupNames == null) this.groupNames = new ArrayList<String>();
@@ -258,7 +258,7 @@ public class RunInstancesRequest implements Request {
 	 * ファイアウォールグループ名リストを設定し、自オブジェクトを返します。
 	 *
 	 * @param groupNames ファイアウォールグループ名リスト
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withGroupNames(Collection<String> groupNames) {
 		if(this.groupNames == null) this.groupNames = new ArrayList<String>();
@@ -267,10 +267,10 @@ public class RunInstancesRequest implements Request {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * additionalInfoを取得します。
-	 * 
+	 *
 	 * @return additionalInfo
 	 */
 	@Query(name="AdditionalInfo")
@@ -279,7 +279,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * additionalInfoを設定します。
-	 * 
+	 *
 	 * @param additionalInfo
 	 */
 	public void setAdditionalInfo(String additionalInfo) {
@@ -289,16 +289,16 @@ public class RunInstancesRequest implements Request {
 	 * additionalInfoを設定し、自オブジェクトを返します。
 	 *
 	 * @param additionalInfo
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withAdditionalInfo(String additionalInfo) {
 		setAdditionalInfo(additionalInfo);
 		return this;
 	}
-	
+
 	/**
 	 * サーバー起動時スクリプトを取得します。
-	 * 
+	 *
 	 * @return サーバー起動時スクリプト
 	 */
 	@Query(name="UserData")
@@ -307,7 +307,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * サーバー起動時スクリプトを設定します。
-	 * 
+	 *
 	 * @param userData サーバー起動時スクリプト
 	 */
 	public void setUserData(String userData) {
@@ -317,13 +317,13 @@ public class RunInstancesRequest implements Request {
 	 * サーバー起動時スクリプトを設定し、自オブジェクトを返します。
 	 *
 	 * @param userData サーバー起動時スクリプト
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withUserData(String userData) {
 		setUserData(userData);
 		return this;
 	}
-	
+
 	/**
 	 * サーバー起動時スクリプトのエンコードを取得します。
 	 * @return サーバー起動時スクリプトのエンコード
@@ -332,29 +332,29 @@ public class RunInstancesRequest implements Request {
 	public String getUserDataEncoding() {
 		return userDataEncoding;
 	}
-	
+
 	/**
 	 * サーバー起動時スクリプトのエンコードを設定します。
 	 * @param userDataEncoding サーバー起動時スクリプトのエンコード
-	 * 
+	 *
 	 */
 	public void setUserDataEncoding(String userDataEncoding) {
 		this.userDataEncoding = userDataEncoding;
 	}
-	
+
 	/**
 	 * サーバー起動時スクリプトのエンコードを設定し、自オブジェクトを返します。
 	 * @param userDataEncoding サーバー起動時スクリプトのエンコード
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withUserDataEncoding(String userDataEncoding){
 		setUserDataEncoding(userDataEncoding);
 		return this;
 	}
-	
+
 	/**
 	 * addressingTypeを取得します。
-	 * 
+	 *
 	 * @return addressingType
 	 */
 	@Query(name="AddressingType")
@@ -363,7 +363,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * addressingTypeを設定します。
-	 * 
+	 *
 	 * @param addressingType
 	 */
 	public void setAddressingType(String addressingType) {
@@ -373,16 +373,16 @@ public class RunInstancesRequest implements Request {
 	 * addressingTypeを設定し、自オブジェクトを返します。
 	 *
 	 * @param addressingType
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withAddressingType(String addressingType) {
 		setAddressingType(addressingType);
 		return this;
 	}
-	
+
 	/**
 	 * サーバータイプを取得します。
-	 * 
+	 *
 	 * @return サーバータイプ
 	 */
 	@Query(name="InstanceType")
@@ -391,7 +391,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * サーバータイプを設定します。
-	 * 
+	 *
 	 * @param instanceType サーバータイプ
 	 */
 	public void setInstanceType(String instanceType) {
@@ -401,16 +401,16 @@ public class RunInstancesRequest implements Request {
 	 * サーバータイプを設定し、自オブジェクトを返します。
 	 *
 	 * @param instanceType サーバータイプ
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withInstanceType(String instanceType) {
 		setInstanceType(instanceType);
 		return this;
 	}
-	
+
 	/**
 	 * ゾーン情報を取得します。
-	 * 
+	 *
 	 * @return ゾーン情報
 	 */
 	@Query(name="Placement")
@@ -419,7 +419,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * ゾーン情報を設定します。
-	 * 
+	 *
 	 * @param placement ゾーン情報
 	 */
 	public void setPlacement(Placement placement) {
@@ -435,10 +435,10 @@ public class RunInstancesRequest implements Request {
 		setPlacement(placement);
 		return this;
 	}
-	
+
 	/**
 	 * kernelIdを取得します。
-	 * 
+	 *
 	 * @return kernelId
 	 */
 	@Query(name="KernelId")
@@ -447,7 +447,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * kernelIdを設定します。
-	 * 
+	 *
 	 * @param kernelId
 	 */
 	public void setKernelId(String kernelId) {
@@ -457,16 +457,16 @@ public class RunInstancesRequest implements Request {
 	 * kernelIdを設定し、自オブジェクトを返します。
 	 *
 	 * @param kernelId
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withKernelId(String kernelId) {
 		setKernelId(kernelId);
 		return this;
 	}
-	
+
 	/**
 	 * ramdiskIdを取得します。
-	 * 
+	 *
 	 * @return ramdiskId
 	 */
 	@Query(name="RamdiskId")
@@ -475,7 +475,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * ramdiskIdを設定します。
-	 * 
+	 *
 	 * @param ramdiskId
 	 */
 	public void setRamdiskId(String ramdiskId) {
@@ -485,16 +485,16 @@ public class RunInstancesRequest implements Request {
 	 * ramdiskIdを設定し、自オブジェクトを返します。
 	 *
 	 * @param ramdiskId
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withRamdiskId(String ramdiskId) {
 		setRamdiskId(ramdiskId);
 		return this;
 	}
-	
+
 	/**
 	 * blockDeviceMappingsを取得します。
-	 * 
+	 *
 	 * @return blockDeviceMappings
 	 */
 	@Query(name="BlockDeviceMapping")
@@ -503,7 +503,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * blockDeviceMappingsを設定します。
-	 * 
+	 *
 	 * @param blockDeviceMappings
 	 */
 	public void setBlockDeviceMappings(List<BlockDeviceMapping> blockDeviceMappings) {
@@ -513,7 +513,7 @@ public class RunInstancesRequest implements Request {
 	 * blockDeviceMappingsを設定し、自オブジェクトを返します。
 	 *
 	 * @param blockDeviceMappings
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withBlockDeviceMappings(BlockDeviceMapping ... blockDeviceMappings) {
 		if(this.blockDeviceMappings == null) this.blockDeviceMappings = new ArrayList<BlockDeviceMapping>();
@@ -526,7 +526,7 @@ public class RunInstancesRequest implements Request {
 	 * blockDeviceMappingsを設定し、自オブジェクトを返します。
 	 *
 	 * @param blockDeviceMappings
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withBlockDeviceMappings(Collection<BlockDeviceMapping> blockDeviceMappings) {
 		if(this.blockDeviceMappings == null) this.blockDeviceMappings = new ArrayList<BlockDeviceMapping>();
@@ -535,10 +535,10 @@ public class RunInstancesRequest implements Request {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * monitoringを取得します。
-	 * 
+	 *
 	 * @return monitoring
 	 */
 	@Query(name="Monitoring.Enabled")
@@ -547,7 +547,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * monitoringを設定します。
-	 * 
+	 *
 	 * @param monitoring
 	 */
 	public void setMonitoring(Boolean monitoring) {
@@ -557,16 +557,16 @@ public class RunInstancesRequest implements Request {
 	 * monitoringを設定し、自オブジェクトを返します。
 	 *
 	 * @param monitoring
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withMonitoring(Boolean monitoring) {
 		setMonitoring(monitoring);
 		return this;
 	}
-	
+
 	/**
 	 * subnetIdを取得します。
-	 * 
+	 *
 	 * @return subnetId
 	 */
 	@Query(name="SubnetId")
@@ -575,7 +575,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * subnetIdを設定します。
-	 * 
+	 *
 	 * @param subnetId
 	 */
 	public void setSubnetId(String subnetId) {
@@ -585,16 +585,16 @@ public class RunInstancesRequest implements Request {
 	 * subnetIdを設定し、自オブジェクトを返します。
 	 *
 	 * @param subnetId
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withSubnetId(String subnetId) {
 		setSubnetId(subnetId);
 		return this;
 	}
-	
+
 	/**
 	 * APIからのサーバー削除の可否フラグを取得します。
-	 * 
+	 *
 	 * @return APIからのサーバー削除の可否フラグ
 	 */
 	@Query(name="DisableApiTermination")
@@ -603,7 +603,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * APIからのサーバー削除の可否フラグを設定します。
-	 * 
+	 *
 	 * @param disableApiTermination APIからのサーバー削除の可否フラグ
 	 */
 	public void setDisableApiTermination(Boolean disableApiTermination) {
@@ -613,16 +613,16 @@ public class RunInstancesRequest implements Request {
 	 * APIからのサーバー削除の可否フラグを設定し、自オブジェクトを返します。
 	 *
 	 * @param disableApiTermination APIからのサーバー削除の可否フラグ
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withDisableApiTermination(Boolean disableApiTermination) {
 		setDisableApiTermination(disableApiTermination);
 		return this;
 	}
-	
+
 	/**
 	 * instanceInitiatedShutdownBehaviorを取得します。
-	 * 
+	 *
 	 * @return instanceInitiatedShutdownBehavior
 	 */
 	@Query(name="InstanceInitiatedShutdownBehavior")
@@ -631,7 +631,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * instanceInitiatedShutdownBehaviorを設定します。
-	 * 
+	 *
 	 * @param instanceInitiatedShutdownBehavior
 	 */
 	public void setInstanceInitiatedShutdownBehavior(
@@ -642,16 +642,16 @@ public class RunInstancesRequest implements Request {
 	 * instanceInitiatedShutdownBehaviorを設定し、自オブジェクトを返します。
 	 *
 	 * @param instanceInitiatedShutdownBehavior
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
 		setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
 		return this;
 	}
-	
+
 	/**
 	 * 利用料金タイプを取得します。
-	 * 
+	 *
 	 * @return 利用料金タイプ
 	 */
 	@Query(name="AccountingType")
@@ -660,7 +660,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * 利用料金タイプを設定します。
-	 * 
+	 *
 	 * @param accountingType 利用料金タイプ
 	 */
 	public void setAccountingType(String accountingType) {
@@ -670,16 +670,16 @@ public class RunInstancesRequest implements Request {
 	 * 利用料金タイプを設定し、自オブジェクトを返します。
 	 *
 	 * @param accountingType 利用料金タイプ
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withAccountingType(String accountingType) {
 		setAccountingType(accountingType);
 		return this;
 	}
-	
+
 	/**
 	 * サーバー名を取得します。
-	 * 
+	 *
 	 * @return サーバー名
 	 */
 	@Query(name="InstanceId")
@@ -688,7 +688,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * サーバー名を設定します。
-	 * 
+	 *
 	 * @param instanceId サーバー名
 	 */
 	public void setInstanceId(String instanceId) {
@@ -698,16 +698,16 @@ public class RunInstancesRequest implements Request {
 	 * サーバー名を設定し、自オブジェクトを返します。
 	 *
 	 * @param instanceId サーバー名
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withInstanceId(String instanceId) {
 		setInstanceId(instanceId);
 		return this;
 	}
-	
+
 	/**
 	 * 管理者アカウントを取得します。
-	 * 
+	 *
 	 * @return 管理者アカウント
 	 */
 	@Query(name="Admin")
@@ -716,7 +716,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * 管理者アカウントを設定します。
-	 * 
+	 *
 	 * @param admin 管理者アカウント
 	 */
 	public void setAdmin(String admin) {
@@ -726,7 +726,7 @@ public class RunInstancesRequest implements Request {
 	 * 管理者アカウントを設定し、自オブジェクトを返します。
 	 *
 	 * @param admin 管理者アカウント
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withAdmin(String admin) {
 		setAdmin(admin);
@@ -735,7 +735,7 @@ public class RunInstancesRequest implements Request {
 
 	/**
 	 * root/管理者パスワードを取得します。
-	 * 
+	 *
 	 * @return root/管理者パスワード
 	 */
 	@Query(name="Password")
@@ -744,7 +744,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * root/管理者パスワードを設定します。
-	 * 
+	 *
 	 * @param password root/管理者パスワード
 	 */
 	public void setPassword(String password) {
@@ -754,16 +754,16 @@ public class RunInstancesRequest implements Request {
 	 * root/管理者パスワードを設定し、自オブジェクトを返します。
 	 *
 	 * @param password root/管理者パスワード
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withPassword(String password) {
 		setPassword(password);
 		return this;
 	}
-	
+
 	/**
 	 * IPアドレスタイプを取得します。
-	 * 
+	 *
 	 * @return IPアドレスタイプ
 	 */
 	@Query(name="IpType")
@@ -772,7 +772,7 @@ public class RunInstancesRequest implements Request {
 	}
 	/**
 	 * IPアドレスタイプを設定します。
-	 * 
+	 *
 	 * @param ipType IPアドレスタイプ
 	 */
 	public void setIpType(String ipType) {
@@ -782,16 +782,17 @@ public class RunInstancesRequest implements Request {
 	 * IPアドレスタイプを設定し、自オブジェクトを返します。
 	 *
 	 * @param ipType IPアドレスタイプ
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public RunInstancesRequest withIpType(String ipType) {
 		setIpType(ipType);
 		return this;
-	}	
+	}
 
 	/**
-	 * @param agreement Redhat サブスクリプション入りをした場合の同意を返します。
-	 * @return
+	 * Redhat サブスクリプション入りを指定した場合の同意を取得します。
+	 *
+	 * @return Redhat サブスクリプション入りを指定した場合の同意
 	 */
 	@Query(name="Agreement")
 	public boolean isAgreement() {
@@ -799,15 +800,15 @@ public class RunInstancesRequest implements Request {
 	}
 
 	/**
-	 * @param agreement Redhat　サブスクリオプション入りをした場合の同意を設定します。
-	 * @param agreement
+	 * Redhat サブスクリプション入りを指定した場合の同意を設定します。
+	 *
+	 * @param agreement Redhat サブスクリオプション入りをした場合の同意
 	 */
 	public void setAgreement(boolean agreement) {
 		this.agreement = agreement;
 	}
 
 
-	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */

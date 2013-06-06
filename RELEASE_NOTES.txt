@@ -3,6 +3,15 @@ NIFTY Cloud SDK for Java
 リリースノート
 --------------------------
 
+2013-03-28  SDK for Java Version.1.14
+---------------------------------
+■機能追加
+－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+　主な修正classは以下です。
+　　com.nifty.cloud.sdk.disk.*
+－詳しくは、JavaDocを参照してください。
+　　http://cloud.nifty.com/api/sdk/javadoc/
+
 2013-02-20  SDK for Java Version.1.12
 ---------------------------------
 ■機能追加

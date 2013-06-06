@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2012 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.12
- *  Date: 2012-12-21 17:00:00
- * 
+ *  API Version: 1.14
+ *  Date: 2013-03-28 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.misc;
 
@@ -29,6 +29,8 @@ import com.nifty.cloud.sdk.ClientConfiguration;
 import com.nifty.cloud.sdk.auth.Credentials;
 import com.nifty.cloud.sdk.misc.model.AssociateUsersRequest;
 import com.nifty.cloud.sdk.misc.model.AssociateUsersResult;
+import com.nifty.cloud.sdk.misc.model.DescribeAssociatedUsersRequest;
+import com.nifty.cloud.sdk.misc.model.DescribeAssociatedUsersResult;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeAvailabilityZonesResult;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
@@ -43,13 +45,13 @@ import com.nifty.cloud.sdk.misc.model.DissociateUsersResult;
  */
 public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAsync {
 
-	
+
 	/** 非同期タスク実行クラス. */
 	protected ExecutorService executorService = null;
-	
+
 	/**
 	 * 認証情報を指定し、その他カテゴリクライアントを構築します。
-	 * 
+	 *
 	 * @param credential 認証情報
 	 */
 	public NiftyMiscAsyncClient(Credentials credential) {
@@ -58,7 +60,7 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 
 	/**
 	 * 認証情報、クライアント設定を指定し、その他カテゴリクライアントを構築します。
-	 * 
+	 *
 	 * @param credential 認証情報
 	 * @param configuration クライアント設定
 	 */
@@ -68,20 +70,20 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 
 	/**
 	 * 認証情報,非同期タスク実行クラスを指定し、その他カテゴリクライアントを構築します。
-	 * 
-	 * @param credential 認証情報	
+	 *
+	 * @param credential 認証情報
 	 * @param executorService 非同期タスク実行クラス
 	 */
 	public NiftyMiscAsyncClient(Credentials credential, ExecutorService executorService) {
 		super(credential);
 		this.executorService = executorService;
-		
+
 	}
-	
+
 	/**
 	 * 認証情報、クライアント設定,非同期タスク実行クラスを指定し、その他カテゴリクライアントを構築します。
-	 * 
-	 * @param credential 認証情報	
+	 *
+	 * @param credential 認証情報
 	 * @param configuration クライアント設定
 	 * @param executorService 非同期タスク実行クラス
 	 */
@@ -95,7 +97,7 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 	 */
 	@Override
 	public Future<DescribeAvailabilityZonesResult> describeAvailabilityZonesAsync(final DescribeAvailabilityZonesRequest request) {
-		return executorService.submit( 
+		return executorService.submit(
 				new Callable<DescribeAvailabilityZonesResult>() {
 					@Override
 					public DescribeAvailabilityZonesResult call() {
@@ -109,7 +111,7 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 	 */
 	@Override
 	public Future<DescribeRegionsResult> describeRegionsAsync(final DescribeRegionsRequest request) {
-		return executorService.submit( 
+		return executorService.submit(
 				new Callable<DescribeRegionsResult>() {
 					@Override
 					public DescribeRegionsResult call() {
@@ -118,13 +120,13 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 				}
 		);
 	}
-	
+
 	/**
-	 * @see com.nifty.cloud.sdk.misc.NiftyMiscAsync#associateUsersAsync(AssociateUsersResult)
+	 * @see com.nifty.cloud.sdk.misc.NiftyMiscAsync#associateUsersAsync(AssociateUsersRequest)
 	 */
 	@Override
 	public Future<AssociateUsersResult> associateUsersAsync(final AssociateUsersRequest request) {
-		return executorService.submit( 
+		return executorService.submit(
 				new Callable<AssociateUsersResult>() {
 					@Override
 					public AssociateUsersResult call() {
@@ -133,17 +135,32 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 				}
 		);
 	}
-	
+
 	/**
 	 * @see com.nifty.cloud.sdk.misc.NiftyMiscAsync#dissociateUsersAsync(DissociateUsersRequest)
 	 */
 	@Override
 	public Future<DissociateUsersResult> dissociateUsersAsync(final DissociateUsersRequest request) {
-		return executorService.submit( 
+		return executorService.submit(
 				new Callable<DissociateUsersResult>() {
 					@Override
 					public DissociateUsersResult call() {
 						return dissociateUsers(request);
+					}
+				}
+		);
+	}
+
+	/**
+	 * @see com.nifty.cloud.sdk.misc.NiftyMiscAsync#describeAssociatedUsersAsync(DescribeAssociatedUsersRequest)
+	 */
+	@Override
+	public Future<DescribeAssociatedUsersResult> describeAssociatedUsersAsync(final DescribeAssociatedUsersRequest request) {
+		return executorService.submit(
+				new Callable<DescribeAssociatedUsersResult>() {
+					@Override
+					public DescribeAssociatedUsersResult call() {
+						return describeAssociatedUsers(request);
 					}
 				}
 		);

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-/* *************************************************************************** 
- *  Copyright 2011 NIFTY Corporation All Rights Reserved.
+/******************************************************************************* 
+ *  Copyright 2013 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -17,8 +17,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.12
- *  Date: 2013-01-28 14:44:24
+ *  API Version: 1.14
+ *  Date: 2013-03-28 17:00:00
  * 
  */
  -->

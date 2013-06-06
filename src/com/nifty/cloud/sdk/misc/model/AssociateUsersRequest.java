@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2012 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.12
- *  Date: 2012-12-21 17:00:00
- * 
+ *  API Version: 1.14
+ *  Date: 2013-03-28 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.misc.model;
 
@@ -39,25 +39,26 @@ public class AssociateUsersRequest  implements Request{
 	private String FunctionName;
 	private List<UserInfo> userinfo;
 
-	
+
 	/**
 	 * デフォルトコンストラクタ。
 	 */
 	public AssociateUsersRequest() {
 	}
-	
+
 	/**
-	 * functionNameを指定し、AssociateUsersRequestを構築します。
-	 * 
+	 * 機能名を指定し、AssociateUsersRequestを構築します。
+	 *
 	 * @param functionName 機能名
 	 */
 	public AssociateUsersRequest(String functionName) {
 		this.FunctionName = functionName;
 	}
+
 	/**
 	 * 機能名を取得します。
 	 *
-	 * @return FunctionName
+	 * @return 機能名
 	 */
 	@Query(name = "FunctionName")
 	public String getFunctionName() {
@@ -67,43 +68,45 @@ public class AssociateUsersRequest  implements Request{
 	/**
 	 * 機能名を設定します。
 	 *
-	 * @param function
+	 * @param function 機能名
 	 */
 	public void setFunctionName(String function) {
 		this.FunctionName = function;
 	}
 
 	/**
-	 * functionを設定し、自オブジェクトを返します。
+	 * 機能名を設定し、自オブジェクトを返します。
 	 *
-	 * @param String function
+	 * @param function 機能名
 	 * @return 自オブジェクト
 	 */
 	public AssociateUsersRequest withFunctionName(String function) {
 		setFunctionName(function);
 		return this;
 	}
-	
+
 	/**
-	 * UserInfo情報リストを取得します。
-	 * @return　List<UserInfo>
+	 * 共有設定する＠nifty法人IDリストを取得します。
+	 * @return 共有設定する＠nifty法人IDリスト
 	 */
-	@Query(name="Users.member", require=true)	
+	@Query(name="Users.member", require=true)
 	public List<UserInfo> getUserInfo() {
 		return userinfo;
 	}
+
 	/**
-	 * UserInfo情報リストを設定します。
-	 * 
-	 * @param List<UserInfo>
+	 * 共有設定する＠nifty法人IDリストを設定します。
+	 *
+	 * @param uinfo 共有設定する＠nifty法人IDリスト
 	 */
 	public void setUserInfo(List<UserInfo> uinfo) {
 		this.userinfo = uinfo;
 	}
+
 	/**
-	 * UserInfo 配列を設定し、自オブジェクトを返します。
+	 * 共有設定する＠nifty法人IDの配列を設定し、自オブジェクトを返します。
 	 *
-	 * @param UserInfo 情報の配列
+	 * @param uinfo 共有設定する＠nifty法人IDの配列
 	 * @return 自オブジェクト
 	 */
 	public AssociateUsersRequest withUserInfo(UserInfo ... uinfo) {
@@ -113,10 +116,11 @@ public class AssociateUsersRequest  implements Request{
 		}
 		return this;
 	}
+
 	/**
-	 * UserInfoを設定し、自オブジェクトを返します。
+	 * 共有設定する＠nifty法人IDリストを設定し、自オブジェクトを返します。
 	 *
-	 * @param UserInfo 情報リスト
+	 * @param uinfo 共有設定する＠nifty法人IDリスト
 	 * @return 自オブジェクト
 	 */
 	public AssociateUsersRequest withUserInfo(Collection<UserInfo> uinfo) {
@@ -126,7 +130,7 @@ public class AssociateUsersRequest  implements Request{
 		}
 		return this;
 	}
-	
+
 
 
 	/*

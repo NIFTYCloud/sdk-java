@@ -1,3 +1,24 @@
+/*******************************************************************************
+ *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ * *****************************************************************************
+ *
+ *  NIFTY Cloud SDK for Java
+ *  API Version: 1.14
+ *  Date: 2013-03-28 17:00:00
+ *
+ */
+
 package com.nifty.cloud.sdk.misc.model;
 
 import java.util.ArrayList;
@@ -19,25 +40,26 @@ public class DissociateUsersRequest  implements Request{
 	private String FunctionName;
 	private List<UserInfo> userinfo;
 
-	
+
 	/**
 	 * デフォルトコンストラクタ。
 	 */
 	public DissociateUsersRequest() {
 	}
-	
+
 	/**
-	 * functionNameを指定し、DissociateUsersRequestを構築します。
-	 * 
-	 * @param String functionName 機能名
+	 * 機能名を指定し、DissociateUsersRequestを構築します。
+	 *
+	 * @param functionName 機能名
 	 */
 	public DissociateUsersRequest(String functionName) {
 		this.FunctionName = functionName;
 	}
+
 	/**
 	 * 機能名を取得します。
 	 *
-	 * @return String FunctionName
+	 * @return 機能名
 	 */
 	@Query(name = "FunctionName")
 	public String getFunctionName() {
@@ -47,43 +69,45 @@ public class DissociateUsersRequest  implements Request{
 	/**
 	 * 機能名を設定します。
 	 *
-	 * @param String function
+	 * @param function 機能名
 	 */
 	public void setFunctionName(String function) {
 		this.FunctionName = function;
 	}
 
 	/**
-	 * functionを設定し、自オブジェクトを返します。
+	 * 機能名を設定し、自オブジェクトを返します。
 	 *
-	 * @param String function
+	 * @param function 機能名
 	 * @return 自オブジェクト
 	 */
 	public DissociateUsersRequest withFunctionName(String function) {
 		setFunctionName(function);
 		return this;
 	}
-	
+
 	/**
-	 * UserInfo情報リストを取得します。
-	 * @return　List<UserInfo>
+	 * 共有を解除した＠nifty法人IDリストを取得します。
+	 * @return 共有設定する＠nifty法人IDリスト
 	 */
-	@Query(name="Users.member", require=true)	
+	@Query(name="Users.member", require=true)
 	public List<UserInfo> getUserInfo() {
 		return userinfo;
 	}
+
 	/**
-	 * List<UserInfo> 情報リストを設定します。
-	 * 
-	 * @param List<UserInfo>
+	 * 共有を解除した＠nifty法人IDリストを設定します。
+	 *
+	 * @param uinfo 共有設定する＠nifty法人IDリスト
 	 */
 	public void setUserInfo(List<UserInfo> uinfo) {
 		this.userinfo = uinfo;
 	}
+
 	/**
-	 * UserInfo 配列を設定し、自オブジェクトを返します。
+	 * 共有を解除した＠nifty法人IDの配列を設定し、自オブジェクトを返します。
 	 *
-	 * @param List<UserInfo>
+	 * @param uinfo 共有設定する＠nifty法人IDの配列
 	 * @return 自オブジェクト
 	 */
 	public DissociateUsersRequest withUserInfo(UserInfo ... uinfo) {
@@ -93,10 +117,11 @@ public class DissociateUsersRequest  implements Request{
 		}
 		return this;
 	}
+
 	/**
-	 * UserInfoを設定し、自オブジェクトを返します。
+	 * 共有を解除した＠nifty法人IDリストを設定し、自オブジェクトを返します。
 	 *
-	 * @param  Collection<UserInfo>
+	 * @param  uinfo 共有設定する＠nifty法人IDリスト
 	 * @return 自オブジェクト
 	 */
 	public DissociateUsersRequest withUserInfo(Collection<UserInfo> uinfo) {
@@ -106,7 +131,7 @@ public class DissociateUsersRequest  implements Request{
 		}
 		return this;
 	}
-	
+
 
 
 	/*
