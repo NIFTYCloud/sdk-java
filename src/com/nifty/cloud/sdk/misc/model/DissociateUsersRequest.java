@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.14
- *  Date: 2013-03-28 17:00:00
+ *  API Version: 1.15
+ *  Date: 2013-06-28 17:00:00
  *
  */
 
@@ -61,7 +61,7 @@ public class DissociateUsersRequest  implements Request{
 	 *
 	 * @return 機能名
 	 */
-	@Query(name = "FunctionName")
+	@Query(name = "FunctionName", require=true)
 	public String getFunctionName() {
 		return FunctionName;
 	}

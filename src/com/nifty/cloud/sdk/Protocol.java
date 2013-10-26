@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.14
- *  Date: 2013-03-28 17:00:00
+ *  API Version: 1.15
+ *  Date: 2013-06-28 17:00:00
  *
  */
 package com.nifty.cloud.sdk;

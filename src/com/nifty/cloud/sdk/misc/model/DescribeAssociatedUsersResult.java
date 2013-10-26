@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.14
- *  Date: 2013-03-28 17:00:00
+ *  API Version: 1.15
+ *  Date: 2013-06-28 17:00:00
  *
  */
 package com.nifty.cloud.sdk.misc.model;
@@ -39,12 +39,10 @@ import com.thoughtworks.xstream.annotations.XStreamConverter;
 @Xml2Response(response=DescribeAssociatedUsersResponse.class)
 public class DescribeAssociatedUsersResult extends Result {
 
-
 	/** 共有している＠nifty法人IDリスト */
 	@XStreamAlias("Users")
 	@XStreamConverter(UsersConverter.class)
 	private List<UserInfo> userid;
-
 
 	/**
 	 * 共有している＠nifty法人IDリストを取得します。
