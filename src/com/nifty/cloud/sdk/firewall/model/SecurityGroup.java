@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
  *
  */
 package com.nifty.cloud.sdk.firewall.model;
@@ -29,7 +29,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 
 /**
- * 
+ *
  * ファイアウォールグループ情報クラス。<br />
  * このクラスはファイアウォールグループ情報を格納します。
  *
@@ -46,7 +46,7 @@ public class SecurityGroup {
 	/** ファイアウォールグループのメモ */
 	@XStreamAlias("groupDescription")
 	private String groupDescription;
-	
+
 	/** ファイアウォールグループの処理ステータス */
 	@XStreamAlias("groupStatus")
 	private String groupStatus;
@@ -65,11 +65,11 @@ public class SecurityGroup {
 	private Integer groupRuleLimit;
 
 	/** ログ取得件数 */
-	private Integer groupLogLimit; 
+	private Integer groupLogLimit;
 
 	/** Windows サーバー BroadCast 通信ログの抑止状態 */
 	private Boolean groupLogFilterNetBios;
-	
+
 	/** ゾーン名 */
 	private String availabilityZone;
 
@@ -172,7 +172,7 @@ public class SecurityGroup {
 	public void setGroupStatus(String groupStatus) {
 		this.groupStatus = groupStatus;
 	}
-	
+
 	/**
 	 * フファイアウォールグループの処理ステータスを設定し、自オブジェクトを返します。
 	 *
@@ -282,7 +282,7 @@ public class SecurityGroup {
 
 	/**
 	 * ルール数上限を取得します。
-	 * 
+	 *
 	 * @return ルール数上限
 	 */
 	public Integer getGroupRuleLimit() {
@@ -291,7 +291,7 @@ public class SecurityGroup {
 
 	/**
 	 * ルール数上限を設定します。
-	 * 
+	 *
 	 * @param groupRuleLimit ルール数上限
 	 */
 	public void setGroupRuleLimit(Integer groupRuleLimit) {
@@ -310,7 +310,7 @@ public class SecurityGroup {
 
 	/**
 	 * ログ取得件数を取得します。
-	 * 
+	 *
 	 * @return ログ取得件数
 	 */
 	public Integer getGroupLogLimit() {
@@ -319,7 +319,7 @@ public class SecurityGroup {
 
 	/**
 	 * ログ取得件数を設定します。
-	 * 
+	 *
 	 * @param groupLogLimit ログ取得件数
 	 */
 	public void setGroupLogLimit(Integer groupLogLimit) {
@@ -328,7 +328,7 @@ public class SecurityGroup {
 
 	/**
 	 * ログ取得件数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param groupLogLimit ログ取得件数
 	 * @return 自オブジェクト
 	 */
@@ -348,18 +348,23 @@ public class SecurityGroup {
 
 	/**
 	 * WindowsサーバーBroadcastログの抑止設定を登録します
-	 * @param boolean groupLogFilterNetBios  true:設定する  false:設定しない
+	 * @param groupLogFilterNetBios  (true:設定する  false:設定しない)
 	 */
 	public void setGroupLogFilterNetBios(boolean groupLogFilterNetBios) {
 		this.groupLogFilterNetBios = groupLogFilterNetBios;
-	}	
-	
+	}
+
+	/**
+	 * WindowsサーバーBroadcastログの抑止設定を登録し、自オブジェクトを返します
+	 * @param groupLogFilterNetBios (true:設定する  false:設定しない)
+	 * @return 自オブジェクト
+	 */
 	public SecurityGroup withGroupLogFilterNetBios(boolean groupLogFilterNetBios) {
 		setGroupLogFilterNetBios(groupLogFilterNetBios);
 		return this;
 	}
-		
-	
+
+
 	/**
 	 * ゾーン名を取得します。
 	 * @return ゾーン名
@@ -381,13 +386,13 @@ public class SecurityGroup {
 	 * @param availabilityZone ゾーン名
 	 * @return 自オブジェクト
 	 */
-	
-	
+
+
 	public SecurityGroup withAvailabilityZone(String availabilityZone) {
 		setAvailabilityZone(availabilityZone);
 		return this;
 	}
-	
+
 
 
 	/*

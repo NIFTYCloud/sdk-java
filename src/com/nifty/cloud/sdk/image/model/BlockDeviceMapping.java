@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.image.model;
@@ -27,37 +27,39 @@ import com.nifty.cloud.sdk.annotation.Query;
  * このクラスはBlockDeviceMapping情報を格納します。
  */
 public class BlockDeviceMapping {
-	
+
+	/** 接続デバイス */
 	private String deviceName;
-	
+
 	private String virtualName;
-	
+
+	/** ディスク詳細情報 */
 	private EbsBlockDevice ebs;
-	
+
 	private String noDevice;
-	
-	
+
+
 	/**
-	 * deviceNameを取得します。
-	 * 
-	 * @return deviceName
+	 * 接続デバイスを取得します。
+	 *
+	 * @return 接続デバイス
 	 */
 	@Query(name="DeviceName")
 	public String getDeviceName() {
 		return deviceName;
 	}
 	/**
-	 * deviceNameを設定します。
+	 * 接続デバイスを設定します。
 	 * 
-	 * @param deviceName
+	 * @param deviceName 接続デバイス
 	 */
 	public void setDeviceName(String deviceName) {
 		this.deviceName = deviceName;
 	}
 	/**
-	 * deviceNameを設定し、自オブジェクトを返します。
+	 * 接続デバイスを設定し、自オブジェクトを返します。
 	 * 
-	 * @param deviceName
+	 * @param deviceName 接続デバイス
 	 * @return 自オブジェクト
 	 */
 	public BlockDeviceMapping withDeviceName(String deviceName) {
@@ -95,26 +97,26 @@ public class BlockDeviceMapping {
 	}
 	
 	/**
-	 * ebsを取得します。
+	 * ディスク詳細情報を取得します。
 	 * 
-	 * @return ebs
+	 * @return ディスク詳細情報
 	 */
 	@Query(name="Ebs")
 	public EbsBlockDevice getEbs() {
 		return ebs;
 	}
 	/**
-	 * ebsを設定します。
+	 * ディスク詳細情報を設定します。
 	 * 
-	 * @param ebs
+	 * @param ebs ディスク詳細情報
 	 */
 	public void setEbs(EbsBlockDevice ebs) {
 		this.ebs = ebs;
 	}
 	/**
-	 * ebsを設定し、自オブジェクトを返します。
+	 * ディスク詳細情報を設定し、自オブジェクトを返します。
 	 * 
-	 * @param ebs
+	 * @param ebs ディスク詳細情報
 	 * @return 自オブジェクト
 	 */
 	public BlockDeviceMapping withEbs(EbsBlockDevice ebs) {

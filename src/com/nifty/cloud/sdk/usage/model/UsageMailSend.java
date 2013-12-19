@@ -1,22 +1,22 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
- * 
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.usage.model;
 
@@ -98,7 +98,7 @@ public class UsageMailSend {
 	}
 	/**
 	 * メール配信初期費用情報(キャンペーン)を設定し、自オブジェクトを返します。
-	 * @param mailSendInitial メール配信初期費用情報
+	 * @param mailSendInitialCampaign メール配信初期費用情報
 	 * @return 自オブジェクト
 	 */
 	public UsageMailSend withMailSendInitialCampaign(UsageDetail mailSendInitialCampaign) {
@@ -123,8 +123,7 @@ public class UsageMailSend {
 
 	/**
 	 * メール配信月額利用情報の配列を設定し、自オブジェクトを返します。
-	 *
-	 * @param options メール配信オプション利用情報の配列
+	 * @param mailSendMonthlyRate メール配信オプション利用情報の配列
 	 * @return 自オブジェクト
 	 */
 	public UsageMailSend withMailSendMonthlyRate(UsageDetail... mailSendMonthlyRate) {
@@ -136,8 +135,7 @@ public class UsageMailSend {
 
 	/**
 	 * メール配信月額利用情報の配列を設定し、自オブジェクトを返します。
-	 *
-	 * @param options メール配信オプション利用情報のリスト
+	 * @param mailSendMonthlyRate メール配信オプション利用情報のリスト
 	 * @return 自オブジェクト
 	 */
 	public UsageMailSend withMailSendMonthlyRate(List<UsageDetail> mailSendMonthlyRate) {

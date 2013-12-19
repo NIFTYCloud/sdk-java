@@ -1,22 +1,22 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
- * 
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.dashboard.model;
 
@@ -90,7 +90,7 @@ public class Resources {
 
 	/**
 	 * サーバー情報リストを取得します。
-	 * 
+	 *
 	 * @return サーバー情報リスト
 	 */
 	public List<ResourceInstance> getInstances() {
@@ -99,7 +99,7 @@ public class Resources {
 
 	/**
 	 * サーバー情報リストを設定します。
-	 * 
+	 *
 	 * @param instances サーバー情報リスト
 	 */
 	public void setInstances(List<ResourceInstance> instances) {
@@ -108,7 +108,7 @@ public class Resources {
 
 	/**
 	 * サーバー情報の配列を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param instances サーバー情報の配列
 	 * @return 自オブジェクト
 	 */
@@ -122,12 +122,12 @@ public class Resources {
 
 	/**
 	 * サーバー情報リストを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param instances サーバー情報リスト
 	 * @return 自オブジェクト
 	 */
 	public Resources withInstances(List<ResourceInstance> instances) {
-		if (this.instances == null) this.instances = new ArrayList<ResourceInstance>(); 
+		if (this.instances == null) this.instances = new ArrayList<ResourceInstance>();
 		if (instances != null) {
 			getInstances().addAll(instances);
 		}
@@ -136,7 +136,7 @@ public class Resources {
 
 	/**
 	 * 動的IP数を取得します。
-	 * 
+	 *
 	 * @return 動的IP数
 	 */
 	public Integer getDynamicIpCount() {
@@ -145,7 +145,7 @@ public class Resources {
 
 	/**
 	 * 動的IP数を設定します。
-	 * 
+	 *
 	 * @param dynamicIpCount 動的IP数
 	 */
 	public void setDynamicIpCount(Integer dynamicIpCount) {
@@ -154,7 +154,7 @@ public class Resources {
 
 	/**
 	 * 動的IP数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param dynamicIpCount 動的IP数
 	 * @return 自オブジェクト
 	 */
@@ -165,7 +165,7 @@ public class Resources {
 
 	/**
 	 * カスタマイズイメージ数を取得します。
-	 * 
+	 *
 	 * @return カスタマイズイメージ数
 	 */
 	public Integer getCustomizeImageCount() {
@@ -174,7 +174,7 @@ public class Resources {
 
 	/**
 	 * カスタマイズイメージ数を設定します。
-	 * 
+	 *
 	 * @param customizeImageCount カスタマイズイメージ数
 	 */
 	public void setCustomizeImageCount(Integer customizeImageCount) {
@@ -183,7 +183,7 @@ public class Resources {
 
 	/**
 	 * カスタマイズイメージ数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param customizeImageCount カスタマイズイメージ数
 	 * @return 自オブジェクト
 	 */
@@ -194,7 +194,7 @@ public class Resources {
 
 	/**
 	 * 追加ディスク数を取得します。
-	 * 
+	 *
 	 * @return 追加ディスク数
 	 */
 	public Integer getAddDiskCount() {
@@ -203,7 +203,7 @@ public class Resources {
 
 	/**
 	 * 追加ディスク数を設定します。
-	 * 
+	 *
 	 * @param addDiskCount 追加ディスク数
 	 */
 	public void setAddDiskCount(Integer addDiskCount) {
@@ -212,7 +212,7 @@ public class Resources {
 
 	/**
 	 * 追加ディスク数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param addDiskCount 追加ディスク数
 	 * @return 自オブジェクト
 	 */
@@ -223,7 +223,7 @@ public class Resources {
 
 	/**
 	 * 追加ディスク総容量を取得します。
-	 * 
+	 *
 	 * @return 追加ディスク総容量
 	 */
 	public Integer getAddDiskTotalSize() {
@@ -232,7 +232,7 @@ public class Resources {
 
 	/**
 	 * 追加ディスク総容量設定します。
-	 * 
+	 *
 	 * @param addDiskTotalSize 追加ディスク総容量
 	 */
 	public void setAddDiskTotalSize(Integer addDiskTotalSize) {
@@ -241,7 +241,7 @@ public class Resources {
 
 	/**
 	 * 追加ディスク総容量を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param addDiskTotalSize 追加ディスク総容量
 	 * @return 自オブジェクト
 	 */
@@ -252,7 +252,7 @@ public class Resources {
 
 	/**
 	 * ネットワーク転送量を取得します。
-	 * 
+	 *
 	 * @return ネットワーク転送量
 	 */
 	public Integer getNetworkFlowAmount() {
@@ -261,7 +261,7 @@ public class Resources {
 
 	/**
 	 * ネットワーク転送量を設定します。
-	 * 
+	 *
 	 * @param networkFlowAmount ネットワーク転送量
 	 */
 	public void setNetworkFlowAmount(Integer networkFlowAmount) {
@@ -270,7 +270,7 @@ public class Resources {
 
 	/**
 	 * ネットワーク転送量を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param networkFlowAmount ネットワーク転送量
 	 * @return 自オブジェクト
 	 */
@@ -281,7 +281,7 @@ public class Resources {
 
 	/**
 	 * ファイアウォールグループ数を取得します。
-	 * 
+	 *
 	 * @return ファイアウォールグループ数
 	 */
 	public Integer getSecurityGroupCount() {
@@ -290,7 +290,7 @@ public class Resources {
 
 	/**
 	 * ファイアウォールグループ数を設定します。
-	 * 
+	 *
 	 * @param securityGroupCount ファイアウォールグループ数
 	 */
 	public void setSecurityGroupCount(Integer securityGroupCount) {
@@ -299,7 +299,7 @@ public class Resources {
 
 	/**
 	 * ファイアウォールグループ数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param securityGroupCount ファイアウォールグループ数
 	 * @return 自オブジェクト
 	 */
@@ -310,7 +310,7 @@ public class Resources {
 
 	/**
 	 * ロードバランサーVIP数を取得します。
-	 * 
+	 *
 	 * @return ロードバランサーVIP数
 	 */
 	public Integer getLoadBalancerCount() {
@@ -319,7 +319,7 @@ public class Resources {
 
 	/**
 	 * ロードバランサーVIP数を設定します。
-	 * 
+	 *
 	 * @param loadBalancerCount ロードバランサーVIP数
 	 */
 	public void setLoadBalancerCount(Integer loadBalancerCount) {
@@ -328,7 +328,7 @@ public class Resources {
 
 	/**
 	 * ロードバランサーVIP数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param loadBalancerCount ロードバランサーVIP数
 	 * @return 自オブジェクト
 	 */
@@ -339,7 +339,7 @@ public class Resources {
 
 	/**
 	 * SSL証明書数を取得します。
-	 * 
+	 *
 	 * @return SSL証明書数
 	 */
 	public Integer getSslCertCount() {
@@ -348,7 +348,7 @@ public class Resources {
 
 	/**
 	 * SSL証明書数設定します。
-	 * 
+	 *
 	 * @param sslCertCount SSL証明書数
 	 */
 	public void setSslCertCount(Integer sslCertCount) {
@@ -357,7 +357,7 @@ public class Resources {
 
 	/**
 	 * SSL証明書数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param sslCertCount SSL証明書数
 	 * @return 自オブジェクト
 	 */
@@ -368,7 +368,7 @@ public class Resources {
 
 	/**
 	 * 監視設定ルール数を取得します。
-	 * 
+	 *
 	 * @return 監視設定ルール数
 	 */
 	public Integer getMonitoringRuleCount() {
@@ -377,16 +377,16 @@ public class Resources {
 
 	/**
 	 * 監視設定ルール数設定します。
-	 * 
+	 *
 	 * @param monitoringRuleCount 監視設定ルール数
 	 */
 	public void setMonitoringRuleCount(Integer monitoringRuleCount) {
 		this.monitoringRuleCount = monitoringRuleCount;
 	}
-	
+
 	/**
 	 * 監視設定ルール数設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param monitoringRuleCount 監視設定ルール数
 	 * @return 自オブジェクト
 	 */
@@ -397,7 +397,7 @@ public class Resources {
 
 	/**
 	 * オートスケール設定数を取得します。
-	 * 
+	 *
 	 * @return オートスケール設定数
 	 */
 	public Integer getAutoScaleCount() {
@@ -406,7 +406,7 @@ public class Resources {
 
 	/**
 	 * オートスケール設定数を設定します。
-	 * 
+	 *
 	 * @param autoScaleCount オートスケール設定数
 	 */
 	public void setAutoScaleCount(Integer autoScaleCount) {
@@ -415,7 +415,7 @@ public class Resources {
 
 	/**
 	 * オートスケール設定数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param autoScaleCount オートスケール設定数
 	 * @return 自オブジェクト
 	 */
@@ -426,7 +426,7 @@ public class Resources {
 
 	/**
 	 * プライベートLAN設定数を取得します。
-	 * 
+	 *
 	 * @return プライベートLAN設定数
 	 */
 	public Integer getPrivateLanCount() {
@@ -435,17 +435,18 @@ public class Resources {
 
 	/**
 	 * プライベートLAN設定数設定します。
-	 * 
+	 *
 	 * @param privateLanCount プライベートLAN設定数
 	 */
 	public void setPrivateLanCount(Integer privateLanCount) {
 		this.privateLanCount = privateLanCount;
 	}
-	
+
 	/**
 	 * プライベートLAN設定数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param privateLanCount プライベートLAN設定数
+	 * @return 自オブジェクト
 	 */
 	public Resources withPrivateLanCount(Integer privateLanCount) {
 		setPrivateLanCount(privateLanCount);
@@ -454,7 +455,7 @@ public class Resources {
 
 	/**
 	 * プレミアムサポート情報リストを取得します。
-	 * 
+	 *
 	 * @return プレミアムサポート情報リスト
 	 */
 	public List<String> getPremiumSupports() {
@@ -463,7 +464,7 @@ public class Resources {
 
 	/**
 	 * プレミアムサポート情報リストを設定します。
-	 * 
+	 *
 	 * @param premiumSupports プレミアムサポート情報リスト
 	 */
 	public void setPremiumSupports(List<String> premiumSupports) {
@@ -472,7 +473,7 @@ public class Resources {
 
 	/**
 	 * プレミアムサポート情報の配列を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param premiumSupports プレミアム背ポート情報の配列
 	 * @return 自オブジェクト
 	 */
@@ -486,7 +487,7 @@ public class Resources {
 
 	/**
 	 * プレミアムサポート情報リストを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param premiumSupports プレミアムサポート情報リスト
 	 * @return 自オブジェクト
 	 */

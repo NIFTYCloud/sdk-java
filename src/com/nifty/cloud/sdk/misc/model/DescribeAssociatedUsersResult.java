@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
  *
  */
 package com.nifty.cloud.sdk.misc.model;
@@ -60,7 +60,7 @@ public class DescribeAssociatedUsersResult extends Result {
 	}
 	/**
 	 * 共有している＠nifty法人IDの配列を設定し、自オブジェクトを返します。
-	 * @param UserInfo 共有設定する＠nifty法人IDの配列
+	 * @param userid 共有設定する＠nifty法人IDの配列
 	 * @return 自オブジェクト
 	 */
 	public DescribeAssociatedUsersResult withUserid(UserInfo... userid) {

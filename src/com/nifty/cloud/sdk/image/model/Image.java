@@ -1,22 +1,22 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
- * 
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.image.model;
 
@@ -29,65 +29,66 @@ import java.util.List;
  * このクラスはOSイメージ情報を格納します。
  */
 public class Image {
-	
+
 	/** OSイメージID */
 	private String imageId;
-	
+
 	private String imageLocation;
-	
+
 	/** ステータス */
 	private String state;
-	
+
 	private String ownerId;
-	
+
 	/** OSイメージ公開フラグ */
 	private Boolean	publicValue;
-	
+
 	private List<ProductCode> productCodes;
-	
+
 	/** アーキテクチャ */
 	private String architecture;
-	
+
 	/** OSイメージタイプ */
 	private String imageType;
-	
+
 	private String kernelId;
-	
+
 	private String ramdiskId;
-	
+
 	/** プラットフォーム */
 	private String platform;
-	
+
 	private StateReason	stateReason;
-	
+
 	/** OSイメージを所有する企業名 */
 	private String imageOwnerAlias;
-	
+
 	/** OSイメージ名 */
 	private String name;
-	
+
 	/** メモ情報 */
 	private String description;
-	
+
 	/** OSイメージの説明情報 */
 	private String detailDescription;
-	
+
 	/** OSイメージの再配布可否情報 */
 	private Boolean redistributable;
-	
+
 	/** リージョン・ゾーン情報 */
 	private GlobalPlacement placement;
-	
+
 	/** rootデバイスタイプ */
 	private String rootDeviceType;
-	
+
 	private String rootDeviceName;
-	
+
+	/** ディスクの情報リスト */
 	private List<BlockDeviceMapping> blockDeviceMappings;
-	
+
 	/**
 	 * OSイメージIDを取得します。
-	 * 
+	 *
 	 * @return OSイメージID
 	 */
 	public String getImageId() {
@@ -95,7 +96,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージIDを設定します。
-	 * 
+	 *
 	 * @param imageId OSイメージID
 	 */
 	public void setImageId(String imageId) {
@@ -103,7 +104,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージIDを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param imageId OSイメージID
 	 * @return 自オブジェクト
 	 */
@@ -111,11 +112,11 @@ public class Image {
 		setImageId(imageId);
 		return this;
 	}
-	
+
 	/**
 	 * imageLocationを取得します。
-	 * 
-	 * 
+	 *
+	 *
 	 * @return imageLocation
 	 */
 	public String getImageLocation() {
@@ -123,7 +124,7 @@ public class Image {
 	}
 	/**
 	 * imageLocationを設定します。
-	 * 
+	 *
 	 * @param imageLocation
 	 */
 	public void setImageLocation(String imageLocation) {
@@ -131,7 +132,7 @@ public class Image {
 	}
 	/**
 	 * imageLocationを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param imageLocation
 	 * @return 自オブジェクト
 	 */
@@ -139,10 +140,10 @@ public class Image {
 		setImageLocation(imageLocation);
 		return this;
 	}
-	
+
 	/**
 	 * ステータスを取得します。
-	 * 
+	 *
 	 * @return ステータス
 	 */
 	public String getState() {
@@ -150,7 +151,7 @@ public class Image {
 	}
 	/**
 	 * ステータスを設定します。
-	 * 
+	 *
 	 * @param state ステータス
 	 */
 	public void setState(String state) {
@@ -158,7 +159,7 @@ public class Image {
 	}
 	/**
 	 * ステータスを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param state ステータス
 	 * @return 自オブジェクト
 	 */
@@ -166,10 +167,10 @@ public class Image {
 		setState(state);
 		return this;
 	}
-	
+
 	/**
 	 * ownerIdを取得します。
-	 * 
+	 *
 	 * @return ownerId
 	 */
 	public String getOwnerId() {
@@ -177,7 +178,7 @@ public class Image {
 	}
 	/**
 	 * ownerIdを設定します。
-	 * 
+	 *
 	 * @param ownerId
 	 */
 	public void setOwnerId(String ownerId) {
@@ -185,7 +186,7 @@ public class Image {
 	}
 	/**
 	 * ownerIdを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param ownerId
 	 * @return 自オブジェクト
 	 */
@@ -193,10 +194,10 @@ public class Image {
 		setOwnerId(ownerId);
 		return this;
 	}
-	
+
 	/**
 	 * OSイメージ公開フラグを取得します。
-	 * 
+	 *
 	 * @return OSイメージ公開フラグ
 	 */
 	public Boolean getPublicValue() {
@@ -204,7 +205,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージ公開フラグを設定します。
-	 * 
+	 *
 	 * @param publicValue OSイメージ公開フラグ
 	 */
 	public void setPublicValue(Boolean publicValue) {
@@ -212,7 +213,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージ公開フラグを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param publicValue OSイメージ公開フラグ
 	 * @return 自オブジェクト
 	 */
@@ -220,10 +221,10 @@ public class Image {
 		setPublicValue(publicValue);
 		return this;
 	}
-	
+
 	/**
 	 * productCodesを取得します。
-	 * 
+	 *
 	 * @return productCodes
 	 */
 	public List<ProductCode> getProductCodes() {
@@ -231,7 +232,7 @@ public class Image {
 	}
 	/**
 	 * productCodesを設定します。
-	 * 
+	 *
 	 * @param productCodes
 	 */
 	public void setProductCodes(List<ProductCode> productCodes) {
@@ -239,7 +240,7 @@ public class Image {
 	}
 	/**
 	 * productCodesの配列を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param productCodes
 	 * @return 自オブジェクト
 	 */
@@ -252,7 +253,7 @@ public class Image {
 	}
 	/**
 	 * productCodesを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param productCodes
 	 * @return 自オブジェクト
 	 */
@@ -263,10 +264,10 @@ public class Image {
 		}
 		return this;
 	}
-	
+
 	/**
 	 * アーキテクチャを取得します。
-	 * 
+	 *
 	 * @return アーキテクチャ
 	 */
 	public String getArchitecture() {
@@ -274,7 +275,7 @@ public class Image {
 	}
 	/**
 	 * アーキテクチャを設定します。
-	 * 
+	 *
 	 * @param architecture アーキテクチャ
 	 */
 	public void setArchitecture(String architecture) {
@@ -282,7 +283,7 @@ public class Image {
 	}
 	/**
 	 * アーキテクチャを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param architecture アーキテクチャ
 	 * @return 自オブジェクト
 	 */
@@ -290,10 +291,10 @@ public class Image {
 		setArchitecture(architecture);
 		return this;
 	}
-	
+
 	/**
 	 * OSイメージタイプを取得します。
-	 * 
+	 *
 	 * @return OSイメージタイプ
 	 */
 	public String getImageType() {
@@ -301,7 +302,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージタイプを設定します。
-	 * 
+	 *
 	 * @param imageType OSイメージタイプ
 	 */
 	public void setImageType(String imageType) {
@@ -309,7 +310,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージタイプを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param imageType OSイメージタイプ
 	 * @return 自オブジェクト
 	 */
@@ -317,10 +318,10 @@ public class Image {
 		setImageType(imageType);
 		return this;
 	}
-	
+
 	/**
 	 * kernelIdを取得します。
-	 * 
+	 *
 	 * @return kernelId
 	 */
 	public String getKernelId() {
@@ -328,7 +329,7 @@ public class Image {
 	}
 	/**
 	 * kernelIdを設定します。
-	 * 
+	 *
 	 * @param kernelId
 	 */
 	public void setKernelId(String kernelId) {
@@ -336,7 +337,7 @@ public class Image {
 	}
 	/**
 	 * kernelIdを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param kernelId
 	 * @return 自オブジェクト
 	 */
@@ -344,10 +345,10 @@ public class Image {
 		setKernelId(kernelId);
 		return this;
 	}
-	
+
 	/**
 	 * ramdiskIdを取得します。
-	 * 
+	 *
 	 * @return ramdiskId
 	 */
 	public String getRamdiskId() {
@@ -355,7 +356,7 @@ public class Image {
 	}
 	/**
 	 * ramdiskIdを設定します。
-	 * 
+	 *
 	 * @param ramdiskId
 	 */
 	public void setRamdiskId(String ramdiskId) {
@@ -363,7 +364,7 @@ public class Image {
 	}
 	/**
 	 * ramdiskIdを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param ramdiskId
 	 * @return 自オブジェクト
 	 */
@@ -371,10 +372,10 @@ public class Image {
 		setRamdiskId(ramdiskId);
 		return this;
 	}
-	
+
 	/**
 	 * プラットフォームを取得します。
-	 * 
+	 *
 	 * @return プラットフォーム
 	 */
 	public String getPlatform() {
@@ -382,7 +383,7 @@ public class Image {
 	}
 	/**
 	 * プラットフォームを設定します。
-	 * 
+	 *
 	 * @param platform プラットフォーム
 	 */
 	public void setPlatform(String platform) {
@@ -390,7 +391,7 @@ public class Image {
 	}
 	/**
 	 * プラットフォームを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param platform プラットフォーム
 	 * @return 自オブジェクト
 	 */
@@ -398,10 +399,10 @@ public class Image {
 		setPlatform(platform);
 		return this;
 	}
-	
+
 	/**
 	 * stateReasonを取得します。
-	 * 
+	 *
 	 * @return stateReason
 	 */
 	public StateReason getStateReason() {
@@ -409,7 +410,7 @@ public class Image {
 	}
 	/**
 	 * stateReasonを設定します。
-	 * 
+	 *
 	 * @param stateReason
 	 */
 	public void setStateReason(StateReason stateReason) {
@@ -417,7 +418,7 @@ public class Image {
 	}
 	/**
 	 * stateReasonを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param stateReason
 	 * @return 自オブジェクト
 	 */
@@ -425,10 +426,10 @@ public class Image {
 		setStateReason(stateReason);
 		return this;
 	}
-	
+
 	/**
 	 * OSイメージを所有する企業名を取得します。
-	 * 
+	 *
 	 * @return imageOwnerAlias OSイメージを所有する企業名
 	 */
 	public String getImageOwnerAlias() {
@@ -436,7 +437,7 @@ public class Image {
 	}
 	/**
 	 * iOSイメージを所有する企業名を設定します。
-	 * 
+	 *
 	 * @param imageOwnerAlias OSイメージを所有する企業名
 	 */
 	public void setImageOwnerAlias(String imageOwnerAlias) {
@@ -444,7 +445,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージを所有する企業名を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param imageOwnerAlias OSイメージを所有する企業名
 	 * @return 自オブジェクト
 	 */
@@ -452,10 +453,10 @@ public class Image {
 		setImageOwnerAlias(imageOwnerAlias);
 		return this;
 	}
-	
+
 	/**
 	 * OSイメージ名を取得します。
-	 * 
+	 *
 	 * @return OSイメージ名
 	 */
 	public String getName() {
@@ -463,7 +464,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージ名を設定します。
-	 * 
+	 *
 	 * @param name OSイメージ名
 	 */
 	public void setName(String name) {
@@ -471,7 +472,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージ名を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param name OSイメージ名
 	 * @return 自オブジェクト
 	 */
@@ -479,10 +480,10 @@ public class Image {
 		setName(name);
 		return this;
 	}
-	
+
 	/**
 	 * メモ情報を取得します。
-	 * 
+	 *
 	 * @return メモ情報
 	 */
 	public String getDescription() {
@@ -490,7 +491,7 @@ public class Image {
 	}
 	/**
 	 * メモ情報を設定します。
-	 * 
+	 *
 	 * @param description メモ情報
 	 */
 	public void setDescription(String description) {
@@ -498,7 +499,7 @@ public class Image {
 	}
 	/**
 	 * メモ情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param description メモ情報
 	 * @return 自オブジェクト
 	 */
@@ -522,7 +523,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージの説明情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param detailDescription OSイメージの説明情報
 	 * @return 自オブジェクト
 	 */
@@ -546,7 +547,7 @@ public class Image {
 	}
 	/**
 	 * OSイメージの再配布可否情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param redistributable OSイメージの再配布可否情報
 	 * @return 自オブジェクト
 	 */
@@ -579,7 +580,7 @@ public class Image {
 	}
 	/**
 	 * rootデバイスタイプを取得します。
-	 * 
+	 *
 	 * @return rootデバイスタイプ
 	 */
 	public String getRootDeviceType() {
@@ -587,7 +588,7 @@ public class Image {
 	}
 	/**
 	 * rootデバイスタイプを設定します。
-	 * 
+	 *
 	 * @param rootDeviceType rootデバイスタイプ
 	 */
 	public void setRootDeviceType(String rootDeviceType) {
@@ -595,7 +596,7 @@ public class Image {
 	}
 	/**
 	 * rootデバイスタイプを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param rootDeviceType rootデバイスタイプ
 	 * @return 自オブジェクト
 	 */
@@ -603,10 +604,10 @@ public class Image {
 		setRootDeviceType(rootDeviceType);
 		return this;
 	}
-	
+
 	/**
 	 * rootDeviceNameを取得します。
-	 * 
+	 *
 	 * @return rootDeviceName
 	 */
 	public String getRootDeviceName() {
@@ -614,7 +615,7 @@ public class Image {
 	}
 	/**
 	 * rootDeviceNameを設定します。
-	 * 
+	 *
 	 * @param rootDeviceName
 	 */
 	public void setRootDeviceName(String rootDeviceName) {
@@ -622,7 +623,7 @@ public class Image {
 	}
 	/**
 	 * rootDeviceNameを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param rootDeviceName
 	 * @return 自オブジェクト
 	 */
@@ -632,25 +633,25 @@ public class Image {
 	}
 
 	/**
-	 * blockDeviceMappingsを取得します。
-	 * 
-	 * @return blockDeviceMappings
+	 * ディスクの情報リストを取得します。
+	 *
+	 * @return ディスクの情報リスト
 	 */
 	public List<BlockDeviceMapping> getBlockDeviceMappings() {
 		return blockDeviceMappings;
 	}
 	/**
-	 * blockDeviceMappingsを設定します。
-	 * 
-	 * @param blockDeviceMappings
+	 * ディスクの情報リストを設定します。
+	 *
+	 * @param blockDeviceMappings ディスクの情報リスト
 	 */
 	public void setBlockDeviceMappings(List<BlockDeviceMapping> blockDeviceMappings) {
 		this.blockDeviceMappings = blockDeviceMappings;
 	}
 	/**
-	 * blockDeviceMappingsの配列を設定し、自オブジェクトを返します。
-	 * 
-	 * @param blockDeviceMappings
+	 * ディスクの情報の配列を設定し、自オブジェクトを返します。
+	 *
+	 * @param blockDeviceMappings ディスクの情報の配列
 	 * @return 自オブジェクト
 	 */
 	public Image withBlockDeviceMappings(BlockDeviceMapping ... blockDeviceMappings) {
@@ -661,9 +662,9 @@ public class Image {
 		return this;
 	}
 	/**
-	 * blockDeviceMappingsリストを設定し、自オブジェクトを返します。
-	 * 
-	 * @param blockDeviceMappings
+	 * ディスクの情報リストを設定し、自オブジェクトを返します。
+	 *
+	 * @param blockDeviceMappings ディスクの情報リスト
 	 * @return 自オブジェクト
 	 */
 	public Image withBlockDeviceMappings(Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -673,7 +674,7 @@ public class Image {
 		}
 		return this;
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -725,6 +726,6 @@ public class Image {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 
 }

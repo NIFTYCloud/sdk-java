@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
  *
  */
 package com.nifty.cloud.sdk;
@@ -80,9 +80,11 @@ public interface Const {
 	public final static String VERSION_1_14 = "1.14";
 	/** APIバージョン	*/
 	public final static String VERSION_1_15 = "1.15";
+	/** APIバージョン	*/
+	public final static String VERSION_1_16 = "1.16";
 
 	/** APIバージョン	*/
-	public final static String VERSION = VERSION_1_15;
+	public final static String VERSION = VERSION_1_16;
 
 
 

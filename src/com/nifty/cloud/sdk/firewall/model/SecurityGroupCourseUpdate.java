@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
  *
  */
 package com.nifty.cloud.sdk.firewall.model;
@@ -36,7 +36,7 @@ public class SecurityGroupCourseUpdate {
 
 	/**
 	 * 有償・無償の指定を取得します。
-	 * 
+	 *
 	 * @return 有償・無償の指定
 	 */
 	@Query(name = "CourseUpdate")
@@ -46,7 +46,7 @@ public class SecurityGroupCourseUpdate {
 
 	/**
 	 * 有償・無償の指定を設定します。
-	 * 
+	 *
 	 * @param course 有償・無償の指定
 	 */
 	public void setCourse(String course) {
@@ -55,7 +55,7 @@ public class SecurityGroupCourseUpdate {
 
 	/**
 	 * 有償・無償の指定
-	 * 
+	 *
 	 * @param course 有償・無償の指定
 	 * @return 自オブジェクト
 	 */
@@ -66,7 +66,7 @@ public class SecurityGroupCourseUpdate {
 
 	/**
 	 * 注意事項に同意を取得します。
-	 * 
+	 *
 	 * @return 注意事項に同意
 	 */
 	@Query(name = "CourseUpdate.Agreement")
@@ -76,13 +76,18 @@ public class SecurityGroupCourseUpdate {
 
 	/**
 	 * 注意事項に同意を設定します。
-	 * 
+	 *
 	 * @param agreement 注意事項に同意
 	 */
 	public void setAgreement(Boolean agreement) {
 		this.agreement = agreement;
 	}
 
+	/**
+	 * 注意事項に同意を設定し、自オブジェクトを返します
+	 * @param agreement
+	 * @return 自オブジェクト
+	 */
 	public SecurityGroupCourseUpdate withAgreement(Boolean agreement) {
 		setAgreement(agreement);
 		return this;

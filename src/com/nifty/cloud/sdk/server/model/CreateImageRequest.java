@@ -1,22 +1,22 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
- * 
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.server.model;
 
@@ -31,35 +31,35 @@ import com.nifty.cloud.sdk.annotation.Query;
  */
 @Action("CreateImage")
 public class CreateImageRequest implements Request {
-	
+
 	/** イメージ化元サーバー */
 	private String	instanceId;
-	
+
 	/** イメージ名 */
 	private String	name;
-	
+
 	private String	description;
-	
+
 	private Boolean	noReboot;
-	
+
 	/** イメージ化元サーバー残存フラグ */
 	private Boolean	leftInstance;
-	
+
 	/** リージョン・ゾーン情報 */
 	private GlobalPlacement placement;
 
 	/**
 	 * イメージ化元サーバーを取得します。
-	 * 
+	 *
 	 * @return イメージ化元サーバー
 	 */
-	@Query(name="InstanceId", require=true)	
+	@Query(name="InstanceId", require=true)
 	public String getInstanceId() {
 		return instanceId;
 	}
 	/**
 	 * イメージ化元サーバーを設定します。
-	 * 
+	 *
 	 * @param instanceId イメージ化元サーバー
 	 */
 	public void setInstanceId(String instanceId) {
@@ -69,25 +69,25 @@ public class CreateImageRequest implements Request {
 	 * イメージ化元サーバーを設定し、自オブジェクトを返します。
 	 *
 	 * @param instanceId イメージ化元サーバー
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public CreateImageRequest withInstanceId(String instanceId) {
 		setInstanceId(instanceId);
 		return this;
 	}
-	
+
 	/**
 	 * イメージ名を取得します。
-	 * 
+	 *
 	 * @return イメージ名
 	 */
-	@Query(name="Name", require=true)	
+	@Query(name="Name", require=true)
 	public String getName() {
 		return name;
 	}
 	/**
 	 * イメージ名を設定します。
-	 * 
+	 *
 	 * @param name イメージ名
 	 */
 	public void setName(String name) {
@@ -97,25 +97,25 @@ public class CreateImageRequest implements Request {
 	 * イメージ名を設定し、自オブジェクトを返します。
 	 *
 	 * @param name イメージ名
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public CreateImageRequest withName(String name) {
 		setName(name);
 		return this;
 	}
-	
+
 	/**
 	 * descriptionを取得します。
-	 * 
+	 *
 	 * @return description
 	 */
-	@Query(name="Description")	
+	@Query(name="Description")
 	public String getDescription() {
 		return description;
 	}
 	/**
 	 * descriptionを設定します。
-	 * 
+	 *
 	 * @param description
 	 */
 	public void setDescription(String description) {
@@ -125,25 +125,25 @@ public class CreateImageRequest implements Request {
 	 * descriptionを設定し、自オブジェクトを返します。
 	 *
 	 * @param description
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public CreateImageRequest withDescription(String description) {
 		setDescription(description);
 		return this;
 	}
-	
+
 	/**
 	 * noRebootを取得します。
-	 * 
+	 *
 	 * @return noReboot
 	 */
-	@Query(name="NoReboot")	
+	@Query(name="NoReboot")
 	public Boolean getNoReboot() {
 		return noReboot;
 	}
 	/**
 	 * noRebootを設定します。
-	 * 
+	 *
 	 * @param noReboot
 	 */
 	public void setNoReboot(Boolean noReboot) {
@@ -153,7 +153,7 @@ public class CreateImageRequest implements Request {
 	 * noRebootを設定し、自オブジェクトを返します。
 	 *
 	 * @param noReboot
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public CreateImageRequest withNoReboot(Boolean noReboot) {
 		setNoReboot(noReboot);
@@ -162,16 +162,16 @@ public class CreateImageRequest implements Request {
 
 	/**
 	 * イメージ化元サーバー残存フラグを取得します。
-	 * 
+	 *
 	 * @return イメージ化元サーバー残存フラグ
 	 */
-	@Query(name="LeftInstance")	
+	@Query(name="LeftInstance")
 	public Boolean getLeftInstance() {
 		return leftInstance;
 	}
 	/**
 	 * イメージ化元サーバー残存フラグを設定します。
-	 * 
+	 *
 	 * @param leftInstance イメージ化元サーバー残存フラグ
 	 */
 	public void setLeftInstance(Boolean leftInstance) {
@@ -181,7 +181,7 @@ public class CreateImageRequest implements Request {
 	 * イメージ化元サーバー残存フラグを設定し、自オブジェクトを返します。
 	 *
 	 * @param leftInstance イメージ化元サーバー残存フラグ
-	 * @return 自オブジェクト	 
+	 * @return 自オブジェクト
 	 */
 	public CreateImageRequest withLeftInstance(Boolean leftInstance) {
 		setLeftInstance(leftInstance);
@@ -192,7 +192,7 @@ public class CreateImageRequest implements Request {
 	 * リージョン・ゾーン情報を取得します。
 	 * @return リージョン・ゾーン情報
 	 */
-	@Query(name="Placement")	
+	@Query(name="Placement")
 	public GlobalPlacement getPlacement() {
 		return placement;
 	}
@@ -212,6 +212,7 @@ public class CreateImageRequest implements Request {
 		setPlacement(placement);
 		return this;
 	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */

@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.sample;
@@ -27,6 +27,7 @@ import java.util.List;
 
 import com.nifty.cloud.sdk.ClientConfiguration;
 import com.nifty.cloud.sdk.NiftyClientException;
+import com.nifty.cloud.sdk.Protocol;
 import com.nifty.cloud.sdk.auth.BasicCredentials;
 import com.nifty.cloud.sdk.auth.Credentials;
 import com.nifty.cloud.sdk.usage.model.DescribeUsageRequest;

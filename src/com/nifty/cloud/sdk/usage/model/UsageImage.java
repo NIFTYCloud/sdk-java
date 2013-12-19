@@ -1,22 +1,22 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
- * 
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.usage.model;
 
@@ -37,14 +37,14 @@ public class UsageImage {
 	@XStreamAlias("createImage")
 	private UsageDetail createImage;
 
-	/** イメージ保存情報リスト */
+	/** イメージ保存情報/イメージディスク保存情報リスト */
 	@XStreamAlias("keepImageSet")
 	@XStreamConverter(UsageDetailSetConverter.class)
 	private List<UsageDetail> keepImages;
 
 	/**
 	 * サーバーイメージ化情報を取得します。
-	 * 
+	 *
 	 * @return サーバーイメージ化情報
 	 */
 	public UsageDetail getCreateImage() {
@@ -53,7 +53,7 @@ public class UsageImage {
 
 	/**
 	 * サーバーイメージ化情報を設定します。
-	 * 
+	 *
 	 * @param createImage サーバーイメージ化情報
 	 */
 	public void setCreateImage(UsageDetail createImage) {
@@ -62,7 +62,7 @@ public class UsageImage {
 
 	/**
 	 * サーバーイメージ化情報を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param createImage サーバーイメージ化情報
 	 * @return 自オブジェクト
 	 */
@@ -72,27 +72,27 @@ public class UsageImage {
 	}
 
 	/**
-	 * イメージ保存情報リストを取得します。
-	 * 
-	 * @return イメージ保存情報リスト
+	 * イメージ保存情報/イメージディスク保存情報リストを取得します。
+	 *
+	 * @return イメージ保存情報/イメージディスク保存情報リスト
 	 */
 	public List<UsageDetail> getKeepImages() {
 		return keepImages;
 	}
 
 	/**
-	 * イメージ保存情報リストを設定します。
-	 * 
-	 * @param keepImages イメージ保存情報リスト
+	 * イメージ保存情報/イメージディスク保存情報リストを設定します。
+	 *
+	 * @param keepImages イメージ保存情報/イメージディスク保存情報リスト
 	 */
 	public void setKeepImages(List<UsageDetail> keepImages) {
 		this.keepImages = keepImages;
 	}
 
 	/**
-	 * イメージ保存情報の配列を設定し、自オブジェクトを返します。
-	 * 
-	 * @param keepImages イメージ保存情報の配列
+	 * イメージ保存情報/イメージディスク保存情報の配列を設定し、自オブジェクトを返します。
+	 *
+	 * @param keepImages イメージ保存情報/イメージディスク保存情報の配列
 	 * @return 自オブジェクト
 	 */
 	public UsageImage withKeepImages(UsageDetail... keepImages) {
@@ -104,9 +104,9 @@ public class UsageImage {
 	}
 
 	/**
-	 * イメージ保存情報リストを設定し、自オブジェクトを返します。
-	 * 
-	 * @param keepImages イメージ保存情報リスト
+	 * イメージ保存情報/イメージディスク保存情報リストを設定し、自オブジェクトを返します。
+	 *
+	 * @param keepImages イメージ保存情報/イメージディスク保存情報リスト
 	 * @return 自オブジェクト
 	 */
 	public UsageImage withKeepImages(List<UsageDetail> keepImages) {

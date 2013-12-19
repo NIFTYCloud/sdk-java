@@ -1,22 +1,22 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
- * 
+ *  API Version: 1.16
+ *  Date: 2013-10-18 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.usage.model;
 
@@ -30,8 +30,8 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  * このクラスは追加オプション（共通）利用情報を格納します。
  */
 public class UsageOptionCommon {
-	
-	
+
+
 	/** 追加オプション大分類名 */
 	@XStreamAlias("optionName")
 	private String optionName;
@@ -40,7 +40,7 @@ public class UsageOptionCommon {
 	/** 追加オプション小分類利用情報リスト */
 	@XStreamAlias("optionSet")
 	private List<UsageDetail> optionSet;
-	
+
 	/**
 	 * 追加オプション大分類名を取得します。
 	 * @return 追加オプション大分類名
@@ -60,28 +60,29 @@ public class UsageOptionCommon {
 
 	/**
 	 * 追加オプション大分類名を設定します
-	 * @param String optionName 追加オプション大分類名
+	 * @param optionName 追加オプション大分類名
 	 */
 	public void setOptionName(String optionName) {
 		this.optionName = optionName;
 	}
 
-	
+
 	/**
 	 * 追加オプション利用情報リストを設定します。
-	 * @param List<UsageDetail>optionSet 追加オプション利用情報リスト
+	 * @param optionSet 追加オプション利用情報リスト
 	 */
 	public void setOptionSet(List<UsageDetail> optionSet) {
 		this.optionSet = optionSet;
 	}
 	/**
 	 * 追加オプション利用情報の配列を設定し、自オブジェクトを返します。
-	 * @param String optionName,optionSet 追加オプション小分類利用情報の配列
+	 * @param optionName 追加オプション大分類名
+	 * @param optionSet  追加オプション小分類情報の配列
 	 * @return 自オブジェクト
 	 */
 	public UsageOptionCommon withOptionSet(String optionName,UsageDetail... optionSet) {
 		this.optionName = optionName;
-		
+
 		if(this.optionSet == null) {
 			this.optionSet = new ArrayList<UsageDetail>();
 		}
@@ -92,7 +93,8 @@ public class UsageOptionCommon {
 	}
 	/**
 	 * 追加オプション利用情報リストを設定し、自オブジェクトを返します。
-	 * @param String optionName,optionSet 追加オプション小分類利用情報リスト
+	 * @param optionName 追加オプション大分類名
+	 * @param optionSet  追加オプション小分類情報のリスト
 	 * @return 自オブジェクト
 	 */
 	public UsageOptionCommon withOptionSet(String optionName,List<UsageDetail> optionSet) {
