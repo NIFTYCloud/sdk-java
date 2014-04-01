@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
- * 
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.upload.model.transform;
 
@@ -35,7 +35,7 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 /**
  * uploadSet変換クラス。<br />
  * このクラスはレスポンスXMLのuploadSet要素からUploadクラスのリストを生成します。
- *  
+ *
  */
 public class UploadSetConverter implements Converter {
 
@@ -61,11 +61,12 @@ public class UploadSetConverter implements Converter {
 	}
 
 	/**
-	 * uploadSetをList<Upload>に変換します。
+	 * {@literal
+	 * uploadSetをList<Upload>に変換します。}
 	 *
 	 * @param reader XML読込リーダ
 	 * @param context
-	 * @return List<Upload>オブジェクト
+	 * @return {@literal List<Upload>オブジェクト}
 	 *
 	 * @see com.thoughtworks.xstream.converters.Converter#unmarshal(HierarchicalStreamReader, UnmarshallingContext)
 	 */
@@ -102,7 +103,7 @@ public class UploadSetConverter implements Converter {
 	 */
 	@Override
 	public void marshal(Object source, HierarchicalStreamWriter writer, MarshallingContext context) {
-		
+
 	}
 
 }

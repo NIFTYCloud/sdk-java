@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.usage.model;
@@ -73,6 +73,10 @@ public class DescribeUsageResult extends Result {
 	@XStreamAlias("loadBalancerInfo")
 	private UsageLoadBalancer loadBalancer;
 
+	/** 付替IP利用情報 */
+	@XStreamAlias("elasticIpInfo")
+	private UsageElasticIp elasticIp;
+
 	/** オートスケール利用情報 */
 	@XStreamAlias("autoScaleInfo")
 	private UsageAutoScale autoScale;
@@ -118,6 +122,9 @@ public class DescribeUsageResult extends Result {
 	@XStreamAlias("extraChargeInfo")
 	private UsageExtraCharge extraCharge;
 	
+	/** ライセンス情報 */
+	@XStreamAlias("licenseInfo")
+	private UsageLicense license;
 	
 	/** 追加オプション利用情報（共通） */
 	@XStreamAlias("optionCommonInfo")
@@ -387,6 +394,33 @@ public class DescribeUsageResult extends Result {
 	 */
 	public DescribeUsageResult withLoadBalancer(UsageLoadBalancer loadBalancer) {
 		setLoadBalancer(loadBalancer);
+		return this;
+	}
+
+	/**
+	 * 付替IP利用情報を取得します。
+	 *
+	 * @return 付替IP利用情報
+	 */
+	public UsageElasticIp getElasticIp() {
+		return elasticIp;
+	}
+	/**
+	 * 付替IP利用情報を設定します。
+	 *
+	 * @param elasticIp 付替IP利用情報
+	 */
+	public void setElasticIp(UsageElasticIp elasticIp) {
+		this.elasticIp = elasticIp;
+	}
+	/**
+	 * 付替IP利用情報を取得し、自オブジェクトを返します。
+	 *
+	 * @param elasticIp 付替IP利用情報
+	 * @return 自オブジェクト
+	 */
+	public DescribeUsageResult withElasticIp(UsageElasticIp elasticIp) {
+		setElasticIp(elasticIp);
 		return this;
 	}
 
@@ -696,6 +730,33 @@ public class DescribeUsageResult extends Result {
 		return this;
 	}
 	
+	/**
+	 * ライセンス情報を取得します。
+	 *
+	 * @return ライセンス情報
+	 */
+	public UsageLicense getLicense() {
+		return license;
+	}
+
+	/** ライセンス情報を設定します。
+	 *
+	 * @param license ライセンス情報
+	 */
+	public void setLicense(UsageLicense license) {
+		this.license = license;
+	}
+
+	/**
+	 * ライセンス情報を設定し、取得します。
+	 *
+	 * @param license ライセンス情報
+	 * @return 自オブジェクト
+	 */
+	public DescribeUsageResult withLicense(UsageLicense license) {
+		setLicense(license);
+		return this;
+	}
 	
 	/**
 	 * 追加オプション（共通）の利用情報を取得します。
@@ -771,6 +832,8 @@ public class DescribeUsageResult extends Result {
 		builder.append(securityGroup);
 		builder.append(", loadBalancer=");
 		builder.append(loadBalancer);
+		builder.append(", elasticIp=");
+		builder.append(elasticIp);
 		builder.append(", autoScale=");
 		builder.append(autoScale);
 		builder.append(", sslCert=");
@@ -793,6 +856,8 @@ public class DescribeUsageResult extends Result {
 		builder.append(osOptionCharge);
 		builder.append(", extraCharge=");
 		builder.append(extraCharge);
+		builder.append(", license=");
+		builder.append(license);
 		builder.append(", optionCommon=");
 		builder.append(optionCommon);
 		builder.append(", option=");

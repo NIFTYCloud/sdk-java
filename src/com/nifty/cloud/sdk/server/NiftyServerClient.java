@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
- *   
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.server;
 
@@ -59,19 +59,19 @@ import com.nifty.cloud.sdk.server.model.TerminateInstancesResult;
  *
  */
 public class NiftyServerClient extends BaseClient implements NiftyServer {
-	
-	/** 
+
+	/**
 	 * 認証情報を指定し、サーバーカテゴリクライアントを構築します。
-	 * 
+	 *
 	 * @param credential 認証情報
 	 */
 	public NiftyServerClient(Credentials credential) {
 		super(credential, new ClientConfiguration());
 	}
 
-	/** 
+	/**
 	 * 認証情報、クライアント設定を指定し、サーバーカテゴリクライアントを構築します。
-	 * 
+	 *
 	 * @param credential 認証情報
 	 * @param configuration クライアント設定
 	 */
@@ -79,7 +79,8 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		super(credential, configuration);
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#cancelCopyInstances(CancelCopyInstancesRequest)
 	 */
 	@Override
@@ -87,24 +88,27 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return (CancelCopyInstancesResult) client.execute(request, CancelCopyInstancesResult.class);
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#copyInstances(CopyInstancesRequest)
 	 */
 	@Override
 	public CopyInstancesResult copyInstances(CopyInstancesRequest request) {
 		return (CopyInstancesResult) client.execute(request, CopyInstancesResult.class);
 	}
-	
-	/**
+
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#createImage(CreateImageRequest)
 	 */
 	@Override
 	public CreateImageResult createImage(CreateImageRequest request) {
 		return (CreateImageResult) client.execute(request, CreateImageResult.class);
-		
+
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#describeInstanceAttribute(DescribeInstanceAttributeRequest)
 	 */
 	@Override
@@ -112,7 +116,8 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return (DescribeInstanceAttributeResult) client.execute(request, DescribeInstanceAttributeResult.class);
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#describeInstances(DescribeInstancesRequest)
 	 */
 	@Override
@@ -120,7 +125,8 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return (DescribeInstancesResult) client.execute(request, DescribeInstancesResult.class);
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#modifyInstanceAttribute(ModifyInstanceAttributeRequest)
 	 */
 	@Override
@@ -128,16 +134,18 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return (ModifyInstanceAttributeResult) client.execute(request, ModifyInstanceAttributeResult.class);
 	}
 
-	
-	/**
+
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#rebootInstances(RebootInstancesRequest)
 	 */
 	@Override
 	public RebootInstancesResult rebootInstances(RebootInstancesRequest request) {
 		return (RebootInstancesResult) client.execute(request, RebootInstancesResult.class);
 	}
-	
-	/**
+
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#runInstances(RunInstancesRequest)
 	 */
 	@Override
@@ -145,7 +153,8 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return (RunInstancesResult) client.execute(request, RunInstancesResult.class);
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#startInstances(StartInstancesRequest)
 	 */
 	@Override
@@ -153,7 +162,8 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return (StartInstancesResult) client.execute(request, StartInstancesResult.class);
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#stopInstances(StopInstancesRequest)
 	 */
 	@Override
@@ -161,7 +171,8 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return (StopInstancesResult) client.execute(request, StopInstancesResult.class);
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#terminateInstances(TerminateInstancesRequest)
 	 */
 	@Override
@@ -169,19 +180,19 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return (TerminateInstancesResult) client.execute(request, TerminateInstancesResult.class);
 	}
 
-	/**
+	/*
+	 * (non-Javadoc)
 	 * @see com.nifty.cloud.sdk.server.NiftyServer#importInstance(ImportInstanceRequest)
 	 */
 	@Override
 	public ImportInstanceResult importInstance(ImportInstanceRequest request) {
 		return (ImportInstanceResult) client.execute(request, ImportInstanceResult.class);
 	}
-	
+
 	/*
-	 * Redhat 同意文取得
-	 * 
+	 * (non-Javadoc)
+	 * @see com.nifty.cloud.sdk.server.NiftyServer#getRedhatAgree()
 	 */
-	
 	@Override
 	public String getRedhatAgree() throws IOException {
 		ClientConfiguration configuration = client.getConfig();
@@ -189,4 +200,14 @@ public class NiftyServerClient extends BaseClient implements NiftyServer {
 		return client.getHttpText(url);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see com.nifty.cloud.sdk.server.NiftyServer#getSplaAgree()
+	 */
+	@Override
+	public String getSplaAgree() throws IOException {
+		ClientConfiguration configuration = client.getConfig();
+		String url = configuration.getSplaAgreeUrl();
+		return client.getHttpText(url);
+	}
 }

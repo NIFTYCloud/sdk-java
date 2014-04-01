@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.server.model.transform;
@@ -57,6 +57,7 @@ public class DescribeInstanceAttributeResultConverter implements Converter {
 	private static final String ELEMENT_COPY_INFO = "copyInfo";
 	private static final String ELEMENT_AUTO_SCALING = "autoscaling";
 	private static final String ELEMENT_IP_TYPE = "ipType";
+	private static final String ELEMENT_NIFTY_PRIVATE_IP_TYPE = "niftyPrivateIpType";
 	private static final String ELEMENT_GROUP_ID = "groupId";
 	private static final String ELEMENT_DESCRIPTION = "description";
 	
@@ -146,6 +147,9 @@ public class DescribeInstanceAttributeResultConverter implements Converter {
 			}
 			else if (name.equals(ELEMENT_IP_TYPE)) {
 				instanceAttribute.setIpType((String) valueConverter.unmarshal(reader, context));
+			}
+			else if (name.equals(ELEMENT_NIFTY_PRIVATE_IP_TYPE)) {
+				instanceAttribute.setNiftyPrivateIpType((String) valueConverter.unmarshal(reader, context));
 			}
 			else if (name.equals(ELEMENT_GROUP_ID)) {
 				instanceAttribute.setGroupId((String) valueConverter.unmarshal(reader, context));

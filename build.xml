@@ -17,8 +17,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.15
- *  Date: 2013-06-28 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  * 
  */
  -->
@@ -99,6 +99,8 @@
 				<group title="${sdkDocPackageGroupTitle}" packages="${sdkPackageRoot}" />
 				<bottom>${sdkDocBottom}</bottom>
 				<classpath refid="sdk.build.classpath"/>
+				<group title="アドレス" 
+					   packages="com.nifty.cloud.sdk.address:com.nifty.cloud.sdk.address.model" />				
 				<group title="サーバー" 
 					   packages="com.nifty.cloud.sdk.server:com.nifty.cloud.sdk.server.model" />
 				<group title="ディスク" 

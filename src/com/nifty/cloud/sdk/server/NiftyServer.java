@@ -1,9 +1,9 @@
 /******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
  *  
  *  Unless required by applicable law or agreed to in writing, software
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.server;
@@ -230,4 +230,12 @@ public interface NiftyServer {
 	 * @throws IOException
 	 */
 	public String getRedhatAgree() throws IOException;
+
+	/**
+	 * SPLA 同意文の文言を取得します。
+	 *
+	 * @return 注意事項
+	 * @throws IOException
+	 */
+	public String getSplaAgree() throws IOException;
 }

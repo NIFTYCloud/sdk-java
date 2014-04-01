@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.sample;
@@ -37,9 +37,11 @@ import com.nifty.cloud.sdk.usage.model.UsageChargeDetail;
 import com.nifty.cloud.sdk.usage.model.UsageCopy;
 import com.nifty.cloud.sdk.usage.model.UsageDetail;
 import com.nifty.cloud.sdk.usage.model.UsageDetailDouble;
+import com.nifty.cloud.sdk.usage.model.UsageElasticIp;
 import com.nifty.cloud.sdk.usage.model.UsageExtraCharge;
 import com.nifty.cloud.sdk.usage.model.UsageImage;
 import com.nifty.cloud.sdk.usage.model.UsageInstance;
+import com.nifty.cloud.sdk.usage.model.UsageLicense;
 import com.nifty.cloud.sdk.usage.model.UsageLoadBalancer;
 import com.nifty.cloud.sdk.usage.model.UsageMailSend;
 import com.nifty.cloud.sdk.usage.model.UsageMultiAccount;
@@ -480,6 +482,25 @@ public class DescribeUsageSample {
                     }
                 }
             }
+            if (result.getElasticIp() != null) {
+                out.println("ElasticIp");
+                UsageElasticIp elasticIp = result.getElasticIp();
+                if (elasticIp.getElasticIps() != null) {
+                    out.println("  ElasticIps");
+                    List<UsageDetail> elasticIps = elasticIp.getElasticIps();
+                    for (UsageDetail elastic : elasticIps) {
+                        if (elastic.getType() != null) {
+                            out.println("    Type  : " + elastic.getType());
+                        }
+                        if (elastic.getUnit() != null) {
+                            out.println("    Unit  : " + elastic.getUnit());
+                        }
+                        if (elastic.getValue() != null) {
+                            out.println("    Value : " + elastic.getValue());
+                        }
+                    }
+                }
+            }
             if (result.getAutoScale() != null) {
                 out.println("AutoScale");
                 UsageAutoScale autoScale = result.getAutoScale();
@@ -806,7 +827,25 @@ public class DescribeUsageSample {
                     }
             	}
             }
-
+            if (result.getLicense() != null) {
+                out.println("License");
+                UsageLicense license = result.getLicense();
+                if (license.getLicenseMonthlyRates() != null) {
+                    out.println("  LicenseMonthlyRates");
+                    List<UsageDetail> licenseMonthlyRates = license.getLicenseMonthlyRates();
+                    for (UsageDetail licenseMonthlyRate : licenseMonthlyRates) {
+                        if (licenseMonthlyRate.getType() != null) {
+                            out.println("    Type  : " + licenseMonthlyRate.getType());
+                        }
+                        if (licenseMonthlyRate.getUnit() != null) {
+                            out.println("    Unit  : " + licenseMonthlyRate.getUnit());
+                        }
+                        if (licenseMonthlyRate.getValue() != null) {
+                            out.println("    Value : " + licenseMonthlyRate.getValue());
+                        }
+                    }
+                }
+            }
             out.println("=============================================================================");
         } catch(NiftyClientException ex) {
             err.println("Message: " + ex.getMessage());

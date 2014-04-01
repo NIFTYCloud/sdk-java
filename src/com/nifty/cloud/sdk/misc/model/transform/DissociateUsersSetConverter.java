@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
- * 
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.misc.model.transform;
 
@@ -40,10 +40,10 @@ public class DissociateUsersSetConverter implements Converter {
 
 	/**
 	 * 変換可能なクラスか判定します。
-	 * 
+	 *
 	 * @param clazz クラス
 	 * @return 変換可能な場合true, 変換不可能な場合false
-	 *  
+	 *
 	 * @see com.thoughtworks.xstream.converters.Converter#canConvert(Class)
 	 */
 	@SuppressWarnings("rawtypes")
@@ -57,12 +57,13 @@ public class DissociateUsersSetConverter implements Converter {
 		return false;
 	}
 	/**
-	 * Users要素をList<String>クラスに変換します。
-	 * 
+	 * {@literal
+	 * Users要素をList<String>クラスに変換します。}
+	 *
 	 * @param reader XML読込リーダ
-	 * @param context 
-	 * @return List<String>オブジェクト
-	 * 
+	 * @param context
+	 * @return {@literal List<String>オブジェクト}
+	 *
 	 * @see com.thoughtworks.xstream.converters.Converter#unmarshal(HierarchicalStreamReader, UnmarshallingContext)
 	 */
 	@SuppressWarnings("unchecked")
@@ -75,9 +76,9 @@ public class DissociateUsersSetConverter implements Converter {
 			reader.moveDown();
 			while(reader.hasMoreChildren()) {
 				reader.moveDown();
-				
+
 				name = reader.getNodeName();
-				if (name.equals(ELEMENT_USERID)) { 
+				if (name.equals(ELEMENT_USERID)) {
 					users.add(reader.getValue());
 				}
 				reader.moveUp();
@@ -87,8 +88,8 @@ public class DissociateUsersSetConverter implements Converter {
 		return users;
 	}
 	/**
-	 * 未実装メソッド 
-	 */	
+	 * 未実装メソッド
+	 */
 	@Override
 	public void marshal(Object paramObject,
 						HierarchicalStreamWriter paramHierarchicalStreamWriter,

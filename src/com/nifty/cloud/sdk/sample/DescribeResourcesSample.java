@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  You may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  *
  */
 package com.nifty.cloud.sdk.sample;
@@ -27,6 +27,7 @@ import java.util.List;
 
 import com.nifty.cloud.sdk.ClientConfiguration;
 import com.nifty.cloud.sdk.NiftyClientException;
+import com.nifty.cloud.sdk.Protocol;
 import com.nifty.cloud.sdk.auth.BasicCredentials;
 import com.nifty.cloud.sdk.auth.Credentials;
 import com.nifty.cloud.sdk.dashboard.NiftyDashboardClient;
@@ -34,6 +35,7 @@ import com.nifty.cloud.sdk.dashboard.model.DescribeResourcesRequest;
 import com.nifty.cloud.sdk.dashboard.model.DescribeResourcesResult;
 import com.nifty.cloud.sdk.dashboard.model.ResourceInstance;
 import com.nifty.cloud.sdk.dashboard.model.Resources;
+import com.nifty.cloud.sdk.dashboard.model.ResourceElasticIp;
 
 /**
  * DescribeResourcesサンプル
@@ -163,6 +165,18 @@ public class DescribeResourcesSample {
             }
             if (resource.getLoadBalancerCount() != null) {
                 out.println("LoadBalancerCount   : " + resource.getLoadBalancerCount());
+            }
+            if (resource.getElasticIps() != null) {
+                out.println("ElasticIps");
+                List<ResourceElasticIp> elasticIps = resource.getElasticIps();
+                for (ResourceElasticIp elasticIp : elasticIps) {
+                    if (elasticIp.getType() != null) {
+                        out.println("  Type              : " + elasticIp.getType());
+                    }
+                    if (elasticIp.getCount() != null) {
+                        out.println("  Count             : " + elasticIp.getCount());
+                    }
+                }
             }
             if (resource.getSslCertCount() != null) {
                 out.println("SslCertCount        : " + resource.getSslCertCount());

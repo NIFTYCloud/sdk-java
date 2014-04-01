@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  You may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  *
  */
 package com.nifty.cloud.sdk.dashboard.model;
@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.nifty.cloud.sdk.dashboard.model.transform.InstanceItemSetConverter;
+import com.nifty.cloud.sdk.dashboard.model.transform.ElasticIpItemSetConverter;
 import com.nifty.cloud.sdk.dashboard.model.transform.PremiumSupportSetConverter;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
@@ -66,6 +67,11 @@ public class Resources {
 	/** ロードバランサーVIP数 */
 	@XStreamAlias("loadBalancerCount")
 	private Integer loadBalancerCount;
+
+	/** 付替IPアドレス情報リスト */
+	@XStreamAlias("elasticIpItemSet")
+	@XStreamConverter(ElasticIpItemSetConverter.class)
+	List<ResourceElasticIp> elasticIps;
 
 	/** SSL証明書数 */
 	@XStreamAlias("sslCertCount")
@@ -338,6 +344,52 @@ public class Resources {
 	}
 
 	/**
+	 * 付替IPアドレス情報リストを取得します。
+	 *
+	 * @return 付替IPアドレス情報リスト
+	 */
+	public List<ResourceElasticIp> getElasticIps() {
+		return elasticIps;
+	}
+
+	/**
+	 * 付替IPアドレス情報リストを設定します。
+	 *
+	 * @param elasticIps 付替IPアドレス情報リスト
+	 */
+	public void setElasticIps(List<ResourceElasticIp> elasticIps) {
+		this.elasticIps = elasticIps;
+	}
+
+	/**
+	 * 付替IPアドレス情報の配列を設定し、自オブジェクトを返します。
+	 *
+	 * @param elasticIps 付替IPアドレス情報の配列
+	 * @return 自オブジェクト
+	 */
+	public Resources withElasticIps(ResourceElasticIp ... elasticIps) {
+		if (this.elasticIps == null) this.elasticIps = new ArrayList<ResourceElasticIp>();
+		for (ResourceElasticIp elasticIp : elasticIps) {
+			getElasticIps().add(elasticIp);
+		}
+		return this;
+	}
+
+	/**
+	 * 付替IPアドレス情報リストを設定し、自オブジェクトを返します。
+	 *
+	 * @param elasticIps 付替IPアドレス情報リスト
+	 * @return 自オブジェクト
+	 */
+	public Resources withElasticIps(List<ResourceElasticIp> elasticIps) {
+		if (this.elasticIps == null) this.elasticIps = new ArrayList<ResourceElasticIp>();
+		if (elasticIps != null) {
+			getElasticIps().addAll(elasticIps);
+		}
+		return this;
+	}
+
+	/**
 	 * SSL証明書数を取得します。
 	 *
 	 * @return SSL証明書数
@@ -521,6 +573,8 @@ public class Resources {
 		builder.append(securityGroupCount);
 		builder.append(", loadBalancerCount=");
 		builder.append(loadBalancerCount);
+		builder.append(", elasticIps=");
+		builder.append(elasticIps);
 		builder.append(", sslCertCount=");
 		builder.append(sslCertCount);
 		builder.append(", monitoringRuleCount=");

@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.server.model;
@@ -68,8 +68,11 @@ public class InstanceAttribute {
 	/** スケールアウトサーバー情報  */
 	private InstanceAutoScaleMapping autoscaling;
 	
-	/** IPアドレスタイプ */
+	/** グローバルIPアドレスタイプ */
 	private String ipType;
+
+	/** プライベートIPアドレスタイプ */
+	private String niftyPrivateIpType;
 
 	/** ファイアウォールのグループ名 */
 	private String groupId;
@@ -487,29 +490,56 @@ public class InstanceAttribute {
 	}
 	
 	/**
-	 * IPアドレスタイプを取得します。
+	 * グローバルIPアドレスタイプを取得します。
 	 * 
-	 * @return IPアドレスタイプ
+	 * @return グローバルIPアドレスタイプ
 	 */
 	public String getIpType() {
 		return ipType;
 	}
 	/**
-	 * IPアドレスタイプを設定します。
+	 * グローバルIPアドレスタイプを設定します。
 	 * 
-	 * @param ipType IPアドレスタイプ
+	 * @param ipType グローバルIPアドレスタイプ
 	 */
 	public void setIpType(String ipType) {
 		this.ipType = ipType;
 	}
 	/**
-	 * IPアドレスタイプを設定し、自オブジェクトを返します。
+	 * グローバルIPアドレスタイプを設定し、自オブジェクトを返します。
 	 *
-	 * @param ipType IPアドレスタイプ
+	 * @param ipType グローバルIPアドレスタイプ
 	 * @return 自オブジェクト	 
 	 */
 	public InstanceAttribute withIpType(String ipType) {
 		setIpType(ipType);
+		return this;
+	}
+
+	/**
+	 * プライベートIPアドレスタイプを取得します。
+	 *
+	 * @return プライベートIPアドレスタイプ
+	 */
+	public String getNiftyPrivateIpType() {
+		return niftyPrivateIpType;
+	}
+	/**
+	 * プライベートIPアドレスタイプを設定します。
+	 *
+	 * @param niftyPrivateIpType プライベートIPアドレスタイプ
+	 */
+	public void setNiftyPrivateIpType(String niftyPrivateIpType) {
+		this.niftyPrivateIpType = niftyPrivateIpType;
+	}
+	/**
+	 * プライベートIPアドレスタイプを設定し、自オブジェクトを返します。
+	 *
+	 * @param niftyPrivateIpType プライベートIPアドレスタイプ
+	 * @return 自オブジェクト
+	 */
+	public InstanceAttribute withNiftyPrivateIp(String niftyPrivateIpType) {
+		setNiftyPrivateIpType(niftyPrivateIpType);
 		return this;
 	}
 
@@ -603,6 +633,8 @@ public class InstanceAttribute {
 		builder.append(autoscaling);
 		builder.append(", ipType=");
 		builder.append(ipType);
+		builder.append(", niftyPrivateIpType=");
+		builder.append(niftyPrivateIpType);
 		builder.append(", groupId=");
 		builder.append(groupId);
 		builder.append(", description=");

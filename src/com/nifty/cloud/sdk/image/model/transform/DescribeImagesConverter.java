@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  You may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  *
  */
 package com.nifty.cloud.sdk.image.model.transform;
@@ -84,11 +84,12 @@ public class DescribeImagesConverter implements Converter {
 	}
 
 	/**
-	 * imagesSet要素をList<Image>クラスに変換します。
+	 * {@literal
+	 * imagesSet要素をList<Image>クラスに変換します。}
 	 *
 	 * @param reader XML読込リーダ
 	 * @param context
-	 * @return List<Image>オブジェクト
+	 * @return {@literal List<Image>オブジェクト}
 	 *
 	 * @see com.thoughtworks.xstream.converters.Converter#unmarshal(HierarchicalStreamReader, UnmarshallingContext)
 	 */

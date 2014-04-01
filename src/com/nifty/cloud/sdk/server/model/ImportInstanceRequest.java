@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.server.model;
@@ -63,6 +63,9 @@ public class ImportInstanceRequest implements Request {
 
 	/** IPアドレスタイプ */
 	private String ipType;
+
+	/** 付替グローバルIPアドレス */
+	private String publicIp;
 
 	private List<DiskImage> diskImageSet;
 
@@ -408,6 +411,34 @@ public class ImportInstanceRequest implements Request {
 	}
 
 	/**
+	 * 付替グローバルIPアドレスを取得します。
+	 *
+	 * @return 付替グローバルIPアドレス
+	 */
+	@Query(name="PublicIp")
+	public String getPublicIp() {
+		return publicIp;
+	}
+	/**
+	 * 付替グローバルIPアドレスを設定します。
+	 *
+	 * @param publicIp 付替グローバルIPアドレス
+	 */
+	public void setPublicIp(String publicIp) {
+		this.publicIp = publicIp;
+	}
+	/**
+	 * 付替グローバルIPアドレスを設定し、自オブジェクトを返します。
+	 *
+	 * @param publicIp 付替グローバルIPアドレス
+	 * @return 自オブジェクト
+	 */
+	public ImportInstanceRequest withPublicIp(String publicIp) {
+		setPublicIp(publicIp);
+		return this;
+	}
+
+	/**
 	 * diskImageSetを取得します。
 	 * @return diskImageSet
 	 */
@@ -578,6 +609,8 @@ public class ImportInstanceRequest implements Request {
 		builder.append(accountingType);
 		builder.append(", ipType=");
 		builder.append(ipType);
+		builder.append(", publicIp=");
+		builder.append(publicIp);
 		builder.append(", diskImageSet=");
 		builder.append(diskImageSet);
 		builder.append(", instanceId=");

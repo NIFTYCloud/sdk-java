@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
- * 
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
+ *
  */
 package com.nifty.cloud.sdk;
 
@@ -35,19 +35,19 @@ public class ClientConfiguration {
 
 	/**　ユーザーエージェント	*/
     private String userAgent = DEFAULT_USER_AGENT;
-    
+
     /** プロトコル	*/
     private Protocol protocol = Protocol.find(DEFAULT_PROTOCOL);
-    
+
     /** プロキシーホスト名	*/
     private String proxyHost = null;
-    
+
     /** プロキシー  ポート番号	*/
     private int proxyPort = 0;
-    
+
     /** プロキシー 　認証ユーザー名	*/
     private String proxyUsername = null;
-    
+
     /** プロキシー 　パスワード	*/
     private String proxyPassword = null;
 
@@ -56,37 +56,37 @@ public class ClientConfiguration {
 
     /** 最大接続数	*/
     private int maxConnections = MAX_CONNECTIONS;
-    
+
     /** TCPソケットタイムアウト秒数	*/
     private int socketTimeout = SOCKET_TIMEOUT;
-    
+
     /** 接続タイムアウト秒数 */
     private int connectionTimeout = CONNECTION_TIMEOUT;
-    
+
     /** 送信バッファサイズ	*/
     private int socketSendBufferSizeHint = 0;
-    
+
     /** 受信バッファサイズ */
     private int socketReceiveBufferSizeHint = 0;
 
     /** SignatureVersion	*/
     private SignatureVersion signatureVersion = SignatureVersion.find(DEFAULT_SIGNATURE_VERSION);
-    
+
     /** SignatureMethod	*/
     private SignatureMethod signatureMethod = SignatureMethod.find(DEFAULT_SIGNATUTE_METHOD);
-    
+
     /** エンドポイント **/
     private String configEndpoint = null;
-    
+
     /** エンドポイント **/
     private String configUploadEndpoint = null;
-    
+
     /** 利用規約URL */
     private String sslCertEulaUrl = SSL_CERT_EULA_URL;
-    
+
     /** HTTPメソッド */
     private String requestMethod = HTTP_METHOD_GET;
-   
+
     /** アップロードのブロックサイズデフォルト */
     private int uploadBlockSize = DEFAULT_UPLOAD_BLOCKSIZE;
 
@@ -95,29 +95,28 @@ public class ClientConfiguration {
 
     /** 無償版へ変更する際の注意事項URL */
     private String firewallNotesUrlForFree = FW_NOTES_URL_FOR_FREE;
-    
-    /*
-     * ここにRedhat同意文のURLを定義
-     * private String redHatForAgree = REDHAT_AGREE;
-     */
-     private String redhatForAgree = REDHAT_AGREE;
-    
-    
+
+    /** Redhat同意文のURL */
+    private String redhatForAgree = REDHAT_AGREE;
+
+    /** SPLA同意文のURL */
+    private String splaForAgree = SPLA_AGREE;
+
 	/**
 	 * デフォルトのプロパティファイルから設定を取得し、クライアント設定情報を構築します。
-	 * 
+	 *
 	 */
 	public ClientConfiguration() {
 		this(PROPERTIES_FILE);
 	}
-	
+
 	/**
 	 * 指定されたプロパティファイルから設定を取得し、クライアント設定情報を構築します。
-	 * 
+	 *
 	 * @param propertiesFile プロパティファイル名
 	 */
-	public ClientConfiguration(String propertiesFile) {	
-		
+	public ClientConfiguration(String propertiesFile) {
+
 		ResourceBundle bundle = ResourceBundle.getBundle(propertiesFile);
 
 		String value = getResourceValue(bundle, "nifty_cloud.sdk.user_agent");
@@ -148,7 +147,7 @@ public class ClientConfiguration {
 		if (value != null && !value.isEmpty()) socketTimeout = Integer.parseInt(value);
 
 		value = getResourceValue(bundle, "nifty_cloud.sdk.connection_timeout");
-		if (value != null && !value.isEmpty()) connectionTimeout = Integer.parseInt(value);	
+		if (value != null && !value.isEmpty()) connectionTimeout = Integer.parseInt(value);
 
 		value = getResourceValue(bundle, "nifty_cloud.sdk.socket_send_buffer_size_hint");
 		if (value != null && !value.isEmpty()) socketSendBufferSizeHint = Integer.parseInt(value);
@@ -195,17 +194,17 @@ public class ClientConfiguration {
 
 	/**
 	 * 指定されたリソースバンドルとキーから、文字列を取得します。
-	 * 
-	 * @return 指定されたキーの文字列 
+	 *
+	 * @return 指定されたキーの文字列
 	 */
 	private String getResourceValue(ResourceBundle bundle, String key) {
 		if(key == null) return null;
 		return bundle.containsKey(key) ? bundle.getString(key) : null;
 	}
-	
+
 	/**
 	 * ユーザーエージェントを取得します。
-	 * 
+	 *
 	 * @return ユーザーエージェント
 	 */
 	public String getUserAgent() {
@@ -213,7 +212,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * ユーザーエージェントを設定します。
-	 * 
+	 *
 	 * @param userAgent ユーザーエージェント
 	 */
 	public void setUserAgent(String userAgent) {
@@ -221,7 +220,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * ユーザーエージェントを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param userAgent  ユーザーエージェント
 	 * @return　自オブジェクト
 	 */
@@ -232,7 +231,7 @@ public class ClientConfiguration {
 
 	/**
 	 * プロトコルを取得します。
-	 * 
+	 *
 	 * @return プロトコル
 	 */
 	public Protocol getProtocol() {
@@ -240,7 +239,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロトコルを設定します。
-	 * 
+	 *
 	 * @param protocol プロトコル
 	 */
 	public void setProtocol(Protocol protocol) {
@@ -248,7 +247,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロトコルを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param protocol プロトコル
 	 * @return 自オブジェクト
 	 */
@@ -259,7 +258,7 @@ public class ClientConfiguration {
 
 	/**
 	 * プロキシホストを取得します。
-	 * 
+	 *
 	 * @return プロキシホスト
 	 */
 	public String getProxyHost() {
@@ -267,7 +266,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロキシホストを設定します。
-	 * 
+	 *
 	 * @param proxyHost プロキシホスト
 	 */
 	public void setProxyHost(String proxyHost) {
@@ -275,7 +274,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロキシホストを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param proxyHost プロキシホスト
 	 * @return 自オブジェクト
 	 */
@@ -286,7 +285,7 @@ public class ClientConfiguration {
 
 	/**
 	 * プロキシホストのポート番号を取得します。
-	 * 
+	 *
 	 * @return プロキシホストのポート番号
 	 */
 	public int getProxyPort() {
@@ -294,7 +293,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロキシホストのポート番号を設定します。
-	 * 
+	 *
 	 * @param proxyPort プロキシホストのポート番号
 	 */
 	public void setProxyPort(int proxyPort) {
@@ -302,7 +301,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロキシホストのポート番号を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param proxyPort プロキシホストのポート番号
 	 * @return 自オブジェクト
 	 */
@@ -313,7 +312,7 @@ public class ClientConfiguration {
 
 	/**
 	 * プロキシホストの認証ユーザー名を取得します。
-	 * 
+	 *
 	 * @return プロキシホストの認証ユーザー名
 	 */
 	public String getProxyUsername() {
@@ -321,7 +320,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロキシホストの認証ユーザー名を設定します。
-	 * 
+	 *
 	 * @param proxyUsername プロキシホストの認証ユーザー名
 	 */
 	public void setProxyUsername(String proxyUsername) {
@@ -329,7 +328,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロキシホストの認証ユーザー名を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param proxyUsername プロキシホストの認証ユーザー名
 	 * @return 自オブジェクト
 	 */
@@ -340,7 +339,7 @@ public class ClientConfiguration {
 
 	/**
 	 * プロキシホストのパスワードを取得します。
-	 * 
+	 *
 	 * @return プロキシホストのパスワード
 	 */
 	public String getProxyPassword() {
@@ -348,7 +347,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロキシホストのパスワードを設定します。
-	 * 
+	 *
 	 * @param proxyPassword  プロキシホストのパスワード
 	 */
 	public void setProxyPassword(String proxyPassword) {
@@ -356,7 +355,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * プロキシホストのパスワードを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param proxyPassword プロキシホストのパスワード
 	 * @return 自オブジェクト
 	 */
@@ -367,7 +366,7 @@ public class ClientConfiguration {
 
 	/**
 	 * 最大リトライ回数を取得します。
-	 * 
+	 *
 	 * @return 最大リトライ回数
 	 */
 	public int getMaxErrorRetry() {
@@ -375,7 +374,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * 最大リトライ回数を設定します。
-	 * 
+	 *
 	 * @param maxErrorRetry  最大リトライ回数
 	 */
 	public void setMaxErrorRetry(int maxErrorRetry) {
@@ -383,7 +382,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * 最大リトライ回数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param maxErrorRetry  最大リトライ回数
 	 * @return 自オブジェクト
 	 */
@@ -394,7 +393,7 @@ public class ClientConfiguration {
 
 	/**
 	 * 最大接続数を取得します。
-	 * 
+	 *
 	 * @return 最大接続数
 	 */
 	public int getMaxConnections() {
@@ -402,7 +401,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * 最大接続数を設定します。
-	 * 
+	 *
 	 * @param maxConnections  最大接続数
 	 */
 	public void setMaxConnections(int maxConnections) {
@@ -410,7 +409,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * 最大接続数を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param maxConnections  最大接続数
 	 * @return 自オブジェクト
 	 */
@@ -421,7 +420,7 @@ public class ClientConfiguration {
 
 	/**
 	 * TCPソケットのタイムアウト秒を取得します。
-	 * 
+	 *
 	 * @return TCPソケットのタイムアウト秒
 	 */
 	public int getSocketTimeout() {
@@ -429,7 +428,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * TCPソケットのタイムアウト秒を設定します。
-	 * 
+	 *
 	 * @param socketTimeout  TCPソケットのタイムアウト秒
 	 */
 	public void setSocketTimeout(int socketTimeout) {
@@ -437,7 +436,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * TCPソケットのタイムアウト秒を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param socketTimeout  TCPソケットのタイムアウト秒
 	 * @return 自オブジェクト
 	 */
@@ -448,7 +447,7 @@ public class ClientConfiguration {
 
 	/**
 	 * 接続タイムアウト秒を取得します。
-	 * 
+	 *
 	 * @return 接続タイムアウト秒
 	 */
 	public int getConnectionTimeout() {
@@ -456,7 +455,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * 接続タイムアウト秒を設定します。
-	 * 
+	 *
 	 * @param connectionTimeout 接続タイムアウト秒
 	 */
 	public void setConnectionTimeout(int connectionTimeout) {
@@ -464,7 +463,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * 接続タイムアウト秒を設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param connectionTimeout 接続タイムアウト秒
 	 * @return 自オブジェクト
 	 */
@@ -475,7 +474,7 @@ public class ClientConfiguration {
 
 	/**
 	 * ソケットバッファサイズを取得します。
-	 * 
+	 *
 	 * @return 送信バッファサイズ, 受信バッファサイズ
 	 */
 	public int[] getSocketBufferSizeHints() {
@@ -483,7 +482,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * ソケットバッファサイズを設定します。
-	 * 
+	 *
 	 * @param socketSendBufferSizeHint  送信バッファサイズ
 	 * @param socketReceiveBufferSizeHint  受信バッファサイズ
 	 */
@@ -494,7 +493,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * ソケットバッファサイズを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param socketSendBufferSizeHint  送信バッファサイズ
 	 * @param socketReceiveBufferSizeHint  受信バッファサイズ
 	 * @return 自オブジェクト
@@ -508,7 +507,7 @@ public class ClientConfiguration {
 
 	/**
 	 * SignatureVersionを取得します。
-	 * 
+	 *
 	 * @return SignatureVersion
 	 */
 	public SignatureVersion getSignatureVersion() {
@@ -516,7 +515,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * SignatureVersionを設定します。
-	 * 
+	 *
 	 * @param signatureVersion SignatureVersion
 	 */
 	public void setSignatureVersion(SignatureVersion signatureVersion) {
@@ -524,7 +523,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * SignatureVersionを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param signatureVersion  SignatureVersion
 	 * @return 自オブジェクト
 	 */
@@ -532,10 +531,10 @@ public class ClientConfiguration {
 		this.signatureVersion = signatureVersion;
 		return this;
 	}
-	
+
 	/**
 	 * SignatureMethodを取得します。
-	 * 
+	 *
 	 * @return SignatureMethod
 	 */
 	public SignatureMethod getSignatureMethod() {
@@ -543,15 +542,15 @@ public class ClientConfiguration {
 	}
 	/**
 	 * SignatureMethodを設定します。
-	 * 
-	 * @param signatureMethod SignatureMethod 
+	 *
+	 * @param signatureMethod SignatureMethod
 	 */
 	public void setSignatureMethod(SignatureMethod signatureMethod) {
 		this.signatureMethod = signatureMethod;
 	}
 	/**
 	 * SignatureMethodを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param signatureMethod  SignatureMethod
 	 * @return 自オブジェクト
 	 */
@@ -559,11 +558,11 @@ public class ClientConfiguration {
 		this.signatureMethod = signatureMethod;
 		return this;
 	}
-	
-	
+
+
 	/**
 	 * エンドポイントを取得します。
-	 * 
+	 *
 	 * @return エンドポイント
 	 */
 	public String getConfigEndpoint(){
@@ -571,15 +570,15 @@ public class ClientConfiguration {
 	}
 	/**
 	 * エンドポイントを設定します。
-	 * 
-	 * @param configEndpoint エンドポイント 
+	 *
+	 * @param configEndpoint エンドポイント
 	 */
 	public void setConfigEndpoint(String configEndpoint){
 		this.configEndpoint = configEndpoint;
 	}
 	/**
 	 * エンドポイントを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param configEndpoint  エンドポイント
 	 * @return 自オブジェクト
 	 */
@@ -590,7 +589,7 @@ public class ClientConfiguration {
 
 	/**
 	 * アップロードエンドポイントを取得します。
-	 * 
+	 *
 	 * @return アップロードエンドポイント
 	 */
 	public String getConfigUploadEndpoint(){
@@ -598,15 +597,15 @@ public class ClientConfiguration {
 	}
 	/**
 	 * アップロードエンドポイントを設定します。
-	 * 
-	 * @param configUploadEndpoint エンドポイント 
+	 *
+	 * @param configUploadEndpoint エンドポイント
 	 */
 	public void setConfigUploadEndpoint(String configUploadEndpoint){
 		this.configUploadEndpoint = configUploadEndpoint;
 	}
 	/**
 	 * アップロードエンドポイントを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param configUploadEndpoint  アップロードエンドポイント
 	 * @return 自オブジェクト
 	 */
@@ -641,7 +640,7 @@ public class ClientConfiguration {
 
 	/**
 	 * 利用規約URLを取得します。
-	 * 
+	 *
 	 * @return 利用規約URL
 	 */
 	public String getSslCertEulaUrl() {
@@ -649,7 +648,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * 利用規約URLを設定します。
-	 * 
+	 *
 	 * @param sslCertEulaUrl 利用規約URL
 	 */
 	public void setSslCertEulaUrl(String sslCertEulaUrl) {
@@ -657,7 +656,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * 利用規約URLを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param sslCertEulaUrl 利用規約URL
 	 * @return 自オブジェクト
 	 */
@@ -682,7 +681,7 @@ public class ClientConfiguration {
 	}
 	/**
 	 * HTTPメソッドを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param requestMethod HTTPメソッド
 	 * @return 自オブジェクト
 	 */
@@ -693,7 +692,7 @@ public class ClientConfiguration {
 
 	/**
 	 * 有償版へ変更する際の注意事項URLを取得します。
-	 * 
+	 *
 	 * @return firewallNotesUrl 注意事項URL
 	 */
 	public String getFirewallNotesUrlForPaid() {
@@ -702,7 +701,7 @@ public class ClientConfiguration {
 
 	/**
 	 * 有償版へ変更する際の注意事項URLを設定します。
-	 * 
+	 *
 	 * @param firewallNotesUrlForPaid 注意事項URL
 	 */
 	public void setFirewallNotesUrlForPaid(String firewallNotesUrlForPaid) {
@@ -711,7 +710,7 @@ public class ClientConfiguration {
 
 	/**
 	 * 有償版へ変更する際の注意事項URLを設定し、自オブジェクトを返します。
-	 * 
+	 *
 	 * @param firewallNotesUrlForPaid 注意事項URL
 	 * @return 自オブジェクト
 	 */
@@ -737,7 +736,7 @@ public class ClientConfiguration {
 	}
 
 	/**
-	 * 無償版へ変更する際の注意事項URLを設定し、ジオブジェクトを返します。
+	 * 無償版へ変更する際の注意事項URLを設定し、自オブジェクトを返します。
 	 * @param firewallNotesUrlForFree 無償版へ変更する際の注意事項URL
 	 * @return 自オブジェクト
 	 */
@@ -745,8 +744,8 @@ public class ClientConfiguration {
 		this.firewallNotesUrlForFree = firewallNotesUrlForFree;
 		return this;
 	}
-	
-	
+
+
 	/**
 	 * Redhat 同意文URLを取得します。
 	 * @return Redhat同意文の注意事項URL
@@ -764,12 +763,38 @@ public class ClientConfiguration {
 	}
 
 	/**
-	 * Redhat同意文URLを設定し、ジオブジェクトを返します。
+	 * Redhat同意文URLを設定し、自オブジェクトを返します。
 	 * @param redhatForAgree Redhat同意文URL
 	 * @return 自オブジェクト
 	 */
 	public ClientConfiguration withRedhatAgreeUrl(String redhatForAgree) {
 		this.redhatForAgree = redhatForAgree;
+		return this;
+	}
+
+	/**
+	 * SPLA 同意文URLを取得します。
+	 * @return SPLA同意文の注意事項URL
+	 */
+	public String getSplaAgreeUrl() {
+		return splaForAgree;
+	}
+
+	/**
+	 * SPLA 同意文URLを設定します。
+	 * @param splaForAgree SPLA同意文URL
+	 */
+	public void setSplaAgreeUrl(String splaForAgree) {
+		this.splaForAgree = splaForAgree;
+	}
+
+	/**
+	 * SPLA 同意文URLを設定し、自オブジェクトを返します。
+	 * @param splaForAgree SPLA同意文URL
+	 * @return 自オブジェクト
+	 */
+	public ClientConfiguration withSplaAgreeUrl(String splaForAgree) {
+		this.splaForAgree = splaForAgree;
 		return this;
 	}
 }

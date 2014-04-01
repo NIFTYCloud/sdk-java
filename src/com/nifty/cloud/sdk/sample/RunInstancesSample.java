@@ -1,5 +1,5 @@
 /******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *  
  *  Licensed under the Apache License, Version 2.0 (the "License"); 
  *  You may not use this file except in compliance with the License. 
@@ -14,8 +14,8 @@
  * ***************************************************************************** 
  * 
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  * 
  */
 package com.nifty.cloud.sdk.sample;
@@ -166,6 +166,8 @@ public class RunInstancesSample {
         // request.setAdmin("admin");
         // request.setPassword("password");
         // request.setIpType("static");
+        // request.setAgreement(true);
+        // request.setPublicIp("publicIp");
 
         invokeRunInstances(client, request);
     }
@@ -382,6 +384,9 @@ public class RunInstancesSample {
                         }
                         if (instance.getIpType() != null) {
                             out.println("  IpType                   : " + instance.getIpType());
+                        }
+                        if (instance.getNiftyPrivateIpType() != null) {
+                            out.println("    NiftyPrivateIpType     : " + instance.getNiftyPrivateIpType());
                         }
                     }
                 }

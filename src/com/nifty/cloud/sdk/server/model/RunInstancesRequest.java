@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  You may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  *
  */
 package com.nifty.cloud.sdk.server.model;
@@ -94,7 +94,10 @@ public class RunInstancesRequest implements Request {
 	/** IPアドレスタイプ */
 	private String ipType;
 
-	/** Redhat サブスプリクション入りを指定した場合の同意　*/
+	/** 付替グローバルIPアドレス */
+	private String publicIp;
+
+	/** Redhatサブスクリプション入り、またはSPLAサーバーを指定した場合の同意 */
 	private boolean agreement;
 
 	/**
@@ -790,9 +793,37 @@ public class RunInstancesRequest implements Request {
 	}
 
 	/**
-	 * Redhat サブスクリプション入りを指定した場合の同意を取得します。
+	 * 付替グローバルIPアドレスを取得します。
 	 *
-	 * @return Redhat サブスクリプション入りを指定した場合の同意
+	 * @return 付替グローバルIPアドレス
+	 */
+	@Query(name="PublicIp")
+	public String getPublicIp() {
+		return publicIp;
+	}
+	/**
+	 * 付替グローバルIPアドレスを設定します。
+	 *
+	 * @param publicIp 付替グローバルIPアドレス
+	 */
+	public void setPublicIp(String publicIp) {
+		this.publicIp = publicIp;
+	}
+	/**
+	 * 付替グローバルIPアドレスを設定し、自オブジェクトを返します。
+	 *
+	 * @param publicIp 付替グローバルIPアドレス
+	 * @return 自オブジェクト
+	 */
+	public RunInstancesRequest withPublicIp(String publicIp) {
+		setPublicIp(publicIp);
+		return this;
+	}
+
+	/**
+	 * Redhatサブスクリプション入り、またはSPLAサーバーを指定した場合の同意を取得します。
+	 *
+	 * @return Redhatサブスクリプション入り、またはSPLAサーバーを指定した場合の同意
 	 */
 	@Query(name="Agreement")
 	public boolean isAgreement() {
@@ -800,9 +831,9 @@ public class RunInstancesRequest implements Request {
 	}
 
 	/**
-	 * Redhat サブスクリプション入りを指定した場合の同意を設定します。
+	 * Redhatサブスクリプション入り、またはSPLAサーバーを指定した場合の同意を設定します。
 	 *
-	 * @param agreement Redhat サブスクリオプション入りをした場合の同意
+	 * @param agreement Redhatサブスクリプション入り、またはSPLAサーバーを指定した場合の同意
 	 */
 	public void setAgreement(boolean agreement) {
 		this.agreement = agreement;
@@ -861,6 +892,8 @@ public class RunInstancesRequest implements Request {
 		builder.append(password);
 		builder.append(", ipType=");
 		builder.append(ipType);
+		builder.append(", publicIp=");
+		builder.append(publicIp);
 		builder.append(", agreement=");
 		builder.append(agreement);
 		builder.append("]");

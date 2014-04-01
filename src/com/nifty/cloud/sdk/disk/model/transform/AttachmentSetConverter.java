@@ -1,22 +1,22 @@
-/******************************************************************************* 
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+/*******************************************************************************
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
- * 
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.disk.model.transform;
 
@@ -44,14 +44,14 @@ public class AttachmentSetConverter implements Converter {
 	private static final String ELEMENT_STATUS = "status";
 	private static final String ELEMENT_ATTACH_TIME = "attachTime";
 	private static final String ELEMENT_DELETE_ON_TERMINATION = "deleteOnTermination";
-	
-			
+
+
 	/**
 	 * 変換可能なクラスか判定します。
-	 * 
+	 *
 	 * @param clazz クラス
 	 * @return 変換可能な場合true, 変換不可能な場合false
-	 *  
+	 *
 	 * @see com.thoughtworks.xstream.converters.Converter#canConvert(Class)
 	 */
 	@SuppressWarnings("rawtypes")
@@ -63,30 +63,31 @@ public class AttachmentSetConverter implements Converter {
     			return true;
     		}
     	}
-    	return false;		
+    	return false;
 	}
 
 	/**
-	 * attachmentSet要素をList<VolumeAttachment>クラスに変換します。
-	 * 
+	 * {@literal
+	 * attachmentSet要素をList<VolumeAttachment>クラスに変換します。}
+	 *
 	 * @param reader XML読込リーダ
-	 * @param context 
-	 * @return List<VolumeAttachment>オブジェクト
-	 * 
+	 * @param context
+	 * @return {@literal List<VolumeAttachment>オブジェクト}
+	 *
 	 * @see com.thoughtworks.xstream.converters.Converter#unmarshal(HierarchicalStreamReader, UnmarshallingContext)
 	 */
 	@Override
 	public Object unmarshal(HierarchicalStreamReader reader, UnmarshallingContext context) {
 		List<VolumeAttachment> attachments = new ArrayList<VolumeAttachment>();
-		
+
 		String name = null;
 		while(reader.hasMoreChildren()) {
 			reader.moveDown();
 			VolumeAttachment volumeAttachment = new VolumeAttachment();
-			
+
 			while(reader.hasMoreChildren()) {
 				reader.moveDown();
-				
+
 				name = reader.getNodeName();
 				if (name.equals(ELEMENT_VOLUME_ID)) {
 					volumeAttachment.setVolumeId(reader.getValue());
@@ -106,19 +107,19 @@ public class AttachmentSetConverter implements Converter {
 				else if (name.equals(ELEMENT_DELETE_ON_TERMINATION)) {
 					volumeAttachment.setDeleteOnTermination(Boolean.valueOf(reader.getValue()));
 				}
-				
+
 				reader.moveUp();
 			}
-			
+
 			reader.moveUp();
 			attachments.add(volumeAttachment);
 		}
-		
+
 		return attachments;
 	}
 
 	/**
-	 * 未実装メソッド 
+	 * 未実装メソッド
 	 */
 	@Override
 	public void marshal(Object paramObject,

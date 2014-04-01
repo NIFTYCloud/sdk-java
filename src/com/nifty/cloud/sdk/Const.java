@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2013 NIFTY Corporation All Rights Reserved.
+ *  Copyright 2014 NIFTY Corporation All Rights Reserved.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  You may not use this file except in compliance with the License.
@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.16
- *  Date: 2013-10-18 17:00:00
+ *  API Version: 1.17
+ *  Date: 2014-02-20 17:00:00
  *
  */
 package com.nifty.cloud.sdk;
@@ -60,19 +60,7 @@ public interface Const {
 	/** デフォルト　接続タイムアウト秒数 */
 	public final static int CONNECTION_TIMEOUT = 30;
 
-	/** APIバージョン： 1.5	*/
-	public final static String VERSION_1_5 = "1.5";
-	/** APIバージョン： 1.6	*/
-	public final static String VERSION_1_6 = "1.6";
-	/** APIバージョン： 1.7	*/
-	public final static String VERSION_1_7 = "1.7";
-	/** APIバージョン： 1.8	*/
-	public final static String VERSION_1_8 = "1.8";
-	/** APIバージョン： 1.9	*/
-	public final static String VERSION_1_9 = "1.9";
-	/** APIバージョン： 1.10 */
-	public final static String VERSION_1_10 = "1.10";
-	/** APIバージョン： 1.10 */
+	/** APIバージョン	*/
 	public final static String VERSION_1_11 = "1.11";
 	/** APIバージョン	*/
 	public final static String VERSION_1_12 = "1.12";
@@ -82,9 +70,11 @@ public interface Const {
 	public final static String VERSION_1_15 = "1.15";
 	/** APIバージョン	*/
 	public final static String VERSION_1_16 = "1.16";
+	/** APIバージョン	*/
+	public final static String VERSION_1_17 = "1.17";
 
 	/** APIバージョン	*/
-	public final static String VERSION = VERSION_1_16;
+	public final static String VERSION = VERSION_1_17;
 
 
 
@@ -131,4 +121,7 @@ public interface Const {
 
 	/** RHELサブスクリプション規約 URL */
 	public final static String REDHAT_AGREE = "http://cp.cloud.nifty.com/rhel/eula.txt";
+
+	/** SPLAサーバー規約 URL */
+	public final static String SPLA_AGREE = "http://cp.cloud.nifty.com/spla/agreement.txt";
 }
