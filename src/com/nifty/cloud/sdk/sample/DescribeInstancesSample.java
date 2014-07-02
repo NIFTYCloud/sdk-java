@@ -1,22 +1,22 @@
-/******************************************************************************* 
+/*******************************************************************************
  *  Copyright 2014 NIFTY Corporation All Rights Reserved.
- *  
- *  Licensed under the Apache License, Version 2.0 (the "License"); 
- *  You may not use this file except in compliance with the License. 
- *  You may obtain a copy of the License at 
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  You may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
- * ***************************************************************************** 
- * 
+ * *****************************************************************************
+ *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.17
- *  Date: 2014-02-20 17:00:00
- * 
+ *  API Version: 1.18
+ *  Date: 2014-05-23 17:00:00
+ *
  */
 package com.nifty.cloud.sdk.sample;
 
@@ -40,6 +40,7 @@ import com.nifty.cloud.sdk.server.model.InstanceBlockDeviceMapping;
 import com.nifty.cloud.sdk.server.model.InstanceLoadBalancerMapping;
 import com.nifty.cloud.sdk.server.model.InstanceState;
 import com.nifty.cloud.sdk.server.model.Monitoring;
+import com.nifty.cloud.sdk.server.model.NiftySnapshotting;
 import com.nifty.cloud.sdk.server.model.Placement;
 import com.nifty.cloud.sdk.server.model.ProductCode;
 import com.nifty.cloud.sdk.server.model.Reservation;
@@ -353,6 +354,15 @@ public class DescribeInstancesSample {
                             }
                             if (instance.getDescription() != null) {
                                 out.println("    Description            : " + instance.getDescription());
+                            }
+                            if (instance.getNiftySnapshottings() != null) {
+                                List<NiftySnapshotting> niftySnapshottings = instance.getNiftySnapshottings();
+                                for (NiftySnapshotting niftySnapshotting : niftySnapshottings) {
+                                    out.println("    NiftySnapshottings");
+                                    if (niftySnapshotting.getState() != null) {
+                                        out.println("      State                : " + niftySnapshotting.getState());
+                                    }
+                                }
                             }
                         }
                     }

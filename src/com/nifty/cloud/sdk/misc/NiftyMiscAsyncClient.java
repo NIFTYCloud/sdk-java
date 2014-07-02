@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.17
- *  Date: 2014-02-20 17:00:00
+ *  API Version: 1.18
+ *  Date: 2014-05-23 17:00:00
  *
  */
 package com.nifty.cloud.sdk.misc;
@@ -37,6 +37,8 @@ import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsResult;
 import com.nifty.cloud.sdk.misc.model.DissociateUsersRequest;
 import com.nifty.cloud.sdk.misc.model.DissociateUsersResult;
+import com.nifty.cloud.sdk.misc.model.NiftyDescribePerformanceChartRequest;
+import com.nifty.cloud.sdk.misc.model.NiftyDescribePerformanceChartResult;
 
 /**
  * NIFTY Cloud API 非同期クライアント 具象クラス。
@@ -106,6 +108,7 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 				}
 		);
 	}
+
 	/**
 	 * @see com.nifty.cloud.sdk.misc.NiftyMiscAsync#describeRegionsAsync(DescribeRegionsRequest)
 	 */
@@ -161,6 +164,21 @@ public class NiftyMiscAsyncClient extends NiftyMiscClient implements NiftyMiscAs
 					@Override
 					public DescribeAssociatedUsersResult call() {
 						return describeAssociatedUsers(request);
+					}
+				}
+		);
+	}
+
+	/**
+	 * @see com.nifty.cloud.sdk.misc.NiftyMiscAsync#niftyDescribePerformanceChartAsync(NiftyDescribePerformanceChartRequest)
+	 */
+	@Override
+	public Future<NiftyDescribePerformanceChartResult> niftyDescribePerformanceChartAsync(final NiftyDescribePerformanceChartRequest request) {
+		return executorService.submit(
+				new Callable<NiftyDescribePerformanceChartResult>() {
+					@Override
+					public NiftyDescribePerformanceChartResult call() {
+						return niftyDescribePerformanceChart(request);
 					}
 				}
 		);

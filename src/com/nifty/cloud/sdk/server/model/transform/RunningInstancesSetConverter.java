@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.17
- *  Date: 2014-02-20 17:00:00
+ *  API Version: 1.18
+ *  Date: 2014-05-23 17:00:00
  *
  */
 package com.nifty.cloud.sdk.server.model.transform;
@@ -29,6 +29,7 @@ import com.nifty.cloud.sdk.server.model.InstanceBlockDeviceMapping;
 import com.nifty.cloud.sdk.server.model.InstanceLoadBalancerMapping;
 import com.nifty.cloud.sdk.server.model.InstanceState;
 import com.nifty.cloud.sdk.server.model.Monitoring;
+import com.nifty.cloud.sdk.server.model.NiftySnapshotting;
 import com.nifty.cloud.sdk.server.model.Placement;
 import com.nifty.cloud.sdk.server.model.ProductCode;
 import com.nifty.cloud.sdk.server.model.StateReason;
@@ -84,6 +85,7 @@ public class RunningInstancesSetConverter implements Converter {
 	private static final String ELEMENT_IP_TYPE = "ipType";
 	private static final String ELEMENT_NIFTY_PRIVATE_IP_TYPE = "niftyPrivateIpType";
 	private static final String ELEMENT_DESCRIPTION = "description";
+	private static final String ELEMENT_NIFTY_SNAPSHOTTING = "niftySnapshotting";
 
 	/**
 	 * 変換可能なクラスか判定します。
@@ -191,6 +193,10 @@ public class RunningInstancesSetConverter implements Converter {
            		else if (name.equals(ELEMENT_AUTOSCALING)) {
            			converter = new InstanceAutoScaleMappingConverter();
            			instance.setAutoscaling((InstanceAutoScaleMapping)converter.unmarshal(reader, context));
+           		}
+           		else if (name.equals(ELEMENT_NIFTY_SNAPSHOTTING)) {
+           			converter = new NiftySnapshottingConverter();
+           			instance.setNiftySnapshottings((List<NiftySnapshotting>)converter.unmarshal(reader, context));
            		}
 
        			reader.moveUp();

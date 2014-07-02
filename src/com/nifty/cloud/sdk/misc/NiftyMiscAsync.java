@@ -14,8 +14,8 @@
  * *****************************************************************************
  *
  *  NIFTY Cloud SDK for Java
- *  API Version: 1.17
- *  Date: 2014-02-20 17:00:00
+ *  API Version: 1.18
+ *  Date: 2014-05-23 17:00:00
  *
  */
 package com.nifty.cloud.sdk.misc;
@@ -32,6 +32,8 @@ import com.nifty.cloud.sdk.misc.model.DescribeRegionsRequest;
 import com.nifty.cloud.sdk.misc.model.DescribeRegionsResult;
 import com.nifty.cloud.sdk.misc.model.DissociateUsersRequest;
 import com.nifty.cloud.sdk.misc.model.DissociateUsersResult;
+import com.nifty.cloud.sdk.misc.model.NiftyDescribePerformanceChartRequest;
+import com.nifty.cloud.sdk.misc.model.NiftyDescribePerformanceChartResult;
 
 /**
  * NIFTY Cloud API 非同期クライアント　インタフェース。
@@ -59,7 +61,6 @@ public interface NiftyMiscAsync extends NiftyMisc {
 	/**
 	 * 非同期で指定ユーザーの情報を共有します。
 	 * @param request AssociateUsersリクエスト<br />
-	 * &nbsp;	AssociateUsersRequest
 	 * @return 非同期処理結果
 	 */
 	public Future<AssociateUsersResult> associateUsersAsync(AssociateUsersRequest request);
@@ -67,7 +68,6 @@ public interface NiftyMiscAsync extends NiftyMisc {
 	/**
 	 * 非同期で指定ユーザーの情報の共有を解除します。
 	 * @param request DissociateUsersリクエスト<br />
-	 * &nbsp;	DissociateUsersRequest
 	 * @return 非同期処理結果
 	 */
 	public Future<DissociateUsersResult> dissociateUsersAsync(DissociateUsersRequest request);
@@ -75,8 +75,14 @@ public interface NiftyMiscAsync extends NiftyMisc {
 	/**
 	 * 非同期で指定ユーザーの情報の共有を解除します。
 	 * @param request DescribeAssociatedUsersリクエスト<br />
-	 * &nbsp;	DescribeAssociatedUsersRequest
 	 * @return 非同期処理結果
 	 */
 	public Future<DescribeAssociatedUsersResult> describeAssociatedUsersAsync(DescribeAssociatedUsersRequest request);
+
+	/**
+	 * 非同期でパフォーマンスチャート機能の各リソースの内容を取得します。
+	 * @param request NiftyDescribePerformanceChartリクエスト<br />
+	 * @return 非同期処理結果
+	 */
+	public Future<NiftyDescribePerformanceChartResult> niftyDescribePerformanceChartAsync(NiftyDescribePerformanceChartRequest request);
 }

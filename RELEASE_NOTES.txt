@@ -3,9 +3,20 @@ NIFTY Cloud SDK for Java
 リリースノート
 --------------------------
 
+2014-06-26 SDK for Java Version.1.18
+---------------------------------
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
+　主な修正classは以下です。
+　　com.nifty.cloud.sdk.misc.*
+　　com.nifty.cloud.sdk.server.*
+−詳しくは、JavaDocを参照してください。
+　　http://cloud.nifty.com/api/sdk/javadoc/
+
+
+
 2014-03-13 SDK for Java Version.1.17
 ---------------------------------
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.address.*
 　　com.nifty.cloud.sdk.dashboard.*
@@ -16,7 +27,7 @@ NIFTY Cloud SDK for Java
 　　com.nifty.cloud.sdk.security.*
 　　com.nifty.cloud.sdk.server.*
 　　com.nifty.cloud.sdk.usage.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -24,20 +35,20 @@ NIFTY Cloud SDK for Java
 2013-11-19  SDK for Java Version.1.16
 ---------------------------------
 ■機能拡張
-－新機能に対応するため、既存classにmethod・パラメーターを修正します。
+−新機能に対応するため、既存classにmethod・パラメーターを修正します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.dashboard.*
 　　com.nifty.cloud.sdk.server.*
 　　com.nifty.cloud.sdk.image.*
 　　com.nifty.cloud.sdk.firewall.*
 　　com.nifty.cloud.sdk.usage.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 2013-06-28  SDK for Java Version.1.15
 ---------------------------------
 ■機能拡張
-－機能拡張に伴う、既存classにmethod・パラメーターの付加はありません。
+−機能拡張に伴う、既存classにmethod・パラメーターの付加はありません。
 　※ロードバランサーに設定できるサーバーの設定範囲のみ変更になります。
 　(旧)同一 ゾーン内のサーバー
 　(新)同一 リージョン内のサーバー
@@ -46,21 +57,21 @@ NIFTY Cloud SDK for Java
 2013-03-28  SDK for Java Version.1.14
 ---------------------------------
 ■機能追加
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.disk.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 2013-02-20  SDK for Java Version.1.12
 ---------------------------------
 ■機能追加
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.misc.*
 　　com.nifty.cloud.sdk.server.*
 　　com.nifty.cloud.sdk.usage.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -68,7 +79,7 @@ NIFTY Cloud SDK for Java
 2012-09-19  SDK for Java Version.1.11
 ---------------------------------
 ■機能追加
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.dashboard.*
 　　com.nifty.cloud.sdk.disk.*
@@ -80,7 +91,7 @@ NIFTY Cloud SDK for Java
 　　com.nifty.cloud.sdk.server.*
 　　com.nifty.cloud.sdk.upload.*
 　　com.nifty.cloud.sdk.usage.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -88,10 +99,10 @@ NIFTY Cloud SDK for Java
 2012-04-02  SDK for Java Version.1.9.2
 ---------------------------------
 ■機能追加
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.usage.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -100,7 +111,7 @@ NIFTY Cloud SDK for Java
 ---------------------------------
 ■機能追加
 API Version 1.9に対応
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.dashboard.*
 　　com.nifty.cloud.sdk.firewall.*
@@ -108,7 +119,7 @@ API Version 1.9に対応
 　　com.nifty.cloud.sdk.server.*
 　　com.nifty.cloud.sdk.upload.*
 　　com.nifty.cloud.sdk.usage.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -117,12 +128,12 @@ API Version 1.9に対応
 ---------------------------------
 ■機能追加
 API Version 1.8に対応
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.disk.*
 　　com.nifty.cloud.sdk.loadbalancer.*
 　　com.nifty.cloud.sdk.sslcert.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -131,10 +142,10 @@ API Version 1.8に対応
 ---------------------------------
 ■機能追加
 API Version 1.8に対応
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.server.*
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -143,10 +154,10 @@ API Version 1.8に対応
 ---------------------------------
 ■機能追加
 API Version 1.7に対応
-－新機能に対応するため、既存classにmethod・パラメーターを付加します。
+−新機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.image.model.Image.java
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -156,7 +167,7 @@ API Version 1.7に対応
 ■機能追加
 API Version 1.6に対応
 
-－以下の機能について、classを追加します。
+−以下の機能について、classを追加します。
 　[ファイアウォール]
 　　com.nifty.cloud.sdk.firewall.*
 　　com.nifty.cloud.sdk.sample.AuthorizeSecurityGroupIngressSample.java
@@ -178,14 +189,14 @@ API Version 1.6に対応
 　　com.nifty.cloud.sdk.sample.ModifySslCertificateAttributeSample.java
 　　com.nifty.cloud.sdk.sample.RegisterCorporateInfoForCertificateSample.java
 　　com.nifty.cloud.sdk.sample.UploadSslCertificateSample.java
-－上記機能に対応するため、既存classにmethod・パラメーターを付加します。
+−上記機能に対応するため、既存classにmethod・パラメーターを付加します。
 　主な修正classは以下です。
 　　com.nifty.cloud.sdk.server.model.CopyInstances.java
 　　com.nifty.cloud.sdk.server.model.Instances.java
 　　com.nifty.cloud.sdk.server.model.InstanceAttribute.java
 　　com.nifty.cloud.sdk.server.model.RunInstancesRequest.java
 　　com.nifty.cloud.sdk.loadbalancer.model.CreateLoadBalancerRequest.java
-－詳しくは、JavaDocを参照してください。
+−詳しくは、JavaDocを参照してください。
 　　http://cloud.nifty.com/api/sdk/javadoc/
 
 
@@ -196,4 +207,4 @@ API Version 1.6に対応
 API Version 1.5 に対応
 
 
-Copyright 2013 NIFTY Corporation All Rights Reserved.
+Copyright 2014 NIFTY Corporation All Rights Reserved.
